@@ -3,6 +3,8 @@
 Oct 19 2021
 02:56:52
 /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_address_decoder.vhd,1652264866,vhdl,,,,tb_address_decoder,,,,,,,,
+/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_latch.vhd,1652276684,vhdl,,,,tb_latch,,,,,,,,
 /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_signal_controller.vhd,1652272743,vhdl,,,,tb_signal_controller,,,,,,,,
 /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/address_decoder.vhd,1652264704,vhdl2008,/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_signal_controller.vhd,,,address_decoder,,,,,,,,
+/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/latch.vhd,1652276460,vhdl,/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_latch.vhd,,,latch,,,,,,,,
 /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd,1652272668,vhdl2008,/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_signal_controller.vhd,,,signal_controller,,,,,,,,

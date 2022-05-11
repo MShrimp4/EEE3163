@@ -146,7 +146,7 @@ clk_gen : TOP_8254 port map(
            m_gate0   => s_m_8254_gate0,
            m_gate1   => s_m_8254_gate1,
            m_gate2   => s_m_8254_gate2,
-           m_addr    => m_address(1 downto 0),
+           m_addr    => m_address(1 downto 0), --TODO : s_address(1 downto 0)
            m_cs_b    => not s_pcs_addr,
            m_wr_b    => not m_wen,		-- TODO
 		   m_out0    => sys_clk,
@@ -161,7 +161,7 @@ s_m_8254_gate2	<= '1';
 -- Components
 
 addr_decode : entity work.address_decoder (Behavioral)
-    port map(addr_in=>       (others=>'0'),
+    port map(addr_in=>       (others=>'0'), --s_address
              pcs_addr=>       s_pcs_addr,
              reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,

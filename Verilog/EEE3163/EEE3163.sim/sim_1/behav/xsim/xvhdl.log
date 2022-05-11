@@ -1,0 +1,3 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_latch.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_latch'
+WARNING: [VRFC 10-3093] actual for formal port 'input' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_latch.vhd:51]

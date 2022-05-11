@@ -14,8 +14,8 @@ I live in Spain without an S
 ## Phase 1 (~5/11)
  * ~Address Decoder~
  * ~Address Decoder 테스트 코드~
- * Signal Controller 대갈치기
- * Signal Controller 테스트 코드
+ * ~~Signal Controller 대갈치기~~
+ * ~~Signal Controller 테스트 코드~~
  * 8254 테스트용 코드
 
 ## Phase 2 (~5/12)
