@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "tb_signal_controller_behav" "xil_defaultlib.tb_signal_controller" -log "elaborate.log" 

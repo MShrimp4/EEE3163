@@ -109,7 +109,11 @@ signal s_debug_led : std_logic_vector(6 downto 0);
 signal s_debug_sw     : std_logic_vector (7 downto 0);
 signal s_debug_header : std_logic_vector (15 downto 2);
 
---추가한 signal
+-----------------
+--추가한 signal --
+-----------------
+
+-- Addr Mode
 signal s_pcs_addr       : STD_LOGIC;
 signal s_reset_addr     : STD_LOGIC;
 signal s_reset8254_addr : STD_LOGIC;

@@ -3,72 +3,72 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_address_decoder_behav.wdb" id="1">
+      <db_ref path="tb_signal_controller_behav.wdb" id="1">
          <top_modules>
-            <top_module name="tb_address_decoder" />
+            <top_module name="tb_signal_controller" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="8,475.822 ns"></ZoomStartTime>
-      <ZoomEndTime time="8,893.823 ns"></ZoomEndTime>
-      <Cursor1Time time="13,800.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="420.501 ns"></ZoomEndTime>
+      <Cursor1Time time="395.500 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="130"></NameColumnWidth>
-      <ValueColumnWidth column_width="62"></ValueColumnWidth>
+      <NameColumnWidth column_width="127"></NameColumnWidth>
+      <ValueColumnWidth column_width="60"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
-   <wvobject type="logic" fp_name="/tb_address_decoder/clk">
+   <wvobject type="logic" fp_name="/tb_signal_controller/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_address_decoder/i">
-      <obj_property name="ElementShortName">i[8:0]</obj_property>
-      <obj_property name="ObjectShortName">i[8:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_signal_controller/addr">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/tb_address_decoder/clk_period">
-      <obj_property name="ElementShortName">clk_period</obj_property>
-      <obj_property name="ObjectShortName">clk_period</obj_property>
+   <wvobject type="other" fp_name="/tb_signal_controller/main_ctrl/s">
+      <obj_property name="ElementShortName">s</obj_property>
+      <obj_property name="ObjectShortName">s</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/pcs_addr">
-      <obj_property name="ElementShortName">pcs_addr</obj_property>
-      <obj_property name="ObjectShortName">pcs_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_pcs_addr">
+      <obj_property name="ElementShortName">s_pcs_addr</obj_property>
+      <obj_property name="ObjectShortName">s_pcs_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/reset_addr">
-      <obj_property name="ElementShortName">reset_addr</obj_property>
-      <obj_property name="ObjectShortName">reset_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_reset_addr">
+      <obj_property name="ElementShortName">s_reset_addr</obj_property>
+      <obj_property name="ObjectShortName">s_reset_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/reset8254_addr">
-      <obj_property name="ElementShortName">reset8254_addr</obj_property>
-      <obj_property name="ObjectShortName">reset8254_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_reset8254_addr">
+      <obj_property name="ElementShortName">s_reset8254_addr</obj_property>
+      <obj_property name="ObjectShortName">s_reset8254_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/pc_RAM_addr">
-      <obj_property name="ElementShortName">pc_RAM_addr</obj_property>
-      <obj_property name="ObjectShortName">pc_RAM_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_pc_RAM_addr">
+      <obj_property name="ElementShortName">s_pc_RAM_addr</obj_property>
+      <obj_property name="ObjectShortName">s_pc_RAM_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/da_start_addr">
-      <obj_property name="ElementShortName">da_start_addr</obj_property>
-      <obj_property name="ObjectShortName">da_start_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_da_start_addr">
+      <obj_property name="ElementShortName">s_da_start_addr</obj_property>
+      <obj_property name="ObjectShortName">s_da_start_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/da_stop_addr">
-      <obj_property name="ElementShortName">da_stop_addr</obj_property>
-      <obj_property name="ObjectShortName">da_stop_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_da_stop_addr">
+      <obj_property name="ElementShortName">s_da_stop_addr</obj_property>
+      <obj_property name="ObjectShortName">s_da_stop_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/ad_RAM_addr">
-      <obj_property name="ElementShortName">ad_RAM_addr</obj_property>
-      <obj_property name="ObjectShortName">ad_RAM_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_ad_RAM_addr">
+      <obj_property name="ElementShortName">s_ad_RAM_addr</obj_property>
+      <obj_property name="ObjectShortName">s_ad_RAM_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/adr_RAM_addr">
-      <obj_property name="ElementShortName">adr_RAM_addr</obj_property>
-      <obj_property name="ObjectShortName">adr_RAM_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_adr_RAM_addr">
+      <obj_property name="ElementShortName">s_adr_RAM_addr</obj_property>
+      <obj_property name="ObjectShortName">s_adr_RAM_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/opt_step1_addr">
-      <obj_property name="ElementShortName">opt_step1_addr</obj_property>
-      <obj_property name="ObjectShortName">opt_step1_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_opt_step1_addr">
+      <obj_property name="ElementShortName">s_opt_step1_addr</obj_property>
+      <obj_property name="ObjectShortName">s_opt_step1_addr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_address_decoder/addr_decode/opt_step2_addr">
-      <obj_property name="ElementShortName">opt_step2_addr</obj_property>
-      <obj_property name="ObjectShortName">opt_step2_addr</obj_property>
+   <wvobject type="logic" fp_name="/tb_signal_controller/s_opt_step2_addr">
+      <obj_property name="ElementShortName">s_opt_step2_addr</obj_property>
+      <obj_property name="ObjectShortName">s_opt_step2_addr</obj_property>
    </wvobject>
 </wave_config>

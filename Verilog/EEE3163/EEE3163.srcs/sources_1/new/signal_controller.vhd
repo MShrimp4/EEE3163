@@ -36,8 +36,42 @@ entity signal_controller is
 end signal_controller;
 
 architecture Behavioral of signal_controller is
-
+    TYPE state is (S_IDLE, S_PC, S_DA, S_AD, S_ADR, S_OPT1, S_OPT2);
+    signal s : state := S_IDLE;
+    signal s_escape_idle : state;
 begin
+
+-- Components
+
+-- State
+    ------------------
+    -- 도대체가 input은 48MHz 인데 이게 어떻게 멀쩡하게 작동해????
+    ------------------
+    -- TODO
+    process (s_clk)
+    begin
+        if rising_edge (s_clk) then
+            case s is
+                when S_IDLE => s <= s_escape_idle;
+                when S_PC   => s <= S_IDLE; -- TODO
+                when S_DA   => s <= S_IDLE when da_stop_addr='1' else S_DA; -- TODO
+                when S_AD   => s <= S_IDLE; -- TODO
+                when S_ADR  => s <= S_IDLE; -- TODO
+                when S_OPT1 => s <= S_IDLE; -- TODO
+                when S_OPT2 => s <= S_IDLE; -- TODO
+            end case;
+        end if;
+    end process;
+
+    s_escape_idle <= S_PC   when pc_RAM_addr='1'
+                else S_DA   when da_start_addr='1'
+                else S_AD   when ad_RAM_addr='1'
+                else S_ADR  when adr_RAM_addr='1'
+                else S_OPT1 when opt_step1_addr='1'
+                else S_OPT2 when opt_step2_addr='1'
+                else S_IDLE;
+
+-- Combinational
 
 
 end Behavioral;
