@@ -6,6 +6,7 @@ I live in Spain without an S
  * 원래 FPGA는 xf7s75fgga676-2이나 좀 더 빡빡한 설계를 위해 Speed grade 1으로 세팅해두었음.
  * wea는 `std_logic_vector`
  * `Option_mode.vhd`만 `IEEE.STD_LOGIC_SIGNED.ALL;` 나머지는 `IEEE.STD_LOGIC_UNSIGNED.ALL`
+ * `s_clk_g : IBUFG generic map (IOSTANDARD => "LVCMOS_33")` 에서 s/IBUFG/IBUF/g 했음
 # TODO
 
 ## Phase 1 (~5/11)

@@ -109,27 +109,19 @@ signal s_debug_led : std_logic_vector(6 downto 0);
 signal s_debug_sw     : std_logic_vector (7 downto 0);
 signal s_debug_header : std_logic_vector (15 downto 2);
 
---==============================================================================================================
-
-
-
-                                                -- Code Input --
-
-
---==============================================================================================================
-
+--추가한 signal
+signal s_pcs_addr : std_logic;
 
 begin
 
 s_reset_b <= m_fpga_reset;
 
---global iobuf
-s_clk_g : IBUFG generic map (IOSTANDARD => "LVCMOS_33")
+--global iobuf --TODO
+s_clk_g : IBUF generic map (IOSTANDARD => "LVCMOS_33")
 port map(I=>m_fpga_clk, O=>s_clk);
 
 m_dac_clk   <= s_clk;    -- dac clk
 m_adc_clk   <= sys_clk;    -- adc clk
-
 
 clk_gen : TOP_8254 port map( 
            m_clk0    => s_clk,
@@ -142,8 +134,8 @@ clk_gen : TOP_8254 port map(
            m_gate1   => s_m_8254_gate1,
            m_gate2   => s_m_8254_gate2,
            m_addr    => m_address(1 downto 0),
-           m_cs_b    => ,		        -- chip select signal (address decoder를 통한 8254의 enable signal)
-           m_wr_b    => ,				-- (not m_wen)
+           m_cs_b    => not s_pcs_addr,
+           m_wr_b    => not m_wen,		-- TODO
 		   m_out0    => sys_clk,
            m_out1    => open,
            m_out2    => open
@@ -152,6 +144,19 @@ clk_gen : TOP_8254 port map(
 s_m_8254_gate0	<= '1';
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
+
+addr_decode : entity work.address_decoder (Behavioral)
+    port map(addr_in=>       (others=>'0'),
+             pcs_addr=>       s_pcs_addr,
+             reset_addr=>     open,
+             reset8254_addr=> open,
+             pc_RAM_addr=>    open,
+             da_start_addr=>  open,
+             da_stop_addr=>   open,
+             ad_RAM_addr=>    open,
+             adr_RAM_addr=>   open,
+             opt_step1_addr=> open,
+             opt_step2_addr=> open);
 
 
 --==============================================================================================================
