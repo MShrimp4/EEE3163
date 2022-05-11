@@ -16,11 +16,12 @@ I live in Spain without an S
  * ~Address Decoder 테스트 코드~
  * ~~Signal Controller 대갈치기~~
  * ~~Signal Controller 테스트 코드~~
- * 8254 테스트용 코드
+ * ~~Latch~~
 
 ## Phase 2 (~5/12)
- * Reset 구현
- * 테스트 코드
+ * Reset 구현 & 테스트
+ * MUX 구현 & 테스트
+ * MUX 배선
 
 delay 테스트 진행
 
