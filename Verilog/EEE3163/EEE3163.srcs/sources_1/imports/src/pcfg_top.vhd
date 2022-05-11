@@ -113,6 +113,19 @@ signal s_debug_header : std_logic_vector (15 downto 2);
 --추가한 signal --
 -----------------
 
+-- Latch Enable
+signal IN_latch_en  : STD_LOGIC;
+signal OUT_latch_en : STD_LOGIC;
+signal DA_latch_en  : STD_LOGIC;
+signal AD_latch_en  : STD_LOGIC;
+
+-- PC Latch
+signal s_cmd_data       : STD_LOGIC;
+signal s_wen            : STD_LOGIC;
+signal s_ren            : STD_LOGIC;
+signal s_oe_b           : STD_LOGIC;
+signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
+
 -- Addr Mode
 signal s_pcs_addr       : STD_LOGIC;
 signal s_reset_addr     : STD_LOGIC;
@@ -146,9 +159,9 @@ clk_gen : TOP_8254 port map(
            m_gate0   => s_m_8254_gate0,
            m_gate1   => s_m_8254_gate1,
            m_gate2   => s_m_8254_gate2,
-           m_addr    => m_address(1 downto 0), --TODO : s_address(1 downto 0)
+           m_addr    => s_address(1 downto 0), --TODO : s_address(1 downto 0)
            m_cs_b    => not s_pcs_addr,
-           m_wr_b    => not m_wen,		-- TODO
+           m_wr_b    => not s_wen,		-- TODO
 		   m_out0    => sys_clk,
            m_out1    => open,
            m_out2    => open
@@ -159,6 +172,37 @@ s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
 
 -- Components
+
+PC_LATCH    : entity work.latch (Behavioral)
+    generic map(length=> 4 + m_address'length)
+    port map(clk=>s_clk, en=>'1',
+             input  => m_cmd_data & m_wen & m_ren & m_oe_b & m_address,
+             output => s_cmd_data & s_wen & s_ren & s_oe_b & s_address);
+             
+IN_LATCH    : entity work.latch (Behavioral)
+    generic map(length=> m_data'length)
+    port map(clk=>s_clk, en=>IN_latch_en,
+             input  => m_data,
+             output => s_PC_mux_din0);
+             
+OUT_LATCH   : entity work.latch (Behavioral)
+    generic map(length=> m_data'length)
+    port map(clk=>sys_clk, en=>OUT_latch_en,
+             input  => s_OUT_mux_dout,
+             output => s_tri_data);
+             
+DA_LATCH    : entity work.latch (Behavioral)
+    generic map(length=> m_data'length)
+    port map(clk=>s_clk, en=>DA_latch_en,
+             input  => s_PC_RAM_dout,
+             output => m_dac_d);
+             
+AD_LATCH    : entity work.latch (Behavioral)
+    generic map(length=> m_data'length)
+    port map(clk=>sys_clk, en=>AD_latch_en,
+             input  => m_adc_d,
+             output => s_AD_RAM_din);
+
 
 addr_decode : entity work.address_decoder (Behavioral)
     port map(addr_in=>       (others=>'0'), --s_address
