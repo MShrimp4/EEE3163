@@ -110,13 +110,22 @@ signal s_debug_sw     : std_logic_vector (7 downto 0);
 signal s_debug_header : std_logic_vector (15 downto 2);
 
 --추가한 signal
-signal s_pcs_addr : std_logic;
+signal s_pcs_addr       : STD_LOGIC;
+signal s_reset_addr     : STD_LOGIC;
+signal s_reset8254_addr : STD_LOGIC;
+signal s_pc_RAM_addr    : STD_LOGIC;
+signal s_da_start_addr  : STD_LOGIC;
+signal s_da_stop_addr   : STD_LOGIC;
+signal s_ad_RAM_addr    : STD_LOGIC;
+signal s_adr_RAM_addr   : STD_LOGIC;
+signal s_opt_step1_addr : STD_LOGIC;
+signal s_opt_step2_addr : STD_LOGIC;
 
 begin
 
 s_reset_b <= m_fpga_reset;
 
---global iobuf --TODO
+--global iobuf
 s_clk_g : IBUF generic map (IOSTANDARD => "LVCMOS_33")
 port map(I=>m_fpga_clk, O=>s_clk);
 
@@ -145,31 +154,80 @@ s_m_8254_gate0	<= '1';
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
 
+-- Components
+
 addr_decode : entity work.address_decoder (Behavioral)
     port map(addr_in=>       (others=>'0'),
              pcs_addr=>       s_pcs_addr,
-             reset_addr=>     open,
-             reset8254_addr=> open,
-             pc_RAM_addr=>    open,
-             da_start_addr=>  open,
-             da_stop_addr=>   open,
-             ad_RAM_addr=>    open,
-             adr_RAM_addr=>   open,
-             opt_step1_addr=> open,
-             opt_step2_addr=> open);
+             reset_addr=>     s_reset_addr,
+             reset8254_addr=> s_reset8254_addr,
+             pc_RAM_addr=>    s_pc_RAM_addr,
+             da_start_addr=>  s_da_start_addr,
+             da_stop_addr=>   s_da_stop_addr,
+             ad_RAM_addr=>    s_ad_RAM_addr,
+             adr_RAM_addr=>   s_adr_RAM_addr,
+             opt_step1_addr=> s_opt_step1_addr,
+             opt_step2_addr=> s_opt_step2_addr);
+             
+main_ctrl   : entity work.signal_controller (Behavioral)
+    port map(s_clk=>          s_clk,
+             sys_clk=>        sys_clk,
+             s_wen=>          open,
+             s_ren=>          open,
+             pcs_addr=>       s_pcs_addr,
+             reset_addr=>     s_reset_addr,
+             reset8254_addr=> s_reset8254_addr,
+             pc_RAM_addr=>    s_pc_RAM_addr,
+             da_start_addr=>  s_da_start_addr,
+             da_stop_addr=>   s_da_stop_addr,
+             ad_RAM_addr=>    s_ad_RAM_addr,
+             adr_RAM_addr=>   s_adr_RAM_addr,
+             opt_step1_addr=> s_opt_step1_addr,
+             opt_step2_addr=> s_opt_step2_addr,
+             
+             PCRAM_addr=>     open,
+             ADRAM_addr=>     open,
+             OptionRAM_addr=> open,
+             PC_mux_sel=>     open, 
+             OUT_mux_sel=>    open,
+             IN_latch_en=>    open,
+             OUT_latch_en=>   open,
+             DA_latch_en=>    open,
+             AD_latch_en=>    open);
+             
+             
+PCRAM       : entity work.RAM (RAM_arch)
+    port map(clka=>           s_clk,
+             ena=>            open,
+             wea=>            open,
+             addra=>          open,
+             dina=>           open,
+             clkb=>           s_clk,
+             enb=>            open,
+             addrb=>          open,
+             doutb=>          open);
+             
+ADRAM       : entity work.RAM (RAM_arch)
+    port map(clka=>           sys_clk,
+             ena=>            open,
+             wea=>            open,
+             addra=>          open,
+             dina=>           open,
+             clkb=>           s_clk,
+             enb=>            open,
+             addrb=>          open,
+             doutb=>          open);
 
-
---==============================================================================================================
-
-
-
-
-                                                -- Code Input --
-
-
-
---==============================================================================================================
-
+OPTIONRAM   : entity work.RAM (RAM_arch)
+    port map(clka=>           s_clk,
+             ena=>            open,
+             wea=>            open,
+             addra=>          open,
+             dina=>           open,
+             clkb=>           sys_clk,
+             enb=>            open,
+             addrb=>          open,
+             doutb=>          open);
 
 --for debug 
 

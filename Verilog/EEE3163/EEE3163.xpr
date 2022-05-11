@@ -94,6 +94,12 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/signal_controller.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/src/top_8254.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../src/top_8254.vhd"/>
@@ -202,7 +208,6 @@
     <FileSet Name="RAM" Type="BlockSrcs" RelSrcDir="$PSRCDIR/RAM" RelGenDir="$PGENDIR/RAM">
       <File Path="$PSRCDIR/sources_1/ip/RAM/RAM.xci">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

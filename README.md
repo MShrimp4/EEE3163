@@ -7,7 +7,9 @@ I live in Spain without an S
  * wea는 `std_logic_vector`
  * `Option_mode.vhd`만 `IEEE.STD_LOGIC_SIGNED.ALL;` 나머지는 `IEEE.STD_LOGIC_UNSIGNED.ALL`
  * `s_clk_g : IBUFG generic map (IOSTANDARD => "LVCMOS_33")` 에서 s/IBUFG/IBUF/g 했음
+ * DUAL RAM : A쪽이 Input 전용 B쪽이 Output 전용, B output latency 2 clock
 # TODO
+ * 
 
 ## Phase 1 (~5/11)
  * Address Decoder
