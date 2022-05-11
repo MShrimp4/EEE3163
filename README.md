@@ -1,2 +1,51 @@
 # EEE3163
 I live in Spain without an S
+
+
+# 주의할 점
+ * 원래 FPGA는 xf7s75fgga676-2이나 좀 더 빡빡한 설계를 위해 Speed grade 1으로 세팅해두었음.
+
+# TODO
+
+## Phase 1 (~5/11)
+ * Address Decoder
+ * Address Decoder 테스트 코드
+ * Signal Controller 대갈치기
+ * Signal Controller 테스트 코드
+ * 8254 테스트용 코드
+
+이후 delay 테스트 진행
+
+## Phase 2 (~5/12)
+ * Reset 구현
+ * 테스트 코드
+
+delay 테스트 진행
+
+## Phase 3 (~5/14)
+ * PC Mode/ DA Mode 구현
+ * 테스트 코드
+
+delay test 진행
+
+## Phase 4 (~5/15)
+ * AD(R) Mode 구현
+ * 테스트 코드
+
+delay test 진행
+
+## Phase 5 (~5/16)
+ * Option Mode 구현
+ * 테스트 코드
+
+delay test 진행
+
+## Phase 6 (~5/19)
+ * 전체 테스트용 코드 구현
+ * 전체 주석 달기
+
+delay test 진행
+
+## Phase 7 (~5/23)
+ * 현재 가진 FPGA로 테스트 가능하도록 머리 써보기
+ * 주석을 보고서로 녹여내기 (???)
