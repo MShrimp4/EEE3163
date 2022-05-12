@@ -19,8 +19,9 @@ I live in Spain without an S
  * ~~Latch~~
 
 ## Phase 2 (~5/12)
+ * Data Path Controller 구현, RAM 테스트
  * Reset 구현 & 테스트
- * MUX 구현 & 테스트
+ * ~~MUX 구현 & 테스트~~
  * MUX 배선
 
 delay 테스트 진행
