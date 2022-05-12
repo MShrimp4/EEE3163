@@ -36,7 +36,6 @@ entity mux is
     Port (
     Din0: in  STD_LOGIC_VECTOR (length-1 downto 0);
     Din1: in  STD_LOGIC_VECTOR (length-1 downto 0);
-    clk: in std_logic;
     Dout: out  STD_LOGIC_VECTOR (length-1 downto 0);
     sel: in STD_LOGIC
      );
@@ -45,13 +44,13 @@ end mux;
 architecture Behavioral of mux is
     signal mux_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
-    process(sel,clk)
+    process(sel)
     begin
 
-        if sel = '0' and rising_edge (clk) then
+        if sel = '0' then
             mux_input <= Din0;
         
-        elsif sel = '1' and rising_edge (clk) then
+        elsif sel = '1' then
            mux_input <= Din1;
         end if;
         end process;
