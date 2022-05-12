@@ -39,14 +39,17 @@ architecture Behavioral of tb_mux is
     signal   clk2       : std_logic := '0';
     signal   o          : std_logic_vector(3 downto 0);
     signal   e          : std_logic := '0';
+    signal input1:std_logic_vector(3 downto 0);
+    signal input2:std_logic_vector(3 downto 0);
 begin
 
     clk2 <= not clk2 after clk2_period/2;
     
     mux_work : entity work.mux (Behavioral)
     generic map (length=>o'length)
-    port map(Din0=>"0010",
-             Din1=>"1001",
+    port map(
+             Din0=>input1,
+             Din1=>input2,
              sel=>e,
              Dout=>o);
 
@@ -54,8 +57,16 @@ begin
     test_process : process
     begin
         e <= '1';
+       input1<="0101";
+       input2<="1000";
+        wait for clk2_period*4;
+         e <= '1';
+        input1<="0111";
+        input2<="1100";
         wait for clk2_period*4;
         e <= '0';
+        input1<="0100";
+        input2<="1110";
         wait for clk2_period*3;
     end process test_process;
 end Behavioral;
