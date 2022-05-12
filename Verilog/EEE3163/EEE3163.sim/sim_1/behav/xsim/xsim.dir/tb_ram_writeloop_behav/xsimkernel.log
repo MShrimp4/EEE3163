@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_ram_writeloop_behav/xsimk -simmode gui -wdb tb_ram_writeloop_behav.wdb -simrunnum 0 -socket 50623
+Design successfully loaded
+Design Loading Memory Usage: 33704 KB (Peak: 33712 KB)
+Design Loading CPU Usage: 20 ms

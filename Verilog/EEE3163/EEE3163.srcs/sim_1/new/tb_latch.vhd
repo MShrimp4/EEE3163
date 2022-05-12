@@ -45,7 +45,7 @@ begin
     clk <= not clk after clk_period/2;
     clk2 <= not clk2 after clk2_period/2;
     
-    addr_decode : entity work.latch (Behavioral)
+    latch : entity work.latch (Behavioral)
     generic map (length=>o'length)
     port map(input=>clk2 & clk2 & clk2 & clk2,
              clk=>clk,en=>e,

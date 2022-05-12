@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_ram_writeloop_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_ram_writeloop" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="550.889 ns"></ZoomEndTime>
+      <Cursor1Time time="12.500 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="125"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject type="logic" fp_name="/tb_ram_writeloop/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_writeloop/en_input1">
+      <obj_property name="ElementShortName">en_input1</obj_property>
+      <obj_property name="ObjectShortName">en_input1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_writeloop/en_output1">
+      <obj_property name="ElementShortName">en_output1</obj_property>
+      <obj_property name="ObjectShortName">en_output1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_writeloop/en_input2">
+      <obj_property name="ElementShortName">en_input2</obj_property>
+      <obj_property name="ObjectShortName">en_input2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_writeloop/en_output2">
+      <obj_property name="ElementShortName">en_output2</obj_property>
+      <obj_property name="ObjectShortName">en_output2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_writeloop/addr">
+      <obj_property name="ElementShortName">addr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_writeloop/input">
+      <obj_property name="ElementShortName">input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_writeloop/atob">
+      <obj_property name="ElementShortName">atob[7:0]</obj_property>
+      <obj_property name="ObjectShortName">atob[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_writeloop/output">
+      <obj_property name="ElementShortName">output[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output[7:0]</obj_property>
+   </wvobject>
+</wave_config>

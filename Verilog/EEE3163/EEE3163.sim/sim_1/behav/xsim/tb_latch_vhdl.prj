@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../EEE3163.srcs/sources_1/new/latch.vhd" \
-"../../../../EEE3163.srcs/sim_1/new/tb_latch.vhd" \
-
-# Do not sort compile order
-nosort
