@@ -44,15 +44,8 @@ end mux;
 architecture Behavioral of mux is
     signal mux_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
-    process(sel)
-    begin
-
-        if sel = '0' then
-            mux_input <= Din0;
-        
-        elsif sel = '1' then
-           mux_input <= Din1;
-        end if;
-        end process;
-        Dout<=mux_input;
+       mux_input<=Din0 when sel='0' else
+                  Din1 when sel='1' else
+                  (others=>'0');
+       Dout<=mux_input;
 end Behavioral;
