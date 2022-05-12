@@ -2,3 +2,6 @@ Running: xsim.dir/tb_ram_writeloop_behav/xsimk -simmode gui -wdb tb_ram_writeloo
 Design successfully loaded
 Design Loading Memory Usage: 33704 KB (Peak: 33712 KB)
 Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 123640 KB (Peak: 172972 KB)
+Simulation CPU Usage: 60 ms

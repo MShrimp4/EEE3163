@@ -124,7 +124,26 @@ signal s_cmd_data       : STD_LOGIC;
 signal s_wen            : STD_LOGIC;
 signal s_ren            : STD_LOGIC;
 signal s_oe_b           : STD_LOGIC;
-signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
+signal s_address        : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+
+-- Latch Data
+signal s_OUT_latch_din  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_IN_latch_dout  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+
+-- MUX select
+signal s_OUT_mux_sel    : STD_LOGIC_VECTOR (1 downto 0);
+signal s_PC_mux_sel     : STD_LOGIC;
+
+-- MUX Data
+signal s_OUT1_mux_1to2  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+
+-- RAM
+signal s_PC_RAM_din     : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_PC_RAM_dout    : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_AD_RAM_din     : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_AD_RAM_dout    : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_OPT_RAM_din    : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_OPT_RAM_dout   : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 
 -- Addr Mode
 signal s_pcs_addr       : STD_LOGIC;
@@ -183,12 +202,12 @@ IN_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
     port map(clk=>s_clk, en=>IN_latch_en,
              input  => m_data,
-             output => s_PC_mux_din0);
+             output => s_IN_latch_dout);
              
 OUT_LATCH   : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
     port map(clk=>sys_clk, en=>OUT_latch_en,
-             input  => s_OUT_mux_dout,
+             input  => s_OUT_latch_din,
              output => s_tri_data);
              
 DA_LATCH    : entity work.latch (Behavioral)
@@ -202,7 +221,27 @@ AD_LATCH    : entity work.latch (Behavioral)
     port map(clk=>sys_clk, en=>AD_latch_en,
              input  => m_adc_d,
              output => s_AD_RAM_din);
-
+             
+PC_MUX      : entity work.mux (Behavioral)
+    generic map(length=> m_data'length)
+    port map(Din0=> s_IN_latch_dout, 
+             Din1=> s_AD_RAM_dout,
+             Dout=> s_PC_RAM_din,
+             sel => s_PC_mux_sel);
+             
+OUT_mux_1   : entity work.mux (Behavioral)
+    generic map(length=> m_data'length)
+    port map(Din0=> s_PC_RAM_dout, 
+             Din1=> s_OPT_RAM_dout,
+             Dout=> s_OUT1_mux_1to2,
+             sel => s_OUT_mux_sel(0));
+             
+OUT_mux_2   : entity work.mux (Behavioral)
+    generic map(length=> m_data'length)
+    port map(Din0=> s_OUT1_mux_1to2, 
+             Din1=> s_AD_RAM_dout,
+             Dout=> s_OUT_latch_din,
+             sel => s_OUT_mux_sel(1));
 
 addr_decode : entity work.address_decoder (Behavioral)
     port map(addr_in=>       (others=>'0'), --s_address
@@ -220,8 +259,8 @@ addr_decode : entity work.address_decoder (Behavioral)
 main_ctrl   : entity work.signal_controller (Behavioral)
     port map(s_clk=>          s_clk,
              sys_clk=>        sys_clk,
-             s_wen=>          open,
-             s_ren=>          open,
+             s_wen=>          s_wen,
+             s_ren=>          s_ren,
              pcs_addr=>       s_pcs_addr,
              reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,
@@ -244,38 +283,35 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              AD_latch_en=>    open);
              
              
-PCRAM       : entity work.RAM (RAM_arch)
+PCRAM       : entity work.RAM_WRAPPER (Behavioral)
     port map(clka=>           s_clk,
              ena=>            open,
-             wea=>            open,
              addra=>          open,
-             dina=>           open,
+             dina=>           s_PC_RAM_din,
              clkb=>           s_clk,
              enb=>            open,
              addrb=>          open,
-             doutb=>          open);
+             doutb=>          s_PC_RAM_dout);
              
-ADRAM       : entity work.RAM (RAM_arch)
+ADRAM       : entity work.RAM_WRAPPER (Behavioral)
     port map(clka=>           sys_clk,
              ena=>            open,
-             wea=>            open,
              addra=>          open,
-             dina=>           open,
+             dina=>           s_AD_RAM_din,
              clkb=>           s_clk,
              enb=>            open,
              addrb=>          open,
-             doutb=>          open);
+             doutb=>          s_AD_RAM_dout);
 
-OPTIONRAM   : entity work.RAM (RAM_arch)
+OPTIONRAM   : entity work.RAM_WRAPPER (Behavioral)
     port map(clka=>           s_clk,
              ena=>            open,
-             wea=>            open,
              addra=>          open,
-             dina=>           open,
+             dina=>           s_OPT_RAM_din,
              clkb=>           sys_clk,
              enb=>            open,
              addrb=>          open,
-             doutb=>          open);
+             doutb=>          s_OPT_RAM_dout);
 
 --for debug 
 
