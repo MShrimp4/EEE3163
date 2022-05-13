@@ -13,7 +13,7 @@ I live in Spain without an S
   * 125ns ADDR/DATA 안정화, 125ns 리퀘스트 (처리)
   * CMD_DATA가 활성화 되었을때부터 준비도 가능하다
 # TODO
- * TRI_STATE는 WEN에 묶여야 합니다
+ * ~~TRI_STATE는 WEN에 묶여야 합니다~~
  * reset8254_addr => 8254 reset
 
 ## Phase 1 (~5/11)
@@ -25,19 +25,19 @@ I live in Spain without an S
 
 ## Phase 2 (~5/12)
  * ~~Data Path Controller 구현~~, ~~RAM 테스트~~
- * Reset 구현 & 테스트 (5/13)
+ * ~~Reset 구현 & 테스트 (그없)~~
  * ~~MUX 구현 & 테스트~~
  * ~~MUX 배선~~
  
 ## 5/13
- * Tristate buffer 구현 & 테스트
- * Counter 구현 & 테스트
- * AD fast write 테스트에서 시도해보기 (`tb_RAM_WRAPPER_FAST`)
-  * `AD_RAM`에 써지는 대로 `PC_RAM`으로 바로 전송
-  * 다양한 clock 세팅에서 가능한가?
+ * ~~Tristate buffer 구현 & 테스트~~
+ * ~~Counter 구현 & 테스트~~
+ * ~~AD fast write 테스트에서 시도해보기 (`tb_RAM_WRAPPER_FAST`)~~
+  * ~~`AD_RAM`에 써지는 대로 `PC_RAM`으로 바로 전송~~
+  * ~~다양한 clock 세팅에서 가능한가?~~
 
 ## Phase 3 (~5/14)
- * RAM controller 구현
+ * ~~RAM controller 구현~~
  * PC Mode/ DA Mode 구현
  * 테스트 코드
 
