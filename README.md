@@ -14,10 +14,11 @@ I live in Spain without an S
   * CMD_DATA가 활성화 되었을때부터 준비도 가능하다
 # TODO
  * TRI_STATE는 WEN에 묶여야 합니다
+ * reset8254_addr => 8254 reset
 
 ## Phase 1 (~5/11)
- * ~Address Decoder~
- * ~Address Decoder 테스트 코드~
+ * ~~Address Decoder~~
+ * ~~Address Decoder 테스트 코드~~
  * ~~Signal Controller 대갈치기~~
  * ~~Signal Controller 테스트 코드~~
  * ~~Latch~~
