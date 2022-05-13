@@ -40,11 +40,13 @@ entity tristatebuffer is
      );
 end tristatebuffer;
 
-architecture Behavioral of mux is
+architecture Behavioral of tristatebuffer is
     signal tristate_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'Z');
 begin
-       tristate_input<=(others=>'Z') when sel='0' else
-                  Din when sel='1' else
+       tristate_input<=(others=>'Z') when en='0' else
+                  Din when en='1' else
                   (others=>'Z');
        Dout<=tristate_input;
 end Behavioral;
+
+
