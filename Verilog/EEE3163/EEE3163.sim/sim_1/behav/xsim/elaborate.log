@@ -1,6 +1,6 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot tb_ram_writeloop_behav xil_defaultlib.tb_ram_writeloop -log elaborate.log 
+Running: /opt/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot tb_data_path_control_behav xil_defaultlib.tb_data_path_control -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,25 +10,10 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
 Compiling package std.env
-Compiling package unisim.vcomponents
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_signed
-Compiling package ieee.std_logic_textio
-Compiling package ieee.vital_timing
-Compiling package ieee.vital_primitives
-Compiling package unisim.vpkg
-Compiling architecture gnd_v of entity unisim.GND [gnd_default]
-Compiling architecture rb18_internal_vhdl_v of entity unisim.RB18_INTERNAL_VHDL [\RB18_INTERNAL_VHDL(bram_size=18...]
-Compiling architecture ramb18e1_v of entity unisim.RAMB18E1 [\RAMB18E1(doa_reg=1,dob_reg=1,re...]
-Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_prim_wrapper [ram_blk_mem_gen_prim_wrapper_def...]
-Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_prim_width [ram_blk_mem_gen_prim_width_defau...]
-Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_generic_cstr [ram_blk_mem_gen_generic_cstr_def...]
-Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_top [ram_blk_mem_gen_top_default]
-Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_v8_4_5_synth [ram_blk_mem_gen_v8_4_5_synth_def...]
-Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_v8_4_5 [ram_blk_mem_gen_v8_4_5_default]
-Compiling architecture structure of entity xil_defaultlib.RAM [ram_default]
-Compiling architecture behavioral of entity xil_defaultlib.RAM_WRAPPER [ram_wrapper_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_ram_writeloop
-Built simulation snapshot tb_ram_writeloop_behav
+Compiling architecture behavioral of entity xil_defaultlib.latch [\latch(length=8)\]
+Compiling architecture behavioral of entity xil_defaultlib.mux [\mux(length=8)\]
+Compiling architecture behavioral of entity xil_defaultlib.address_decoder [address_decoder_default]
+Compiling architecture behavioral of entity xil_defaultlib.data_path_control [data_path_control_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_data_path_control
+Built simulation snapshot tb_data_path_control_behav

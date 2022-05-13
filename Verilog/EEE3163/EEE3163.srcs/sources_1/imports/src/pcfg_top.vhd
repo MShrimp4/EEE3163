@@ -124,7 +124,7 @@ signal s_cmd_data       : STD_LOGIC;
 signal s_wen            : STD_LOGIC;
 signal s_ren            : STD_LOGIC;
 signal s_oe_b           : STD_LOGIC;
-signal s_address        : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
 
 -- Latch Data
 signal s_OUT_latch_din  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
@@ -244,7 +244,7 @@ OUT_mux_2   : entity work.mux (Behavioral)
              sel => s_OUT_mux_sel(1));
 
 addr_decode : entity work.address_decoder (Behavioral)
-    port map(addr_in=>       (others=>'0'), --s_address
+    port map(addr_in=>        s_address,
              pcs_addr=>       s_pcs_addr,
              reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,
