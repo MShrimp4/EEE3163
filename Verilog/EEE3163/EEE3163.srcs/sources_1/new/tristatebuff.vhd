@@ -31,20 +31,20 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity mux is
+entity tristatebuffer is
     generic (length : integer := 1);
     Port (
-    Din0: in  STD_LOGIC_VECTOR (length-1 downto 0);
+    Din: in  STD_LOGIC_VECTOR (length-1 downto 0);
     Dout: out  STD_LOGIC_VECTOR (length-1 downto 0);
     en: in STD_LOGIC
      );
-end mux;
+end tristatebuffer;
 
 architecture Behavioral of mux is
-    signal mux_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'Z');
+    signal tristate_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'Z');
 begin
-       mux_input<=(ohters=>'Z') when sel='0' else
-                  Din1 when sel='1' else
-                  (others=>'0');
-       Dout<=mux_input;
+       tristate_input<=(others=>'Z') when sel='0' else
+                  Din when sel='1' else
+                  (others=>'Z');
+       Dout<=tristate_input;
 end Behavioral;
