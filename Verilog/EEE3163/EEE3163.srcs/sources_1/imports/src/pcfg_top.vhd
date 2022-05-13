@@ -130,6 +130,9 @@ signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
 signal s_OUT_latch_din  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 signal s_IN_latch_dout  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 
+-- Tristate Buffer
+signal s_tri_data       : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+
 -- MUX select
 signal s_OUT_mux_sel    : STD_LOGIC_VECTOR (1 downto 0);
 signal s_PC_mux_sel     : STD_LOGIC;
@@ -221,6 +224,11 @@ AD_LATCH    : entity work.latch (Behavioral)
     port map(clk=>sys_clk, en=>AD_latch_en,
              input  => m_adc_d,
              output => s_AD_RAM_din);
+
+TRIBUF      : entity work.tristatebuffer (Behavioral)
+    generic map(length=> m_data'length)
+    port map(en=> s_ren, --TODO: m_ren?
+             Din=>s_tri_data, Dout=>m_data);
              
 PC_MUX      : entity work.mux (Behavioral)
     generic map(length=> m_data'length)
