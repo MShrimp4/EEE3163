@@ -8,8 +8,11 @@ I live in Spain without an S
  * `Option_mode.vhd`만 `IEEE.STD_LOGIC_SIGNED.ALL;` 나머지는 `IEEE.STD_LOGIC_UNSIGNED.ALL`
  * `s_clk_g : IBUFG generic map (IOSTANDARD => "LVCMOS_33")` 에서 s/IBUFG/IBUF/g 했음
  * DUAL RAM : A쪽이 Input 전용 B쪽이 Output 전용, B output latency 2 clock
+ * 48MHz / 12 = 40 MHz / 10 = 4MHz
+  * Phase Lock 하는 방법? -> TESTCASE 보면 필요 없었다. 딜레이 제맘대로.
+  * 125ns ADDR/DATA 안정화, 125ns 리퀘스트 (처리)
 # TODO
- * 
+ * TRI_STATE는 WEN에 묶여야 합니다
 
 ## Phase 1 (~5/11)
  * ~Address Decoder~
@@ -19,7 +22,7 @@ I live in Spain without an S
  * ~~Latch~~
 
 ## Phase 2 (~5/12)
- * Data Path Controller 구현, ~~RAM 테스트~~
+ * ~~Data Path Controller 구현~~, ~~RAM 테스트~~
  * Reset 구현 & 테스트
  * ~~MUX 구현 & 테스트~~
  * ~~MUX 배선~~
@@ -27,6 +30,8 @@ I live in Spain without an S
 delay 테스트 진행
 
 ## Phase 3 (~5/14)
+ * RAM controller 구현
+ * Tristate buffer 구현
  * PC Mode/ DA Mode 구현
  * 테스트 코드
 
