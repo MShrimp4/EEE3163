@@ -176,7 +176,7 @@ clk_gen : TOP_8254 port map(
            m_clk1    => s_clk,
            m_clk2    => s_clk,
            m_clk_ctr => s_clk,
-           m_reset   => not s_reset_b, --8254 reset과 혼용될 수 있도록 변경
+           m_reset   => (not s_reset_b) or s_reset8254_addr, --8254 reset과 혼용될 수 있도록 변경
            m_data    => m_data,                  
            m_gate0   => s_m_8254_gate0,
            m_gate1   => s_m_8254_gate1,
