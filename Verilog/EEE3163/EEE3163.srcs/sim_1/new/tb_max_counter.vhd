@@ -23,7 +23,8 @@ begin
     max_counter : entity work.max_counter (Behavioral)
     generic map (length=> len)
     port map (
-          clk     => clk,
+          clk_c   => clk,
+          clk_max => clk,
           ce_c    => ce_c,
           ce_max  => ce_max,
           rst_c   => rst_c,
@@ -66,6 +67,11 @@ begin
           rst_c   <= '0';
           rst_all <= '1';
         wait for clk_period;
+          ce_c    <= '1';
+          ce_max  <= '0';
+          rst_c   <= '0';
+          rst_all <= '0';
+        wait for clk_period*6;
         wait for clk_period/2;
         stop;
     end process test_process;

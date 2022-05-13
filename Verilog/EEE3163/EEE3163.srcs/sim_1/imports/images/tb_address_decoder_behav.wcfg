@@ -3,56 +3,116 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_max_counter_behav.wdb" id="1">
+      <db_ref path="tb_ram_control_behav.wdb" id="1">
          <top_modules>
-            <top_module name="tb_max_counter" />
+            <top_module name="tb_ram_control" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="584.706 ns"></ZoomEndTime>
-      <Cursor1Time time="775.000 ns"></Cursor1Time>
+      <ZoomStartTime time="204,252.230 ns"></ZoomStartTime>
+      <ZoomEndTime time="204,939.555 ns"></ZoomEndTime>
+      <Cursor1Time time="204,825.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="164"></NameColumnWidth>
-      <ValueColumnWidth column_width="74"></ValueColumnWidth>
+      <ValueColumnWidth column_width="62"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
-   <wvobject type="logic" fp_name="/tb_max_counter/clk">
+   <WVObjectSize size="24" />
+   <wvobject type="logic" fp_name="/tb_ram_control/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_max_counter/ce_c">
+   <wvobject type="logic" fp_name="/tb_ram_control/clk2">
+      <obj_property name="ElementShortName">clk2</obj_property>
+      <obj_property name="ObjectShortName">clk2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_input">
+      <obj_property name="ElementShortName">en_input</obj_property>
+      <obj_property name="ObjectShortName">en_input</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_transfer">
+      <obj_property name="ElementShortName">en_transfer</obj_property>
+      <obj_property name="ObjectShortName">en_transfer</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_output">
+      <obj_property name="ElementShortName">en_output</obj_property>
+      <obj_property name="ObjectShortName">en_output</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_input1">
+      <obj_property name="ElementShortName">en_input1</obj_property>
+      <obj_property name="ObjectShortName">en_input1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_output1">
+      <obj_property name="ElementShortName">en_output1</obj_property>
+      <obj_property name="ObjectShortName">en_output1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_input2">
+      <obj_property name="ElementShortName">en_input2</obj_property>
+      <obj_property name="ObjectShortName">en_input2</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/en_output2">
+      <obj_property name="ElementShortName">en_output2</obj_property>
+      <obj_property name="ObjectShortName">en_output2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/addr1i">
+      <obj_property name="ElementShortName">addr1i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr1i[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/addr1o">
+      <obj_property name="ElementShortName">addr1o[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr1o[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/addr2i">
+      <obj_property name="ElementShortName">addr2i[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr2i[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/addr2o">
+      <obj_property name="ElementShortName">addr2o[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr2o[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/input">
+      <obj_property name="ElementShortName">input[7:0]</obj_property>
+      <obj_property name="ObjectShortName">input[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/atob">
+      <obj_property name="ElementShortName">atob[7:0]</obj_property>
+      <obj_property name="ObjectShortName">atob[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/output">
+      <obj_property name="ElementShortName">output[7:0]</obj_property>
+      <obj_property name="ObjectShortName">output[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/s_r_ready_1">
+      <obj_property name="ElementShortName">s_r_ready_1</obj_property>
+      <obj_property name="ObjectShortName">s_r_ready_1</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/tb_ram_control/clk_period">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/RAMCTRL1/counter/cnt_val">
+      <obj_property name="ElementShortName">cnt_val[10:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_val[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_ram_control/RAMCTRL1/counter/max_val">
+      <obj_property name="ElementShortName">max_val[10:0]</obj_property>
+      <obj_property name="ObjectShortName">max_val[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_ram_control/RAMCTRL1/counter/ce_c">
       <obj_property name="ElementShortName">ce_c</obj_property>
       <obj_property name="ObjectShortName">ce_c</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_max_counter/ce_max">
-      <obj_property name="ElementShortName">ce_max</obj_property>
-      <obj_property name="ObjectShortName">ce_max</obj_property>
+   <wvobject type="logic" fp_name="/tb_ram_control/RAMCTRL1/tc_w">
+      <obj_property name="ElementShortName">tc_w</obj_property>
+      <obj_property name="ObjectShortName">tc_w</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_max_counter/rst_c">
-      <obj_property name="ElementShortName">rst_c</obj_property>
-      <obj_property name="ObjectShortName">rst_c</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_max_counter/rst_all">
-      <obj_property name="ElementShortName">rst_all</obj_property>
-      <obj_property name="ObjectShortName">rst_all</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_max_counter/cnt_val">
-      <obj_property name="ElementShortName">cnt_val[3:0]</obj_property>
-      <obj_property name="ObjectShortName">cnt_val[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_max_counter/max_val">
-      <obj_property name="ElementShortName">max_val[3:0]</obj_property>
-      <obj_property name="ObjectShortName">max_val[3:0]</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_max_counter/tc_c">
-      <obj_property name="ElementShortName">tc_c</obj_property>
-      <obj_property name="ObjectShortName">tc_c</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_max_counter/tc_max">
-      <obj_property name="ElementShortName">tc_max</obj_property>
-      <obj_property name="ObjectShortName">tc_max</obj_property>
+   <wvobject type="logic" fp_name="/tb_ram_control/RAMCTRL1/tc_r">
+      <obj_property name="ElementShortName">tc_r</obj_property>
+      <obj_property name="ObjectShortName">tc_r</obj_property>
    </wvobject>
 </wave_config>

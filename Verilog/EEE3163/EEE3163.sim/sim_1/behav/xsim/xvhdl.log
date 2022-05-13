@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_max_counter.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_max_counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/new/tb_ram_control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_ram_control'
