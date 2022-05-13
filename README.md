@@ -11,6 +11,7 @@ I live in Spain without an S
  * 48MHz / 12 = 40 MHz / 10 = 4MHz
   * Phase Lock 하는 방법? -> TESTCASE 보면 필요 없었다. 딜레이 제맘대로.
   * 125ns ADDR/DATA 안정화, 125ns 리퀘스트 (처리)
+  * CMD_DATA가 활성화 되었을때부터 준비도 가능하다
 # TODO
  * TRI_STATE는 WEN에 묶여야 합니다
 
