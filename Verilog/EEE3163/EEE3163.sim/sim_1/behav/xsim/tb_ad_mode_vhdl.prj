@@ -10,7 +10,11 @@ vhdl xil_defaultlib  \
 "../../../../EEE3163.srcs/sources_1/new/ram_control.vhd" \
 
 vhdl2008 xil_defaultlib  \
-"../../../../EEE3163.srcs/sim_1/new/tb_ram_control.vhd" \
+"../../../../EEE3163.srcs/sources_1/new/ad_mode_ctrl.vhd" \
+"../../../../EEE3163.srcs/sources_1/new/ad_transfer_mode_ctrl.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../../EEE3163.srcs/sim_1/new/tb_ad_mode.vhd" \
 
 # Do not sort compile order
 nosort

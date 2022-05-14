@@ -1,6 +1,6 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: /opt/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot tb_ram_control_behav xil_defaultlib.tb_ram_control -log elaborate.log 
+Running: /opt/Xilinx/Vivado/2021.2/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip -L xpm --snapshot tb_ad_mode_behav xil_defaultlib.tb_ad_mode -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,16 +12,14 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
 Compiling package std.env
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
 Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_signed
 Compiling package ieee.std_logic_textio
 Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
-Compiling architecture behavioral of entity xil_defaultlib.max_counter [\max_counter(length=11)\]
-Compiling architecture behavioral of entity xil_defaultlib.ram_control [ram_control_default]
+Compiling package ieee.std_logic_unsigned
 Compiling architecture gnd_v of entity unisim.GND [gnd_default]
 Compiling architecture rb18_internal_vhdl_v of entity unisim.RB18_INTERNAL_VHDL [\RB18_INTERNAL_VHDL(bram_size=18...]
 Compiling architecture ramb18e1_v of entity unisim.RAMB18E1 [\RAMB18E1(doa_reg=1,dob_reg=1,re...]
@@ -33,5 +31,9 @@ Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_v8_4_5
 Compiling architecture structure of entity xil_defaultlib.RAM_blk_mem_gen_v8_4_5 [ram_blk_mem_gen_v8_4_5_default]
 Compiling architecture structure of entity xil_defaultlib.RAM [ram_default]
 Compiling architecture behavioral of entity xil_defaultlib.RAM_WRAPPER [ram_wrapper_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_ram_control
-Built simulation snapshot tb_ram_control_behav
+Compiling architecture behavioral of entity xil_defaultlib.max_counter [\max_counter(length=11)\]
+Compiling architecture behavioral of entity xil_defaultlib.ram_control [ram_control_default]
+Compiling architecture behavioral of entity xil_defaultlib.ad_mode_ctrl [ad_mode_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.ad_transfer_mode_ctrl [ad_transfer_mode_ctrl_default]
+Compiling architecture behavioral of entity xil_defaultlib.tb_ad_mode
+Built simulation snapshot tb_ad_mode_behav
