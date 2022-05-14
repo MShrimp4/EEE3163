@@ -3,22 +3,22 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_pcfg_func_synth.wdb" id="1">
+      <db_ref path="tb_pcfg_behav.wdb" id="1">
          <top_modules>
             <top_module name="tb_pcfg" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="10,078.334 ns"></ZoomStartTime>
-      <ZoomEndTime time="10,883.335 ns"></ZoomEndTime>
-      <Cursor1Time time="10,212.500 ns"></Cursor1Time>
+      <ZoomStartTime time="338,437.731 ns"></ZoomStartTime>
+      <ZoomEndTime time="341,287.732 ns"></ZoomEndTime>
+      <Cursor1Time time="339,652.731 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="164"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="148"></NameColumnWidth>
+      <ValueColumnWidth column_width="71"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="28" />
+   <WVObjectSize size="18" />
    <wvobject type="logic" fp_name="/tb_pcfg/m_reset_b">
       <obj_property name="ElementShortName">m_reset_b</obj_property>
       <obj_property name="ObjectShortName">m_reset_b</obj_property>
@@ -59,76 +59,35 @@
       <obj_property name="ElementShortName">m_DAC_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">m_DAC_data[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/s_dat_en">
-      <obj_property name="ElementShortName">s_dat_en</obj_property>
-      <obj_property name="ObjectShortName">s_dat_en</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/s_dat_clk">
-      <obj_property name="ElementShortName">s_dat_clk</obj_property>
-      <obj_property name="ObjectShortName">s_dat_clk</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[0]_i_1_n_0\">
-      <obj_property name="ElementShortName">\s_hot[0]_i_1_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[0]_i_1_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[1]_i_1_n_0\">
-      <obj_property name="ElementShortName">\s_hot[1]_i_1_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[1]_i_1_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[2]_i_1_n_0\">
-      <obj_property name="ElementShortName">\s_hot[2]_i_1_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[2]_i_1_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[3]_i_1_n_0\">
-      <obj_property name="ElementShortName">\s_hot[3]_i_1_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[3]_i_1_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[4]_i_1_n_0\">
-      <obj_property name="ElementShortName">\s_hot[4]_i_1_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[4]_i_1_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[8]_i_4_n_0\">
-      <obj_property name="ElementShortName">\s_hot[8]_i_4_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[8]_i_4_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/\s_hot[8]_i_6_n_0\">
-      <obj_property name="ElementShortName">\s_hot[8]_i_6_n_0\</obj_property>
-      <obj_property name="ObjectShortName">\s_hot[8]_i_6_n_0\</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM/RAM1/clka">
-      <obj_property name="ElementShortName">clka</obj_property>
-      <obj_property name="ObjectShortName">clka</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM/RAM1/ena">
-      <obj_property name="ElementShortName">ena</obj_property>
-      <obj_property name="ObjectShortName">ena</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/RAM1/wea">
-      <obj_property name="ElementShortName">wea[0:0]</obj_property>
-      <obj_property name="ObjectShortName">wea[0:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/RAM1/addra">
+   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/addra">
       <obj_property name="ElementShortName">addra[10:0]</obj_property>
       <obj_property name="ObjectShortName">addra[10:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/RAM1/dina">
+   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/dina">
       <obj_property name="ElementShortName">dina[7:0]</obj_property>
       <obj_property name="ObjectShortName">dina[7:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM/RAM1/clkb">
-      <obj_property name="ElementShortName">clkb</obj_property>
-      <obj_property name="ObjectShortName">clkb</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM/RAM1/enb">
-      <obj_property name="ElementShortName">enb</obj_property>
-      <obj_property name="ObjectShortName">enb</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/RAM1/addrb">
+   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/addrb">
       <obj_property name="ElementShortName">addrb[10:0]</obj_property>
       <obj_property name="ObjectShortName">addrb[10:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/RAM1/doutb">
+   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/doutb">
+      <obj_property name="ElementShortName">doutb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/addra">
+      <obj_property name="ElementShortName">addra[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addra[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/dina">
+      <obj_property name="ElementShortName">dina[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dina[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/addrb">
+      <obj_property name="ElementShortName">addrb[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addrb[10:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/doutb">
       <obj_property name="ElementShortName">doutb[7:0]</obj_property>
       <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
    </wvobject>

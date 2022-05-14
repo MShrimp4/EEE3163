@@ -236,9 +236,9 @@ BEGIN
 		wait for 10 us;
 		for i in 0 to 10 loop
 		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 1 us;
+		--wait for 1 us;
 		end loop;
-		wait for 10 us;
+		wait for 21 us;--wait for 10 us;
 
 	    -- DA mode : 8254reset => 8254 n 분주 => DA mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
@@ -280,9 +280,9 @@ BEGIN
 		wait for 10 us;
 		for i in 0 to 10 loop
 		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- PC RAM에 10개 읽기
-		wait for 1 us;
+		--wait for 1 us;
 		end loop;
-		wait for 10 us;		
+		wait for 21 us;--wait for 10 us;		
 		
 		-- ADR mode : 8254reset => 8254 1분주 => ADR mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
@@ -295,9 +295,9 @@ BEGIN
 		wait for 10 us;
 		for i in 0 to 10 loop
 		CMD_RD('1' & x"51",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 1 us;
+		--wait for 1 us;
 		end loop;
-		wait for 10 us;
+		wait for 21 us;--wait for 10 us;
 		
 		--==========Option mode sequence===========
 		--PC Write mode : PC RAM에 "Sample_Input_1.dat" Write	
