@@ -173,7 +173,7 @@ BEGIN
    end process;
  
    Option_input_data : process(s_dat_clk)
-   file	       filein1      :   text is in "Sample_Input_1.dat"; --원하는 dat파일 이름을 적어주세요 fs=40MHz
+   file	       filein1      :   text open read_mode is "Sample_Input_1.dat"; --원하는 dat파일 이름을 적어주세요 fs=40MHz
    variable    linein1      :   line;							 --Sample_Input_1.dat : 3*cos(2πf0/fs*n) + sin(2πf1/fs*n), f0=0.5MHz, f1=3.3MHz
    variable    inputtmp1    :   integer;						 --Sample_Input_2.dat : 3*cos(2πf2/fs*n) - 4*sin(2πf3/fs*n) - 2*sin(2πf4/fs*n), f2=1MHz, f3=2MHz, f4=4.7MHz
    begin

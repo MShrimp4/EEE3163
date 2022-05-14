@@ -67,7 +67,7 @@ begin
               wr           =>en_input,
               rd           =>en_transfer,
               rst          =>rst,
-              rst_r        =>done,
+              rst_r        =>'0',
               -- OUTPUT
               tc_w         =>open,
               tc_r         =>read_tc,
@@ -85,7 +85,7 @@ begin
               wr           =>s_r_ready_1,
               rd           =>en_output,
               rst          =>rst,
-              rst_r        =>done,
+              rst_r        =>'0',
               -- OUTPUT
               tc_w         =>open,
               tc_r         =>read_tc2,

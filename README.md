@@ -38,13 +38,14 @@ I live in Spain without an S
 
 ## Phase 3 (~5/14)
  * ~~RAM controller 구현~~
- * PC Mode/ DA Mode 구현
+ * ~~PC Mode/ DA Mode 구현~~
  * 테스트 코드
 
 delay test 진행
 
 ## Phase 4 (~5/15)
- * AD(R) Mode 구현
+ * ~~AD Mode 구현~~
+ * ~~ADR Mode 구현~~
  * 테스트 코드
 
 delay test 진행

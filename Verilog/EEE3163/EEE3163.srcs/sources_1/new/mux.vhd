@@ -42,10 +42,8 @@ entity mux is
 end mux;
 
 architecture Behavioral of mux is
-    signal mux_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
-       mux_input<=Din0 when sel='0' else
-                  Din1 when sel='1' else
-                  (others=>'0');
-       Dout<=mux_input;
+       Dout<=Din0 when sel='0' else
+             Din1 when sel='1' else
+             (others=>'0');
 end Behavioral;

@@ -33,7 +33,7 @@ end max_counter;
 architecture Behavioral of max_counter is
     constant one : STD_LOGIC_VECTOR (length-1 downto 0) := (0=> '1', others=> '0');
     signal cnt : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
-    signal cnt_next : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
+    signal cnt_next : STD_LOGIC_VECTOR (length-1 downto 0);
     signal max : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
     process (clk_c, clk_max)

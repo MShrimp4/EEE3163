@@ -1,23 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 2019/05/29 20:58:44
--- Design Name: 
--- Module Name: PCFG_top - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
@@ -112,6 +92,7 @@ signal s_debug_header : std_logic_vector (15 downto 2);
 -----------------
 --추가한 signal --
 -----------------
+constant ramadr_len : integer := 11;
 
 -- Latch Enable
 signal IN_latch_en  : STD_LOGIC;
@@ -125,6 +106,7 @@ signal s_wen            : STD_LOGIC;
 signal s_ren            : STD_LOGIC;
 signal s_oe_b           : STD_LOGIC;
 signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
+signal s_pc_latch_out   : STD_LOGIC_VECTOR (m_address'length-1+4 downto 0);
 
 -- Latch Data
 signal s_OUT_latch_din  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
@@ -141,12 +123,43 @@ signal s_PC_mux_sel     : STD_LOGIC;
 signal s_OUT1_mux_1to2  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 
 -- RAM
+signal s_PC_RAM_ena     : STD_LOGIC;
+signal s_PC_RAM_addra   : STD_LOGIC_VECTOR (ramadr_len-1 downto 0);
+signal s_PC_RAM_enb     : STD_LOGIC;
+signal s_PC_RAM_addrb   : STD_LOGIC_VECTOR (ramadr_len-1 downto 0);
 signal s_PC_RAM_din     : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 signal s_PC_RAM_dout    : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_AD_RAM_ena     : STD_LOGIC;
+signal s_AD_RAM_addra   : STD_LOGIC_VECTOR (ramadr_len-1 downto 0);
+signal s_AD_RAM_enb     : STD_LOGIC;
+signal s_AD_RAM_addrb   : STD_LOGIC_VECTOR (ramadr_len-1 downto 0);
 signal s_AD_RAM_din     : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 signal s_AD_RAM_dout    : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_OPT_RAM_ena    : STD_LOGIC;
+signal s_OPT_RAM_addra  : STD_LOGIC_VECTOR (ramadr_len-1 downto 0);
+signal s_OPT_RAM_enb    : STD_LOGIC;
+signal s_OPT_RAM_addrb  : STD_LOGIC_VECTOR (ramadr_len-1 downto 0);
 signal s_OPT_RAM_din    : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 signal s_OPT_RAM_dout   : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+
+-- RAM Controller
+
+signal s_PCRAM_CTRL_wr     : STD_LOGIC;
+signal s_PCRAM_CTRL_rd     : STD_LOGIC;
+signal s_PCRAM_CTRL_rst    : STD_LOGIC;
+signal s_PCRAM_CTRL_rst_r  : STD_LOGIC;
+signal s_PCRAM_CTRL_r_rdy  : STD_LOGIC;
+signal s_ADRAM_CTRL_wr     : STD_LOGIC;
+signal s_ADRAM_CTRL_rd     : STD_LOGIC;
+signal s_ADRAM_CTRL_tc_r   : STD_LOGIC;
+signal s_ADRAM_CTRL_rst    : STD_LOGIC;
+signal s_ADRAM_CTRL_rst_r  : STD_LOGIC;
+signal s_ADRAM_CTRL_r_rdy  : STD_LOGIC;
+signal s_OPTRAM_CTRL_wr    : STD_LOGIC;
+signal s_OPTRAM_CTRL_rd    : STD_LOGIC;
+signal s_OPTRAM_CTRL_rst   : STD_LOGIC;
+signal s_OPTRAM_CTRL_rst_r : STD_LOGIC;
+signal s_OPTRAM_CTRL_r_rdy : STD_LOGIC;
 
 -- Addr Mode
 signal s_pcs_addr       : STD_LOGIC;
@@ -199,7 +212,12 @@ PC_LATCH    : entity work.latch (Behavioral)
     generic map(length=> 4 + m_address'length)
     port map(clk=>s_clk, en=>'1',
              input  => m_cmd_data & m_wen & m_ren & m_oe_b & m_address,
-             output => s_cmd_data & s_wen & s_ren & s_oe_b & s_address);
+             output => s_pc_latch_out);
+s_cmd_data <= s_pc_latch_out(m_address'length-1+4);
+s_wen      <= s_pc_latch_out(m_address'length-1+3);
+s_ren      <= s_pc_latch_out(m_address'length-1+2);
+s_oe_b     <= s_pc_latch_out(m_address'length-1+1);
+s_address  <= s_pc_latch_out(m_address'length-1 downto 0);
              
 IN_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -212,6 +230,8 @@ OUT_LATCH   : entity work.latch (Behavioral)
     port map(clk=>sys_clk, en=>OUT_latch_en,
              input  => s_OUT_latch_din,
              output => s_tri_data);
+OUT_latch_en <= '1' when s_PCRAM_CTRL_r_rdy='1' OR s_ADRAM_CTRL_r_rdy='1' OR s_OPTRAM_CTRL_r_rdy='1'
+           else '0';
              
 DA_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -236,6 +256,7 @@ PC_MUX      : entity work.mux (Behavioral)
              Din1=> s_AD_RAM_dout,
              Dout=> s_PC_RAM_din,
              sel => s_PC_mux_sel);
+s_PC_mux_sel <= s_ADRAM_CTRL_r_rdy;
              
 OUT_mux_1   : entity work.mux (Behavioral)
     generic map(length=> m_data'length)
@@ -269,6 +290,9 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              sys_clk=>        sys_clk,
              s_wen=>          s_wen,
              s_ren=>          s_ren,
+             s_oe_b=>         s_oe_b,
+             s_cmd_data=>     s_cmd_data,
+             m_data=>         m_data,
              pcs_addr=>       s_pcs_addr,
              reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,
@@ -279,47 +303,115 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              adr_RAM_addr=>   s_adr_RAM_addr,
              opt_step1_addr=> s_opt_step1_addr,
              opt_step2_addr=> s_opt_step2_addr,
-             
-             PCRAM_addr=>     open,
-             ADRAM_addr=>     open,
-             OptionRAM_addr=> open,
-             PC_mux_sel=>     open, 
-             OUT_mux_sel=>    open,
-             IN_latch_en=>    open,
-             OUT_latch_en=>   open,
-             DA_latch_en=>    open,
-             AD_latch_en=>    open);
+             -- RAM control input
+             AD_RAM_addra    => s_AD_RAM_addra,
+             ADRAM_CTRL_tc_r => s_ADRAM_CTRL_tc_r,
+             ADRAM_CTRL_r_rdy=> s_ADRAM_CTRL_r_rdy,
+             -- RAM control output
+             PCRAM_CTRL_rd    => s_PCRAM_CTRL_rd,
+             PCRAM_CTRL_wr    => s_PCRAM_CTRL_wr,
+             PCRAM_CTRL_rst   => s_PCRAM_CTRL_rst,
+             PCRAM_CTRL_rst_r => s_PCRAM_CTRL_rst_r,
+             ADRAM_CTRL_rd    => s_ADRAM_CTRL_rd,
+             ADRAM_CTRL_wr    => s_ADRAM_CTRL_wr,
+             ADRAM_CTRL_rst   => s_ADRAM_CTRL_rst,
+             OPTRAM_CTRL_rd   => s_OPTRAM_CTRL_rd,
+             OPTRAM_CTRL_wr   => s_OPTRAM_CTRL_wr,
+             OPTRAM_CTRL_rst  => s_OPTRAM_CTRL_rst,
+             -- Enable Signals (Output)
+             OUT_mux_sel    => s_OUT_mux_sel,
+             IN_latch_en    => IN_latch_en,
+             DA_latch_en    => DA_latch_en,
+             AD_latch_en    => AD_latch_en);
              
              
 PCRAM       : entity work.RAM_WRAPPER (Behavioral)
     port map(clka=>           s_clk,
-             ena=>            open,
-             addra=>          open,
+             ena=>            s_PC_RAM_ena,
+             addra=>          s_PC_RAM_addra,
              dina=>           s_PC_RAM_din,
              clkb=>           s_clk,
-             enb=>            open,
-             addrb=>          open,
+             enb=>            s_PC_RAM_enb,
+             addrb=>          s_PC_RAM_addrb,
              doutb=>          s_PC_RAM_dout);
              
 ADRAM       : entity work.RAM_WRAPPER (Behavioral)
     port map(clka=>           sys_clk,
-             ena=>            open,
-             addra=>          open,
+             ena=>            s_AD_RAM_ena,
+             addra=>          s_AD_RAM_addra,
              dina=>           s_AD_RAM_din,
              clkb=>           s_clk,
-             enb=>            open,
-             addrb=>          open,
+             enb=>            s_AD_RAM_enb,
+             addrb=>          s_AD_RAM_addrb,
              doutb=>          s_AD_RAM_dout);
 
 OPTIONRAM   : entity work.RAM_WRAPPER (Behavioral)
     port map(clka=>           s_clk,
-             ena=>            open,
-             addra=>          open,
+             ena=>            s_OPT_RAM_ena,
+             addra=>          s_OPT_RAM_addra,
              dina=>           s_OPT_RAM_din,
              clkb=>           sys_clk,
-             enb=>            open,
-             addrb=>          open,
+             enb=>            s_OPT_RAM_enb,
+             addrb=>          s_OPT_RAM_addrb,
              doutb=>          s_OPT_RAM_dout);
+
+-- RAM control unit
+PCRAM_CTRL : entity work.ram_control (Behavioral)
+    generic map (length=>ramadr_len)
+    port map
+         (clk_w        => s_clk,
+          clk_r        => s_clk,
+          wr           => s_PCRAM_CTRL_wr,
+          rd           => s_PCRAM_CTRL_rd,
+          rst          => s_PCRAM_CTRL_rst,
+          rst_r        => s_PCRAM_CTRL_rst_r,
+          -- OUTPUT
+          tc_w         => open,
+          tc_r         => open,
+          r_ready      => s_PCRAM_CTRL_r_rdy,
+          -- RAM_CONTROL
+          RAM_addr_wr  => s_PC_RAM_addra,
+          RAM_addr_rd  => s_PC_RAM_addrb,
+          RAM_wr       => s_PC_RAM_ena,
+          RAM_rd       => s_PC_RAM_enb);
+          
+ADRAM_CTRL : entity work.ram_control (Behavioral)
+    generic map (length=>ramadr_len)
+    port map
+         (clk_w        => sys_clk,
+          clk_r        => s_clk,
+          wr           => s_ADRAM_CTRL_wr,
+          rd           => s_ADRAM_CTRL_rd,
+          rst          => s_ADRAM_CTRL_rst,
+          rst_r        => s_ADRAM_CTRL_rst_r,
+          -- OUTPUT
+          tc_w         => open,
+          tc_r         => s_ADRAM_CTRL_tc_r,
+          r_ready      => s_ADRAM_CTRL_r_rdy,
+          -- RAM_CONTROL
+          RAM_addr_wr  => s_AD_RAM_addra,
+          RAM_addr_rd  => s_AD_RAM_addrb,
+          RAM_wr       => s_AD_RAM_ena,
+          RAM_rd       => s_AD_RAM_enb);
+          
+OPTRAM_CTRL : entity work.ram_control (Behavioral)
+    generic map (length=>ramadr_len)
+    port map
+         (clk_w        => s_clk,
+          clk_r        => sys_clk,
+          wr           => s_OPTRAM_CTRL_wr,
+          rd           => s_OPTRAM_CTRL_rd,
+          rst          => s_OPTRAM_CTRL_rst,
+          rst_r        => s_OPTRAM_CTRL_rst_r,
+          -- OUTPUT
+          tc_w         => open,
+          tc_r         => open,
+          r_ready      => s_OPTRAM_CTRL_r_rdy,
+          -- RAM_CONTROL
+          RAM_addr_wr  => s_OPT_RAM_addra,
+          RAM_addr_rd  => s_OPT_RAM_addrb,
+          RAM_wr       => s_OPT_RAM_ena,
+          RAM_rd       => s_OPT_RAM_enb);
 
 --for debug 
 

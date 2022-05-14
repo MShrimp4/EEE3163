@@ -7,6 +7,7 @@ entity ad_mode_ctrl is
           clk : in std_logic
          ;rst : in std_logic
          ;en  : in std_logic
+         ;hot : out std_logic
          -- input
          ;len         : in std_logic_vector(10 downto 0)
          ;written_len : in std_logic_vector(10 downto 0)
@@ -33,4 +34,5 @@ begin
     
     done           <= '1' when s_len = written_len AND one_hot = '1' else '0';
     read_ADC       <= '1' when one_hot AND NOT done else '0';
+    hot            <= one_hot;
 end Behavioral;

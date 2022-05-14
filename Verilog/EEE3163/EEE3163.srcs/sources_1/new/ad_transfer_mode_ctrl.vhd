@@ -7,6 +7,7 @@ entity ad_transfer_mode_ctrl is
           clk : in std_logic
          ;rst : in std_logic
          ;en  : in std_logic
+         ;hot : out std_logic
          -- input
          ;tc_read  : in std_logic
          -- output
@@ -26,4 +27,5 @@ begin
     end process;
     
     transfer <= one_hot;
+    hot      <= one_hot;
 end Behavioral;
