@@ -27,8 +27,8 @@ begin
                else "01" when opt2_mode = '1'
                else "10" when adr_mod_r = '1'
                else "00";
-    IN_latch_en  <= '1'  when pc_mode_w = '1' else '0';
+    IN_latch_en  <= '1';--  when pc_mode_w = '1' else '0';
     DA_latch_en  <= '1'  when da_mode   = '1' else '0';
-    AD_latch_en  <= '1'  when ad_mode   = '1' else '0';
+    AD_latch_en  <= '1';--  when ad_mode   = '1' else '0';
     
 end Behavioral;

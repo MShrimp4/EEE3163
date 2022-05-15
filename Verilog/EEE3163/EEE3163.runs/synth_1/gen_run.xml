@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7s75fgga676-1" LaunchTime="1652536733" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PCFG_TOP.dcp">
-  <File Type="VDS-TIMING-PB" Name="PCFG_TOP_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="PCFG_TOP_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="PCFG_TOP.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="PCFG_TOP_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="PCFG_TOP_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="PCFG_TOP_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="PCFG_TOP.vds"/>
   <File Type="REPORTS-TCL" Name="PCFG_TOP_reports.tcl"/>
   <File Type="PA-TCL" Name="PCFG_TOP.tcl"/>
+  <File Type="RDS-DCP" Name="PCFG_TOP.dcp"/>
+  <File Type="RDS-RDS" Name="PCFG_TOP.vds"/>
+  <File Type="RDS-UTIL" Name="PCFG_TOP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="PCFG_TOP_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/RAM_WRAPPER.vhd">
