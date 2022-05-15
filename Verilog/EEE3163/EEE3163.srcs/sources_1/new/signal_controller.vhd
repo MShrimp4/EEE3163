@@ -53,22 +53,22 @@ architecture Behavioral of signal_controller is
     signal   s_hot    : STD_LOGIC_VECTOR (8 downto 0) := (others=>'0');
     signal   s_next_hot: STD_LOGIC_VECTOR (s_hot'length-1 downto 0);
     constant m_IDLE   : integer := 0;
-    constant IDLE     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_IDLE  => '1', others => '0');
     constant m_PC_R   : integer := 1;
-    constant PC_R     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_PC_R  => '1', others => '0');
     constant m_PC_W   : integer := 2;
-    constant PC_W     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_PC_W  => '1', others => '0');
     constant m_DA     : integer := 3;
-    constant DA       : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_DA    => '1', others => '0');
     constant m_AD     : integer := 4;
-    constant AD       : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_AD    => '1', others => '0');
     constant m_AD_T   : integer := 5;
-    constant AD_T     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_AD_T  => '1', others => '0');
     constant m_ADR    : integer := 6;
-    constant ADR      : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_ADR   => '1', others => '0');
     constant m_OPT_1  : integer := 7;
-    constant OPT_1    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_1 => '1', others => '0');
     constant m_OPT_2  : integer := 8;
+    constant IDLE     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_IDLE  => '1', others => '0');
+    constant PC_R     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_PC_R  => '1', others => '0');
+    constant PC_W     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_PC_W  => '1', others => '0');
+    constant DA       : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_DA    => '1', others => '0');
+    constant AD       : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_AD    => '1', others => '0');
+    constant AD_T     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_AD_T  => '1', others => '0');
+    constant ADR      : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_ADR   => '1', others => '0');
+    constant OPT_1    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_1 => '1', others => '0');
     constant OPT_2    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_2 => '1', others => '0');
     
     -- Modes
@@ -83,11 +83,9 @@ architecture Behavioral of signal_controller is
     signal opt_step1_mode : STD_LOGIC;
     signal opt_step2_mode : STD_LOGIC;
     
-    -- registers
-    signal s_len      : STD_LOGIC_VECTOR (m_data'length-1 downto 0) := (others => '0');
-    signal prev_r,prev_w: STD_LOGIC;
-    
     -- 
+    signal s_len      : STD_LOGIC_VECTOR (m_data'length-1 downto 0) := (others => '0');
+    signal en_latch   : STD_LOGIC;
     signal rising_w   : STD_LOGIC;
     signal rising_r   : STD_LOGIC;
 begin
@@ -109,21 +107,30 @@ begin
         DA_latch_en  => DA_latch_en,
         AD_latch_en  => AD_latch_en);
 
+    rising_r_detector : entity work.edge_detector (Behavioral)
+    port map(
+        clk=> s_clk, i=> s_ren,
+        rising=> rising_r
+    );
+    
+    rising_w_detector : entity work.edge_detector (Behavioral)
+    port map(
+        clk=> s_clk, i=> s_wen,
+        rising=> rising_w);
+        
+    len_latch : entity work.latch (Behavioral)
+    generic map(length=>s_len'length)
+    port map(clk=>s_clk, en=>en_latch,
+             input=>m_data,
+             output=>s_len);
 -- State
     -- TODO
     process (s_clk)
     begin
         if rising_edge (s_clk) then
-            prev_r <= s_ren;
-            prev_w <= s_wen;
-            
             if reset_mode then
                 s_hot <= (m_IDLE  => '1', others => '0');
             else
-                if s_next_hot(m_AD)='1' AND s_hot(m_AD)='0'  then --TODO Latch component
-                    s_len <= m_data;
-                end if;
-                
                 case (s_hot) is
                     when IDLE =>
                         s_hot <= s_next_hot;
@@ -134,11 +141,11 @@ begin
                         s_hot <= s_next_hot when s_next_hot (m_PC_W) = '0' AND s_next_hot /= IDLE
                             else s_hot;
                     when DA =>
-                        s_hot <= IDLE when da_stop_mode else s_hot;
+                        s_hot <= IDLE when da_stop_mode = '1' else s_hot;
                     when AD =>
                         s_hot <= AD_T when s_len = AD_RAM_addra(s_len'length-1 downto 0) else s_hot; -- length 차이 어떻게 처리되나 ???
                     when AD_T =>
-                        s_hot <= IDLE when ADRAM_CTRL_tc_r else s_hot;
+                        s_hot <= IDLE when ADRAM_CTRL_tc_r = '1' else s_hot;
                     when ADR =>
                         s_hot <= s_next_hot when s_next_hot (m_ADR) = '0' AND s_next_hot /= IDLE
                             else s_hot;
@@ -154,27 +161,25 @@ begin
     end process;
     
     s_next_hot(m_IDLE)  <= s_next_hot(s_hot'length-1 downto 1) ?= (s_hot'length-1 downto 1=>'0');
-    s_next_hot(m_PC_R)  <= '1' when pc_RAM_addr AND s_oe_b ?= '0' else '0';
-    s_next_hot(m_PC_W)  <= '1' when pc_RAM_addr AND s_oe_b ?= '1' else '0';
-    s_next_hot(m_DA)    <= '1' when da_start_addr else '0';
-    s_next_hot(m_AD)    <= '1' when ad_RAM_addr else '0';
+    s_next_hot(m_PC_R)  <= '1' when pc_RAM_addr = '1' AND s_oe_b = '0' else '0';
+    s_next_hot(m_PC_W)  <= '1' when pc_RAM_addr = '1' AND s_oe_b = '1' else '0';
+    s_next_hot(m_DA)    <= '1' when da_start_addr = '1' else '0';
+    s_next_hot(m_AD)    <= '1' when ad_RAM_addr = '1' else '0';
     s_next_hot(m_AD_T)  <= '0';
-    s_next_hot(m_ADR)   <= '1' when adr_RAM_addr else '0';
-    s_next_hot(m_OPT_1) <= '1' when opt_step1_addr else '0';
-    s_next_hot(m_OPT_2) <= '1' when opt_step2_addr else '0';
+    s_next_hot(m_ADR)   <= '1' when adr_RAM_addr = '1' else '0';
+    s_next_hot(m_OPT_1) <= '1' when opt_step1_addr = '1' else '0';
+    s_next_hot(m_OPT_2) <= '1' when opt_step2_addr = '1' else '0';
 
 -- Mealy Outputs
-   PCRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) AND s_next_hot(m_PC_W)
-                  else '1' when s_hot(m_IDLE) AND s_next_hot(m_AD)
+   PCRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_W) = '1'
+                  else '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD) = '1'
                   else '0';
-   PCRAM_CTRL_rst_r <= '1' when s_hot(m_IDLE) AND s_next_hot(m_PC_R)
+   PCRAM_CTRL_rst_r <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_R) = '1'
                   -- else '1' when s_hot(m_IDLE) AND s_next_hot(m_DA)   --optional!
                   else '0';
-   ADRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) AND s_next_hot(m_AD) else '0';
-   OPTRAM_CTRL_rst  <= '1' when s_hot(m_IDLE) AND s_next_hot(m_OPT_1) else '0';
-   
-   rising_r         <= NOT prev_r AND s_ren;
-   rising_w         <= NOT prev_w and s_wen;
+   ADRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
+   en_latch         <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
+   OPTRAM_CTRL_rst  <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1' else '0';
    
 -- Modes
   pcs_mode        <= s_cmd_data AND pcs_addr       ;
@@ -191,9 +196,19 @@ begin
 -- Combinational
 
    ADRAM_CTRL_wr  <= '1' when s_hot(m_AD)='1' AND s_len /= AD_RAM_addra(s_len'length-1 downto 0) else '0';
-   ADRAM_CTRL_rd  <= '1' when s_hot(m_AD_T)    OR (s_hot(m_ADR)  AND adr_RAM_mode AND rising_r)  else '0';
-   PCRAM_CTRL_wr  <= '1' when ADRAM_CTRL_r_rdy OR (s_hot(m_PC_W) AND pc_RAM_mode  AND rising_w)  else '0';
-   PCRAM_CTRL_rd  <= '1' when s_hot(m_DA)      OR (s_hot(m_PC_R) AND pc_RAM_mode  AND rising_r)  else '0';
+
+   ADRAM_CTRL_rd  <= '1'                         when s_hot(m_AD_T)   
+                else (adr_RAM_mode AND rising_r) when s_hot(m_ADR) 
+                else '0';
+   
+   PCRAM_CTRL_wr  <= '1'                         when ADRAM_CTRL_r_rdy = '1'
+                else (pc_RAM_mode  AND rising_w) when s_hot(m_PC_W)    = '1'
+                else '0';
+
+   PCRAM_CTRL_rd  <= '1'                         when s_hot(m_DA)   = '1'
+                else (pc_RAM_mode  AND rising_r) when s_hot(m_PC_R) = '1'
+                else '0';
+ 
    OPTRAM_CTRL_wr <= '0'; --TODO
    OPTRAM_CTRL_rd <= '0';
    

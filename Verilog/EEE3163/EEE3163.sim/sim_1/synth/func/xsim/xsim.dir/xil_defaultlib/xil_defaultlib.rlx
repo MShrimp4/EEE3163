@@ -2,5 +2,5 @@
 2020.2
 Oct 19 2021
 02:56:52
-/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.sim/sim_1/synth/func/xsim/tb_pcfg_func_synth.vhd,1652548472,vhdl,,,,\RAM_WRAPPER__xdcDup__1\;\RAM_WRAPPER__xdcDup__2\;\latch__parameterized0\;\latch__parameterized0_0\;\latch__parameterized0_1\;\latch__parameterized0_2\;latch;max_counter;max_counter_4;pcfg_top;ram;ram_blk_mem_gen_generic_cstr;ram_blk_mem_gen_prim_width;ram_blk_mem_gen_prim_wrapper;ram_blk_mem_gen_top;ram_blk_mem_gen_v8_4_5;ram_blk_mem_gen_v8_4_5_synth;ram_control;ram_control_3;ram_wrapper;signal_controller;top_8254;tw_8254_cnt,,,,,,,,
-/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd,1652537307,vhdl,,,,tb_pcfg,,,,,,,,
+/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.sim/sim_1/synth/func/xsim/tb_pcfg_func_synth.vhd,1652583823,vhdl,,,,\RAM_WRAPPER__xdcDup__1\;\RAM_WRAPPER__xdcDup__2\;\latch__parameterized0\;\latch__parameterized0_0\;\latch__parameterized0_1\;\latch__parameterized0_2\;latch;max_counter;max_counter_4;pcfg_top;ram;ram_blk_mem_gen_generic_cstr;ram_blk_mem_gen_prim_width;ram_blk_mem_gen_prim_wrapper;ram_blk_mem_gen_top;ram_blk_mem_gen_v8_4_5;ram_blk_mem_gen_v8_4_5_synth;ram_control;ram_control_3;ram_wrapper;signal_controller;top_8254;tw_8254_cnt,,,,,,,,
+/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd,1652584276,vhdl,,,,tb_pcfg,,,,,,,,

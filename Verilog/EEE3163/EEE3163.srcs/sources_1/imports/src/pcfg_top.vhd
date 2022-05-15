@@ -82,6 +82,8 @@ signal s_m_8254_gate0				: std_logic;
 signal s_m_8254_gate1				: std_logic; 
 signal s_m_8254_gate2				: std_logic; 
 
+signal s_m_8254_reset               : std_logic;
+
 signal sys_clk : std_logic;
 signal s_reset_b : std_logic;
 
@@ -189,14 +191,14 @@ clk_gen : TOP_8254 port map(
            m_clk1    => s_clk,
            m_clk2    => s_clk,
            m_clk_ctr => s_clk,
-           m_reset   => (not s_reset_b) or s_reset8254_addr, --8254 reset과 혼용될 수 있도록 변경
+           m_reset   => s_m_8254_reset, --8254 reset과 혼용될 수 있도록 변경
            m_data    => m_data,                  
            m_gate0   => s_m_8254_gate0,
            m_gate1   => s_m_8254_gate1,
            m_gate2   => s_m_8254_gate2,
            m_addr    => s_address(1 downto 0), --TODO : s_address(1 downto 0)
            m_cs_b    => not s_pcs_addr,
-           m_wr_b    => not s_wen,		-- TODO
+           m_wr_b    => not s_wen,
 		   m_out0    => sys_clk,
            m_out1    => open,
            m_out2    => open
@@ -205,6 +207,8 @@ clk_gen : TOP_8254 port map(
 s_m_8254_gate0	<= '1';
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
+
+s_m_8254_reset  <= '1' when s_reset_b = '0' or s_reset8254_addr = '1' else '0';
 
 -- Components
 

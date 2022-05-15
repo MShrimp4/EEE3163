@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="338,437.731 ns"></ZoomStartTime>
-      <ZoomEndTime time="341,287.732 ns"></ZoomEndTime>
-      <Cursor1Time time="339,652.731 ns"></Cursor1Time>
+      <ZoomStartTime time="109,363.860 ns"></ZoomStartTime>
+      <ZoomEndTime time="111,005.861 ns"></ZoomEndTime>
+      <Cursor1Time time="111,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="148"></NameColumnWidth>
-      <ValueColumnWidth column_width="71"></ValueColumnWidth>
+      <ValueColumnWidth column_width="59"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="18" />
+   <WVObjectSize size="30" />
    <wvobject type="logic" fp_name="/tb_pcfg/m_reset_b">
       <obj_property name="ElementShortName">m_reset_b</obj_property>
       <obj_property name="ObjectShortName">m_reset_b</obj_property>
@@ -59,36 +59,84 @@
       <obj_property name="ElementShortName">m_DAC_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">m_DAC_data[7:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/addra">
-      <obj_property name="ElementShortName">addra[10:0]</obj_property>
-      <obj_property name="ObjectShortName">addra[10:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM_CTRL/RAM_wr">
+      <obj_property name="ElementShortName">RAM_wr</obj_property>
+      <obj_property name="ObjectShortName">RAM_wr</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/dina">
-      <obj_property name="ElementShortName">dina[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dina[7:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM_CTRL/RAM_rd">
+      <obj_property name="ElementShortName">RAM_rd</obj_property>
+      <obj_property name="ObjectShortName">RAM_rd</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/addrb">
-      <obj_property name="ElementShortName">addrb[10:0]</obj_property>
-      <obj_property name="ObjectShortName">addrb[10:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/PCRAM_CTRL/r_ready">
+      <obj_property name="ElementShortName">r_ready</obj_property>
+      <obj_property name="ObjectShortName">r_ready</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/ADRAM/doutb">
-      <obj_property name="ElementShortName">doutb[7:0]</obj_property>
-      <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/ADRAM_CTRL/RAM_wr">
+      <obj_property name="ElementShortName">RAM_wr</obj_property>
+      <obj_property name="ObjectShortName">RAM_wr</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/addra">
-      <obj_property name="ElementShortName">addra[10:0]</obj_property>
-      <obj_property name="ObjectShortName">addra[10:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/ADRAM_CTRL/RAM_rd">
+      <obj_property name="ElementShortName">RAM_rd</obj_property>
+      <obj_property name="ObjectShortName">RAM_rd</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/dina">
-      <obj_property name="ElementShortName">dina[7:0]</obj_property>
-      <obj_property name="ObjectShortName">dina[7:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/ADRAM_CTRL/r_ready">
+      <obj_property name="ElementShortName">r_ready</obj_property>
+      <obj_property name="ObjectShortName">r_ready</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/addrb">
-      <obj_property name="ElementShortName">addrb[10:0]</obj_property>
-      <obj_property name="ObjectShortName">addrb[10:0]</obj_property>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/pc_RAM_mode">
+      <obj_property name="ElementShortName">pc_RAM_mode</obj_property>
+      <obj_property name="ObjectShortName">pc_RAM_mode</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/doutb">
-      <obj_property name="ElementShortName">doutb[7:0]</obj_property>
-      <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
+   <wvobject type="array" fp_name="/tb_pcfg/uut/main_ctrl/s_hot">
+      <obj_property name="ElementShortName">s_hot[8:0]</obj_property>
+      <obj_property name="ObjectShortName">s_hot[8:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/rising_r">
+      <obj_property name="ElementShortName">rising_r</obj_property>
+      <obj_property name="ObjectShortName">rising_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/rising_w">
+      <obj_property name="ElementShortName">rising_w</obj_property>
+      <obj_property name="ObjectShortName">rising_w</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/PCRAM_CTRL_rd">
+      <obj_property name="ElementShortName">PCRAM_CTRL_rd</obj_property>
+      <obj_property name="ObjectShortName">PCRAM_CTRL_rd</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/PCRAM_CTRL_wr">
+      <obj_property name="ElementShortName">PCRAM_CTRL_wr</obj_property>
+      <obj_property name="ObjectShortName">PCRAM_CTRL_wr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/PCRAM_CTRL_rst">
+      <obj_property name="ElementShortName">PCRAM_CTRL_rst</obj_property>
+      <obj_property name="ObjectShortName">PCRAM_CTRL_rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/PCRAM_CTRL_rst_r">
+      <obj_property name="ElementShortName">PCRAM_CTRL_rst_r</obj_property>
+      <obj_property name="ObjectShortName">PCRAM_CTRL_rst_r</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/ADRAM_CTRL_rd">
+      <obj_property name="ElementShortName">ADRAM_CTRL_rd</obj_property>
+      <obj_property name="ObjectShortName">ADRAM_CTRL_rd</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/ADRAM_CTRL_wr">
+      <obj_property name="ElementShortName">ADRAM_CTRL_wr</obj_property>
+      <obj_property name="ObjectShortName">ADRAM_CTRL_wr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/ADRAM_CTRL_rst">
+      <obj_property name="ElementShortName">ADRAM_CTRL_rst</obj_property>
+      <obj_property name="ObjectShortName">ADRAM_CTRL_rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/OPTRAM_CTRL_rd">
+      <obj_property name="ElementShortName">OPTRAM_CTRL_rd</obj_property>
+      <obj_property name="ObjectShortName">OPTRAM_CTRL_rd</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/OPTRAM_CTRL_wr">
+      <obj_property name="ElementShortName">OPTRAM_CTRL_wr</obj_property>
+      <obj_property name="ObjectShortName">OPTRAM_CTRL_wr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_pcfg/uut/main_ctrl/OPTRAM_CTRL_rst">
+      <obj_property name="ElementShortName">OPTRAM_CTRL_rst</obj_property>
+      <obj_property name="ObjectShortName">OPTRAM_CTRL_rst</obj_property>
    </wvobject>
 </wave_config>
