@@ -6,6 +6,7 @@ use IEEE.Numeric_std.ALL;
 use ieee.std_logic_textio.all;
 LIBRARY std;                        
 use std.textio.all;
+use std.env.stop;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
@@ -178,7 +179,7 @@ BEGIN
    end process;
  
    Option_input_data : process(s_dat_clk)
-   file	       filein1      :   text open read_mode is "NSample_Input_1.dat"; --원하는 dat파일 이름을 적어주세요 fs=40MHz
+   file	       filein1      :   text open read_mode is "Sample_Input_1.dat"; --원하는 dat파일 이름을 적어주세요 fs=40MHz
    variable    linein1      :   line;							 --Sample_Input_1.dat : 3*cos(2πf0/fs*n) + sin(2πf1/fs*n), f0=0.5MHz, f1=3.3MHz
    variable    inputtmp1    :   integer;						 --Sample_Input_2.dat : 3*cos(2πf2/fs*n) - 4*sin(2πf3/fs*n) - 2*sin(2πf4/fs*n), f2=1MHz, f3=2MHz, f4=4.7MHz
    begin
@@ -325,6 +326,8 @@ BEGIN
 		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAM값 읽기
 		wait for 1 us;
 		end loop;
+		
+		stop;
 			   
 			   
       wait;

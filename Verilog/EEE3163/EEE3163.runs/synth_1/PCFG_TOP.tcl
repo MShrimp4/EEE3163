@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s75fgga676-1
 
@@ -88,6 +87,8 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
+  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/delay.vhd
+  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/data_path_control.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd
@@ -104,6 +105,15 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/max_counter.vhd
 }
+read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/cordic_0/cordic_0.xci
+set_property used_in_implementation false [get_files -all /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/cordic_0/cordic_0_ooc.xdc]
+
+read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/mult_gen_0/mult_gen_0.xci
+set_property used_in_implementation false [get_files -all /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/mult_gen_0/mult_gen_0_ooc.xdc]
+
+read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/xfft_0/xfft_0.xci
+set_property used_in_implementation false [get_files -all /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/xfft_0/xfft_0_ooc.xdc]
+
 read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/RAM/RAM.xci
 set_property used_in_implementation false [get_files -all /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM_ooc.xdc]
 
@@ -119,6 +129,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc
 set_property used_in_implementation false [get_files /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/utils_1/imports/synth_1/PCFG_TOP.dcp

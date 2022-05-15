@@ -27,6 +27,7 @@ entity signal_controller is
          ;AD_RAM_addra    : in STD_LOGIC_VECTOR (10 downto 0)
          ;ADRAM_CTRL_tc_r : in STD_LOGIC
          ;ADRAM_CTRL_r_rdy: in STD_LOGIC
+         ;PCRAM_CTRL_tc_r : in STD_LOGIC
          -- RAM control output
          ;PCRAM_CTRL_rd    : out STD_LOGIC
          ;PCRAM_CTRL_wr    : out STD_LOGIC
@@ -36,8 +37,12 @@ entity signal_controller is
          ;ADRAM_CTRL_wr    : out STD_LOGIC
          ;ADRAM_CTRL_rst   : out STD_LOGIC
          ;OPTRAM_CTRL_rd   : out STD_LOGIC
-         ;OPTRAM_CTRL_wr   : out STD_LOGIC
          ;OPTRAM_CTRL_rst  : out STD_LOGIC
+         ;OPTRAM_CTRL_rst_r: out STD_LOGIC
+         -- Option Mode Control
+         ;OPTMODE_CTRL_rdy : in  STD_LOGIC
+         ;OPTMODE_CTRL_rst : out STD_LOGIC
+         ;OPTMODE_CTRL_en  : out STD_LOGIC
          -- Enable Signals (Output)
          ;OUT_mux_sel    : out STD_LOGIC_VECTOR (1 downto 0)
          ;DA_latch_en    : out STD_LOGIC
@@ -119,18 +124,19 @@ begin
                         s_hot <= s_next_hot when s_next_hot (m_PC_W) = '0' AND s_next_hot /= IDLE
                             else PC_W;
                     when DA =>
-                        s_hot <= IDLE when da_stop_addr = '1' else s_hot;
+                        s_hot <= IDLE when da_stop_addr = '1' else DA;
                     when AD =>
-                        s_hot <= AD_T when s_len = AD_RAM_addra(s_len'length-1 downto 0) else s_hot; -- length 차이 어떻게 처리되나 ???
+                        s_hot <= AD_T when s_len = AD_RAM_addra(s_len'length-1 downto 0) else AD; -- length 차이 어떻게 처리되나 ???
                     when AD_T =>
-                        s_hot <= IDLE when ADRAM_CTRL_tc_r = '1' else s_hot;
+                        s_hot <= IDLE when ADRAM_CTRL_tc_r = '1' else AD_T;
                     when ADR =>
                         s_hot <= s_next_hot when s_next_hot (m_ADR) = '0' AND s_next_hot /= IDLE
                             else ADR;
                     when OPT_1 =>
-                        s_hot <= s_next_hot; --TODO
+                        s_hot <= IDLE when PCRAM_CTRL_tc_r = '1' else OPT_1;
                     when OPT_2 =>
-                        s_hot <= s_next_hot; --TODO
+                        s_hot <= s_next_hot when s_next_hot (m_OPT_2) = '0' AND s_next_hot /= IDLE
+                            else OPT_2;
                     when others =>
                         s_hot <= IDLE; --TODO
                 end case;
@@ -150,14 +156,17 @@ begin
 
 -- Mealy Outputs
    PCRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_W) = '1'
-                  else '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD) = '1'
+                  else '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)   = '1'
                   else '0';
-   PCRAM_CTRL_rst_r <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_R) = '1'
+   PCRAM_CTRL_rst_r <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_R)  = '1'
+                  else '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1'
                   -- else '1' when s_hot(m_IDLE) AND s_next_hot(m_DA)   --optional!
                   else '0';
    ADRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
    en_latch         <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
    OPTRAM_CTRL_rst  <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1' else '0';
+   OPTMODE_CTRL_rst <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1' else '0';
+   OPTRAM_CTRL_rst_r<= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_2) = '1' else '0';
 
 -- Combinational
 
@@ -172,11 +181,14 @@ begin
                 else '0';
 
    PCRAM_CTRL_rd  <= '1'         when s_hot(m_DA)
-                else pc_RAM_addr when s_hot(m_PC_R) AND NOT s_oe_b AND rising_d
+                else '1'         when OPTMODE_CTRL_en
+                else pc_RAM_addr when s_hot(m_PC_R)  AND NOT s_oe_b AND rising_d
                 else '0';
- 
-   OPTRAM_CTRL_wr <= '0'; --TODO
-   OPTRAM_CTRL_rd <= '0';
+
+   OPTRAM_CTRL_rd <= opt_step2_addr when s_hot(m_OPT_2) AND NOT s_oe_b AND rising_d
+                else '0';
+                
+   OPTMODE_CTRL_en <= s_hot(m_OPT_1) AND OPTMODE_CTRL_rdy;
    
    debug (2 downto 0) <= 
          "000" when s_hot = IDLE

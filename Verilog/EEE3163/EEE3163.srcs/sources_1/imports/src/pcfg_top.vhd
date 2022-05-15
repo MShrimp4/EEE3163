@@ -66,8 +66,8 @@ component Option_mode is
 			m_en			: in STD_LOGIC;
 			m_xin 			: in std_logic_vector (7 downto 0);
 			
-			m_yout 			: out std_logic_vector (7 downto 0)
-		   --m_yout_valid 	: out std_logic --필요할 경우 사용
+			m_yout 			: out std_logic_vector (7 downto 0);
+		    m_yout_valid 	: out std_logic
 		   );
 end component;
 
@@ -148,6 +148,7 @@ signal s_OPT_RAM_dout   : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 
 signal s_PCRAM_CTRL_wr     : STD_LOGIC;
 signal s_PCRAM_CTRL_rd     : STD_LOGIC;
+signal s_PCRAM_CTRL_tc_r   : STD_LOGIC;
 signal s_PCRAM_CTRL_rst    : STD_LOGIC;
 signal s_PCRAM_CTRL_rst_r  : STD_LOGIC;
 signal s_PCRAM_CTRL_r_rdy  : STD_LOGIC;
@@ -162,6 +163,11 @@ signal s_OPTRAM_CTRL_rd    : STD_LOGIC;
 signal s_OPTRAM_CTRL_rst   : STD_LOGIC;
 signal s_OPTRAM_CTRL_rst_r : STD_LOGIC;
 signal s_OPTRAM_CTRL_r_rdy : STD_LOGIC;
+
+-- Option mode controller
+signal s_OPTMODE_CTRL_rdy : STD_LOGIC;
+signal s_OPTMODE_CTRL_rst : STD_LOGIC;
+signal s_OPTMODE_CTRL_en  : STD_LOGIC;
 
 -- Addr Mode
 signal s_pcs_addr       : STD_LOGIC;
@@ -311,6 +317,7 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              AD_RAM_addra    => s_AD_RAM_addra,
              ADRAM_CTRL_tc_r => s_ADRAM_CTRL_tc_r,
              ADRAM_CTRL_r_rdy=> s_ADRAM_CTRL_r_rdy,
+             PCRAM_CTRL_tc_r => s_PCRAM_CTRL_tc_r,
              -- RAM control output
              PCRAM_CTRL_rd    => s_PCRAM_CTRL_rd,
              PCRAM_CTRL_wr    => s_PCRAM_CTRL_wr,
@@ -320,8 +327,12 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              ADRAM_CTRL_wr    => s_ADRAM_CTRL_wr,
              ADRAM_CTRL_rst   => s_ADRAM_CTRL_rst,
              OPTRAM_CTRL_rd   => s_OPTRAM_CTRL_rd,
-             OPTRAM_CTRL_wr   => s_OPTRAM_CTRL_wr,
              OPTRAM_CTRL_rst  => s_OPTRAM_CTRL_rst,
+             OPTRAM_CTRL_rst_r=> s_OPTRAM_CTRL_rst_r,
+             -- Option Mode Control
+             OPTMODE_CTRL_rdy => s_OPTMODE_CTRL_rdy, 
+             OPTMODE_CTRL_rst => s_OPTMODE_CTRL_rst,
+             OPTMODE_CTRL_en  => s_OPTMODE_CTRL_en,
              -- Enable Signals (Output)
              OUT_mux_sel    => s_OUT_mux_sel,
              DA_latch_en    => DA_latch_en,
@@ -371,7 +382,7 @@ PCRAM_CTRL : entity work.ram_control (Behavioral)
           rst_r        => s_PCRAM_CTRL_rst_r,
           -- OUTPUT
           tc_w         => open,
-          tc_r         => open,
+          tc_r         => s_PCRAM_CTRL_tc_r,
           r_ready      => s_PCRAM_CTRL_r_rdy,
           -- RAM_CONTROL
           RAM_addr_wr  => s_PC_RAM_addra,
@@ -416,6 +427,20 @@ OPTRAM_CTRL : entity work.ram_control (Behavioral)
           RAM_addr_rd  => s_OPT_RAM_addrb,
           RAM_wr       => s_OPT_RAM_ena,
           RAM_rd       => s_OPT_RAM_enb);
+
+OPTMODE_CTRL : entity work.Option_mode (Behavioral)
+   port map (
+			m_reset => s_OPTMODE_CTRL_rst OR s_reset_addr OR NOT m_fpga_reset,
+			m_clk 	=> s_clk,
+
+			m_xin 		=> s_PC_RAM_dout,
+			m_xin_valid => s_PCRAM_CTRL_r_rdy AND s_OPTMODE_CTRL_en,
+			m_xin_ready => s_OPTMODE_CTRL_rdy,
+			m_xin_last  => s_PCRAM_CTRL_tc_r,
+			
+			m_yout 		=> s_OPT_RAM_din,
+		    m_yout_valid=> s_OPTRAM_CTRL_wr
+		   );
 
 --for debug 
     s_debug_header (2) <= s_pcs_addr;

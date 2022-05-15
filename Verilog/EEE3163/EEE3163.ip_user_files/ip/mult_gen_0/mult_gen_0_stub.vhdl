@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
 -- Date        : Sat May 14 03:25:37 2022
 -- Host        : mshrimp running 64-bit Arch Linux
--- Command     : write_vhdl -force -mode synth_stub
---               /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/mult_gen_0_synth_1/mult_gen_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top mult_gen_0 -prefix
+--               mult_gen_0_ mult_gen_0_stub.vhdl
 -- Design      : mult_gen_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s75fgga676-1

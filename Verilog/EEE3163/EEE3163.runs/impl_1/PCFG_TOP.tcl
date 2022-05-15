@@ -137,6 +137,9 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/PCFG_TOP.dcp
+  read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/cordic_0/cordic_0.xci
+  read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/mult_gen_0/mult_gen_0.xci
+  read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/xfft_0/xfft_0.xci
   read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/RAM/RAM.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc
