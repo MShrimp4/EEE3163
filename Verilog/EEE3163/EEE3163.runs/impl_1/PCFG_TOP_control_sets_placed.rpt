@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Sun May 15 18:06:58 2022
+| Date         : Sun May 15 20:48:32 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : report_control_sets -verbose -file PCFG_TOP_control_sets_placed.rpt
 | Design       : PCFG_TOP
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    20 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    52 |
+| Unused register locations in slices containing registers |    53 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              30 |           17 |
-| No           | No                    | Yes                    |               4 |            1 |
-| No           | Yes                   | No                     |               9 |            3 |
+| No           | No                    | No                     |              29 |           12 |
+| No           | No                    | Yes                    |               4 |            2 |
+| No           | Yes                   | No                     |               9 |            2 |
 | Yes          | No                    | No                     |              32 |           10 |
-| Yes          | No                    | Yes                    |              32 |            8 |
-| Yes          | Yes                   | No                     |              89 |           27 |
+| Yes          | No                    | Yes                    |              32 |            9 |
+| Yes          | Yes                   | No                     |              89 |           31 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,26 +73,26 @@ Table of Contents
 +--------------------------------------+---------------------------------------------+---------------------------------------------+------------------+----------------+--------------+
 |             Clock Signal             |                Enable Signal                |               Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
 +--------------------------------------+---------------------------------------------+---------------------------------------------+------------------+----------------+--------------+
-| ~m_debug_header_OBUF_BUFG[0]         |                                             |                                             |                3 |              3 |         1.00 |
-|  clk_gen/CNT0/s_wr                   |                                             | PC_LATCH/m_reset                            |                1 |              4 |         4.00 |
-|  m_debug_header_OBUF_BUFG[0]         | PC_LATCH/E[0]                               |                                             |                4 |              8 |         2.00 |
+| ~m_debug_header_OBUF_BUFG[0]         |                                             |                                             |                2 |              3 |         1.50 |
+|  clk_gen/CNT0/s_wr                   |                                             | PC_LATCH/m_reset                            |                2 |              4 |         2.00 |
+|  clk_gen/CNT0/s_wr                   | clk_gen/CNT0/s_REG[15]_i_1_n_0              | PC_LATCH/m_reset                            |                2 |              8 |         4.00 |
+|  clk_gen/CNT0/s_wr                   | clk_gen/CNT0/s_REG[7]_i_1_n_0               | PC_LATCH/m_reset                            |                3 |              8 |         2.67 |
 |  clk_gen/CNT0/m_debug_header_OBUF[0] | PCRAM_CTRL/E[0]                             |                                             |                3 |              8 |         2.67 |
 |  clk_gen/CNT0/m_debug_header_OBUF[0] |                                             |                                             |                3 |              8 |         2.67 |
-|  m_debug_header_OBUF_BUFG[0]         | clk_gen/s_data                              | PC_LATCH/m_reset                            |                1 |              8 |         8.00 |
-|  m_debug_header_OBUF_BUFG[0]         | IN_LATCH/IN_latch_en                        |                                             |                2 |              8 |         4.00 |
-|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/s_hot_reg[3]_0[2]                 |                                             |                1 |              8 |         8.00 |
-|  clk_gen/CNT0/s_wr                   | clk_gen/CNT0/s_REG[7]_i_1_n_0               | PC_LATCH/m_reset                            |                2 |              8 |         4.00 |
-|  clk_gen/CNT0/s_wr                   | clk_gen/CNT0/s_REG[15]_i_1_n_0              | PC_LATCH/m_reset                            |                2 |              8 |         4.00 |
-|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/len_latch/E[0]                    | PC_LATCH/SR[0]                              |                4 |              9 |         2.25 |
-|  m_debug_header_OBUF_BUFG[0]         |                                             | PC_LATCH/m_reset                            |                3 |              9 |         3.00 |
-|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/rising_r_detector/E[0]            | main_ctrl/rising_r_detector/s_hot_reg[0][0] |                3 |             11 |         3.67 |
-|  m_debug_header_OBUF_BUFG[0]         | PC_LATCH/reg_reg[0]                         | PC_LATCH/s_hot_reg[0]_0[0]                  |                3 |             11 |         3.67 |
-|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/rising_r_detector/s_hot_reg[1][0] | PC_LATCH/s_hot_reg[0][0]                    |                3 |             11 |         3.67 |
-|  clk_gen/CNT0/m_debug_header_OBUF[0] | main_ctrl/len_latch/s_hot_reg[4][0]         | main_ctrl/len_latch/SR[0]                   |                3 |             11 |         3.67 |
-| ~m_debug_header_OBUF_BUFG[0]         | clk_gen/CNT0/s_mode                         | PC_LATCH/m_reset                            |                5 |             13 |         2.60 |
+|  m_debug_header_OBUF_BUFG[0]         | PC_LATCH/E[0]                               |                                             |                2 |              8 |         4.00 |
+|  m_debug_header_OBUF_BUFG[0]         | clk_gen/s_data                              | PC_LATCH/m_reset                            |                3 |              8 |         2.67 |
+|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/Q[1]                              |                                             |                2 |              8 |         4.00 |
+|  m_debug_header_OBUF_BUFG[0]         | IN_LATCH/IN_latch_en                        |                                             |                3 |              8 |         2.67 |
+|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/len_latch/E[0]                    | PC_LATCH/SR[0]                              |                6 |              9 |         1.50 |
+|  m_debug_header_OBUF_BUFG[0]         |                                             | PC_LATCH/m_reset                            |                2 |              9 |         4.50 |
+|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/rising_d_detector/E[0]            | main_ctrl/rising_d_detector/s_hot_reg[0][0] |                3 |             11 |         3.67 |
+|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/rising_d_detector/reg_reg[1]_0[0] | main_ctrl/rising_d_detector/SR[0]           |                4 |             11 |         2.75 |
+|  clk_gen/CNT0/m_debug_header_OBUF[0] | main_ctrl/len_latch/s_hot_reg[4][0]         | main_ctrl/len_latch/s_hot_reg[0][0]         |                2 |             11 |         5.50 |
+|  m_debug_header_OBUF_BUFG[0]         | main_ctrl/rising_d_detector/s_hot_reg[1][0] | PC_LATCH/s_hot_reg[0][0]                    |                4 |             11 |         2.75 |
+| ~m_debug_header_OBUF_BUFG[0]         | clk_gen/CNT0/s_mode                         | PC_LATCH/m_reset                            |                4 |             13 |         3.25 |
 | ~m_debug_header_OBUF_BUFG[0]         | clk_gen/CNT0/s_CNT3_U[14]_i_1_n_0           | PC_LATCH/m_reset                            |                5 |             15 |         3.00 |
 | ~m_debug_header_OBUF_BUFG[0]         | clk_gen/CNT0/s_CNT21                        | PC_LATCH/m_reset                            |                4 |             16 |         4.00 |
-|  m_debug_header_OBUF_BUFG[0]         |                                             |                                             |               11 |             19 |         1.73 |
+|  m_debug_header_OBUF_BUFG[0]         |                                             |                                             |                7 |             18 |         2.57 |
 +--------------------------------------+---------------------------------------------+---------------------------------------------+------------------+----------------+--------------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Sun May 15 18:07:13 2022
+| Date         : Sun May 15 20:48:49 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : report_clock_utilization -file PCFG_TOP_clock_utilization_routed.rpt
 | Design       : PCFG_TOP
@@ -21,9 +21,8 @@ Table of Contents
 5. Clock Regions : Global Clock Summary
 6. Device Cell Placement Summary for Global Clock g0
 7. Clock Region Cell Placement per Global Clock: Region X1Y0
-8. Clock Region Cell Placement per Global Clock: Region X1Y1
-9. Clock Region Cell Placement per Global Clock: Region X1Y2
-10. Clock Region Cell Placement per Global Clock: Region X0Y3
+8. Clock Region Cell Placement per Global Clock: Region X1Y2
+9. Clock Region Cell Placement per Global Clock: Region X0Y3
 
 1. Clock Primitive Utilization
 ------------------------------
@@ -47,7 +46,7 @@ Table of Contents
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+-------+------------------------------------+-----------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                         | Net                         |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+-------+------------------------------------+-----------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 4 |         153 |               2 |              |       | m_debug_header_OBUF_BUFG[0]_inst/O | m_debug_header_OBUF_BUFG[0] |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0 | n/a          |                 3 |         152 |               2 |              |       | m_debug_header_OBUF_BUFG[0]_inst/O | m_debug_header_OBUF_BUFG[0] |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+-------+------------------------------------+-----------------------------+
 * Clock Loads column represents the clock pin loads (pin count)
 ** Non-Clock Loads column represents the non-clock pin loads (pin count)
@@ -76,9 +75,9 @@ Table of Contents
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2400 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    1 |  1900 |    1 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  148 |  1900 |   53 |   550 |    1 |    40 |    0 |    20 |    0 |    20 |
+| X1Y2              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  148 |  1900 |   59 |   550 |    1 |    40 |    0 |    20 |    0 |    20 |
 | X0Y3              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2400 |    0 |   550 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    20 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
@@ -94,7 +93,7 @@ All Modules
 +----+----+----+
 | Y3 |  1 |  0 |
 | Y2 |  0 |  1 |
-| Y1 |  0 |  1 |
+| Y1 |  0 |  0 |
 | Y0 |  0 |  1 |
 +----+----+----+
 
@@ -105,7 +104,7 @@ All Modules
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                         |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------+
-| g0        | BUFG/O          | n/a               |       |             |               |         152 |        2 |              0 |        0 | m_debug_header_OBUF_BUFG[0] |
+| g0        | BUFG/O          | n/a               |       |             |               |         151 |        2 |              0 |        0 | m_debug_header_OBUF_BUFG[0] |
 +-----------+-----------------+-------------------+-------+-------------+---------------+-------------+----------+----------------+----------+-----------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -118,7 +117,7 @@ All Modules
 +----+----+------+-----------------------+
 | Y3 |  1 |    0 |                     0 |
 | Y2 |  0 |  151 |                     0 |
-| Y1 |  0 |    1 |                     0 |
+| Y1 |  0 |    0 |                     - |
 | Y0 |  0 |    1 |                     0 |
 +----+----+------+-----------------------+
 
@@ -136,20 +135,7 @@ All Modules
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-8. Clock Region Cell Placement per Global Clock: Region X1Y1
-------------------------------------------------------------
-
-+-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------------------+
-| Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                         |
-+-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------------------+
-| g0        | n/a   | BUFG/O          | None       |           1 |               0 |  1 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | m_debug_header_OBUF_BUFG[0] |
-+-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------------------+
-* Clock Loads column represents the clock pin loads (pin count)
-** Non-Clock Loads column represents the non-clock pin loads (pin count)
-*** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
-
-
-9. Clock Region Cell Placement per Global Clock: Region X1Y2
+8. Clock Region Cell Placement per Global Clock: Region X1Y2
 ------------------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-----------------------------+
@@ -162,8 +148,8 @@ All Modules
 *** Columns FF, LUTRAM, RAMB through 'Hard IP' represents load cell counts
 
 
-10. Clock Region Cell Placement per Global Clock: Region X0Y3
--------------------------------------------------------------
+9. Clock Region Cell Placement per Global Clock: Region X0Y3
+------------------------------------------------------------
 
 +-----------+-------+-----------------+------------+-------------+-----------------+----+-------------+------+-----+----+------+-----+---------+-----------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                         |
@@ -190,5 +176,5 @@ set_property LOC IOB_X1Y26 [get_ports m_fpga_clk]
 #startgroup
 create_pblock {CLKAG_m_debug_header_OBUF_BUFG[0]}
 add_cells_to_pblock [get_pblocks  {CLKAG_m_debug_header_OBUF_BUFG[0]}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL && NAME!=m_debug_header_OBUF[0]_inst && NAME!=m_dac_clk_OBUF_inst} -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="m_debug_header_OBUF_BUFG[0]"}]]]
-resize_pblock [get_pblocks {CLKAG_m_debug_header_OBUF_BUFG[0]}] -add {CLOCKREGION_X1Y1:CLOCKREGION_X1Y1 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_m_debug_header_OBUF_BUFG[0]}] -add {CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
 #endgroup

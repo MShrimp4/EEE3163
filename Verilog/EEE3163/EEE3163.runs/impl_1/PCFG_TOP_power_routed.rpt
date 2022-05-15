@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Sun May 15 18:07:13 2022
+| Date             : Sun May 15 20:48:49 2022
 | Host             : mshrimp running 64-bit Arch Linux
 | Command          : report_power -file PCFG_TOP_power_routed.rpt -pb PCFG_TOP_power_summary_routed.pb -rpx PCFG_TOP_power_routed.rpx
 | Design           : PCFG_TOP
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.000 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      582 |       --- |             --- |
+| Slice Logic    |    <0.001 |      579 |       --- |             --- |
 |   LUT as Logic |    <0.001 |      264 |     48000 |            0.55 |
 |   CARRY4       |    <0.001 |       22 |     16000 |            0.14 |
-|   Register     |    <0.001 |      196 |     96000 |            0.20 |
+|   Register     |    <0.001 |      195 |     96000 |            0.20 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       33 |       --- |             --- |
-| Signals        |    <0.001 |      475 |       --- |             --- |
+|   Others       |     0.000 |       31 |       --- |             --- |
+| Signals        |    <0.001 |      477 |       --- |             --- |
 | Block RAM      |    <0.001 |      1.5 |        90 |            1.67 |
 | I/O            |     0.002 |       74 |       400 |           18.50 |
 | Static Power   |     0.103 |          |           |                 |

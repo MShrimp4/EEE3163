@@ -73,8 +73,7 @@ architecture Behavioral of signal_controller is
     -- 
     signal s_len      : STD_LOGIC_VECTOR (s_data'length-1 downto 0) := (others => '0');
     signal en_latch   : STD_LOGIC;
-    signal rising_w   : STD_LOGIC;
-    signal rising_r   : STD_LOGIC;
+    signal rising_d   : STD_LOGIC;
 begin
 
 -- Components
@@ -91,16 +90,11 @@ begin
         DA_latch_en  => DA_latch_en,
         AD_latch_en  => AD_latch_en);
 
-    rising_r_detector : entity work.edge_detector (Behavioral)
+    rising_d_detector : entity work.edge_detector (Behavioral)
     port map(
-        clk=> s_clk, i=> s_ren,
-        rising=> rising_r
+        clk=> s_clk, i=> s_cmd_data,
+        rising=> rising_d
     );
-    
-    rising_w_detector : entity work.edge_detector (Behavioral)
-    port map(
-        clk=> s_clk, i=> s_wen,
-        rising=> rising_w);
         
     len_latch : entity work.latch (Behavioral)
     generic map(length=>s_len'length)
@@ -169,16 +163,16 @@ begin
 
    ADRAM_CTRL_wr  <= '1' when s_hot(m_AD)='1' AND s_len /= AD_RAM_addra(s_len'length-1 downto 0) else '0';
 
-   ADRAM_CTRL_rd  <= '1'                         when s_hot(m_AD_T)   
-                else (adr_RAM_addr AND rising_r) when s_hot(m_ADR) 
+   ADRAM_CTRL_rd  <= '1'          when s_hot(m_AD_T)   
+                else adr_RAM_addr when s_hot(m_ADR) AND NOT s_oe_b AND rising_d
                 else '0';
    
    PCRAM_CTRL_wr  <= '1'         when ADRAM_CTRL_r_rdy = '1'
-                else pc_RAM_addr when s_hot(m_PC_W)    = '1' AND rising_w = '1'
+                else pc_RAM_addr when s_hot(m_PC_W) AND     s_oe_b AND rising_d
                 else '0';
 
-   PCRAM_CTRL_rd  <= '1'         when s_hot(m_DA)      = '1'
-                else pc_RAM_addr when s_hot(m_PC_R)    = '1' AND rising_r = '1'
+   PCRAM_CTRL_rd  <= '1'         when s_hot(m_DA)
+                else pc_RAM_addr when s_hot(m_PC_R) AND NOT s_oe_b AND rising_d
                 else '0';
  
    OPTRAM_CTRL_wr <= '0'; --TODO
