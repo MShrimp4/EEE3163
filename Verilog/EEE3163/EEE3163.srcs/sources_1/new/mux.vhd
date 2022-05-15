@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 2022/05/12 01:46:33
--- Design Name: 
--- Module Name: mux - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -43,7 +22,5 @@ end mux;
 
 architecture Behavioral of mux is
 begin
-       Dout<=Din0 when sel='0' else
-             Din1 when sel='1' else
-             (others=>'0');
+       Dout<= Din1 when sel='1' else Din0;
 end Behavioral;
