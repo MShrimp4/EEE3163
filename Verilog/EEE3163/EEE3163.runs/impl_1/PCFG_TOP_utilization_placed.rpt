@@ -1,12 +1,12 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Mon May 16 03:11:04 2022
+| Date         : Mon May 16 03:39:15 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : report_utilization -file PCFG_TOP_utilization_placed.rpt -pb PCFG_TOP_utilization_placed.pb
 | Design       : PCFG_TOP
-| Device       : xc7s75fgga676-1
-| Speed File   : -1
+| Device       : xc7s75fgga676-2
+| Speed File   : -2
 | Design State : Fully Placed
 -------------------------------------------------------------------------------------------------------------
 

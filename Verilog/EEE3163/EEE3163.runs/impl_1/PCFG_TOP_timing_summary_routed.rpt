@@ -1,12 +1,12 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Mon May 16 03:11:20 2022
+| Date         : Mon May 16 03:39:31 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file PCFG_TOP_timing_summary_routed.rpt -pb PCFG_TOP_timing_summary_routed.pb -rpx PCFG_TOP_timing_summary_routed.rpx -warn_on_violation
 | Design       : PCFG_TOP
 | Device       : 7s75-fgga676
-| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Speed File   : -2  PRODUCTION 1.23 2018-06-13
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Timing Summary Report
@@ -304,24 +304,24 @@ Slack:                    inf
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        14.144ns  (logic 5.078ns (35.900%)  route 9.066ns (64.100%))
+  Data Path Delay:        12.157ns  (logic 4.619ns (37.998%)  route 7.537ns (62.002%))
   Logic Levels:           6  (FDRE=1 LUT4=2 LUT5=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X77Y111        FDRE                         0.000     0.000 r  main_ctrl/s_hot_reg[4]/C
-    SLICE_X77Y111        FDRE (Prop_fdre_C_Q)         0.456     0.456 f  main_ctrl/s_hot_reg[4]/Q
-                         net (fo=16, routed)          1.403     1.859    main_ctrl/p_0_in4_in
-    SLICE_X78Y114        LUT4 (Prop_lut4_I1_O)        0.150     2.009 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_7/O
-                         net (fo=2, routed)           0.455     2.464    main_ctrl/m_debug_led_OBUF[0]_inst_i_7_n_0
-    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.326     2.790 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_4/O
-                         net (fo=7, routed)           1.001     3.792    main_ctrl/debug0__0
-    SLICE_X80Y114        LUT5 (Prop_lut5_I2_O)        0.124     3.916 r  main_ctrl/m_debug_led_OBUF[2]_inst_i_5/O
-                         net (fo=2, routed)           0.831     4.747    main_ctrl/m_debug_led_OBUF[2]_inst_i_5_n_0
-    SLICE_X79Y113        LUT4 (Prop_lut4_I1_O)        0.124     4.871 r  main_ctrl/m_debug_led_OBUF[1]_inst_i_1/O
-                         net (fo=1, routed)           5.376    10.246    m_debug_led_OBUF[1]
-    B21                  OBUF (Prop_obuf_I_O)         3.898    14.144 r  m_debug_led_OBUF[1]_inst/O
-                         net (fo=0)                   0.000    14.144    m_debug_led[1]
+    SLICE_X77Y111        FDRE (Prop_fdre_C_Q)         0.379     0.379 f  main_ctrl/s_hot_reg[4]/Q
+                         net (fo=16, routed)          1.344     1.723    main_ctrl/p_0_in4_in
+    SLICE_X78Y114        LUT4 (Prop_lut4_I1_O)        0.119     1.842 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_7/O
+                         net (fo=2, routed)           0.364     2.206    main_ctrl/m_debug_led_OBUF[0]_inst_i_7_n_0
+    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.267     2.473 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_4/O
+                         net (fo=7, routed)           0.691     3.164    main_ctrl/debug0__0
+    SLICE_X80Y114        LUT5 (Prop_lut5_I2_O)        0.105     3.269 r  main_ctrl/m_debug_led_OBUF[2]_inst_i_5/O
+                         net (fo=2, routed)           0.684     3.953    main_ctrl/m_debug_led_OBUF[2]_inst_i_5_n_0
+    SLICE_X79Y113        LUT4 (Prop_lut4_I1_O)        0.105     4.058 r  main_ctrl/m_debug_led_OBUF[1]_inst_i_1/O
+                         net (fo=1, routed)           4.455     8.512    m_debug_led_OBUF[1]
+    B21                  OBUF (Prop_obuf_I_O)         3.644    12.157 r  m_debug_led_OBUF[1]_inst/O
+                         net (fo=0)                   0.000    12.157    m_debug_led[1]
     B21                                                               r  m_debug_led[1] (OUT)
   -------------------------------------------------------------------    -------------------
 
@@ -332,21 +332,21 @@ Slack:                    inf
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.751ns  (logic 5.280ns (38.399%)  route 8.471ns (61.601%))
+  Data Path Delay:        11.924ns  (logic 4.923ns (41.283%)  route 7.001ns (58.717%))
   Logic Levels:           4  (BUFG=1 IBUF=1 LUT5=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     AE8                                               0.000     0.000 r  m_fpga_clk (IN)
                          net (fo=0)                   0.000     0.000    m_fpga_clk
-    AE8                  IBUF (Prop_ibuf_I_O)         1.521     1.521 r  s_clk_g/O
-                         net (fo=2, routed)           3.528     5.048    clk_gen/CNT0/m_debug_header_OBUF[0]
-    SLICE_X77Y106        LUT5 (Prop_lut5_I4_O)        0.124     5.172 r  clk_gen/CNT0/m_debug_header_OBUF_BUFG[1]_inst_i_1/O
-                         net (fo=1, routed)           1.760     6.932    m_debug_header_OBUF[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     7.028 r  m_debug_header_OBUF_BUFG[1]_inst/O
-                         net (fo=44, routed)          3.183    10.211    m_debug_header_OBUF_BUFG[1]
-    E17                  OBUF (Prop_obuf_I_O)         3.539    13.751 r  m_debug_header_OBUF[1]_inst/O
-                         net (fo=0)                   0.000    13.751    m_debug_header[1]
+    AE8                  IBUF (Prop_ibuf_I_O)         1.452     1.452 r  s_clk_g/O
+                         net (fo=2, routed)           2.894     4.346    clk_gen/CNT0/m_debug_header_OBUF[0]
+    SLICE_X77Y106        LUT5 (Prop_lut5_I4_O)        0.105     4.451 r  clk_gen/CNT0/m_debug_header_OBUF_BUFG[1]_inst_i_1/O
+                         net (fo=1, routed)           1.449     5.900    m_debug_header_OBUF[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     5.981 r  m_debug_header_OBUF_BUFG[1]_inst/O
+                         net (fo=44, routed)          2.658     8.639    m_debug_header_OBUF_BUFG[1]
+    E17                  OBUF (Prop_obuf_I_O)         3.285    11.924 r  m_debug_header_OBUF[1]_inst/O
+                         net (fo=0)                   0.000    11.924    m_debug_header[1]
     E17                                                               r  m_debug_header[1] (OUT)
   -------------------------------------------------------------------    -------------------
 
@@ -357,77 +357,73 @@ Slack:                    inf
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.620ns  (logic 5.070ns (37.227%)  route 8.550ns (62.773%))
+  Data Path Delay:        11.727ns  (logic 4.612ns (39.329%)  route 7.115ns (60.671%))
   Logic Levels:           6  (FDRE=1 LUT4=1 LUT5=1 LUT6=2 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X77Y111        FDRE                         0.000     0.000 r  main_ctrl/s_hot_reg[4]/C
-    SLICE_X77Y111        FDRE (Prop_fdre_C_Q)         0.456     0.456 f  main_ctrl/s_hot_reg[4]/Q
-                         net (fo=16, routed)          1.403     1.859    main_ctrl/p_0_in4_in
-    SLICE_X78Y114        LUT4 (Prop_lut4_I1_O)        0.150     2.009 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_7/O
-                         net (fo=2, routed)           0.455     2.464    main_ctrl/m_debug_led_OBUF[0]_inst_i_7_n_0
-    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.326     2.790 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_4/O
-                         net (fo=7, routed)           1.001     3.792    main_ctrl/debug0__0
-    SLICE_X80Y114        LUT5 (Prop_lut5_I2_O)        0.124     3.916 r  main_ctrl/m_debug_led_OBUF[2]_inst_i_5/O
-                         net (fo=2, routed)           0.878     4.793    main_ctrl/m_debug_led_OBUF[2]_inst_i_5_n_0
-    SLICE_X79Y114        LUT6 (Prop_lut6_I4_O)        0.124     4.917 r  main_ctrl/m_debug_led_OBUF[2]_inst_i_1/O
-                         net (fo=1, routed)           4.813     9.730    m_debug_led_OBUF[2]
-    B24                  OBUF (Prop_obuf_I_O)         3.890    13.620 r  m_debug_led_OBUF[2]_inst/O
-                         net (fo=0)                   0.000    13.620    m_debug_led[2]
+    SLICE_X77Y111        FDRE (Prop_fdre_C_Q)         0.379     0.379 f  main_ctrl/s_hot_reg[4]/Q
+                         net (fo=16, routed)          1.344     1.723    main_ctrl/p_0_in4_in
+    SLICE_X78Y114        LUT4 (Prop_lut4_I1_O)        0.119     1.842 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_7/O
+                         net (fo=2, routed)           0.364     2.206    main_ctrl/m_debug_led_OBUF[0]_inst_i_7_n_0
+    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.267     2.473 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_4/O
+                         net (fo=7, routed)           0.691     3.164    main_ctrl/debug0__0
+    SLICE_X80Y114        LUT5 (Prop_lut5_I2_O)        0.105     3.269 r  main_ctrl/m_debug_led_OBUF[2]_inst_i_5/O
+                         net (fo=2, routed)           0.721     3.990    main_ctrl/m_debug_led_OBUF[2]_inst_i_5_n_0
+    SLICE_X79Y114        LUT6 (Prop_lut6_I4_O)        0.105     4.095 r  main_ctrl/m_debug_led_OBUF[2]_inst_i_1/O
+                         net (fo=1, routed)           3.995     8.090    m_debug_led_OBUF[2]
+    B24                  OBUF (Prop_obuf_I_O)         3.637    11.727 r  m_debug_led_OBUF[2]_inst/O
+                         net (fo=0)                   0.000    11.727    m_debug_led[2]
     B24                                                               r  m_debug_led[2] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 main_ctrl/s_hot_reg[4]/C
+  Source:                 PC_LATCH/latched_input_reg[1]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            m_debug_led[0]
+  Destination:            m_debug_header[7]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.398ns  (logic 5.075ns (37.876%)  route 8.324ns (62.124%))
-  Logic Levels:           6  (FDRE=1 LUT4=1 LUT6=3 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X77Y111        FDRE                         0.000     0.000 r  main_ctrl/s_hot_reg[4]/C
-    SLICE_X77Y111        FDRE (Prop_fdre_C_Q)         0.456     0.456 f  main_ctrl/s_hot_reg[4]/Q
-                         net (fo=16, routed)          1.403     1.859    main_ctrl/p_0_in4_in
-    SLICE_X78Y114        LUT4 (Prop_lut4_I1_O)        0.150     2.009 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_7/O
-                         net (fo=2, routed)           0.455     2.464    main_ctrl/m_debug_led_OBUF[0]_inst_i_7_n_0
-    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.326     2.790 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_4/O
-                         net (fo=7, routed)           0.704     3.494    main_ctrl/debug0__0
-    SLICE_X79Y114        LUT6 (Prop_lut6_I3_O)        0.124     3.618 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_5/O
-                         net (fo=1, routed)           0.706     4.324    main_ctrl/m_debug_led_OBUF[0]_inst_i_5_n_0
-    SLICE_X78Y114        LUT6 (Prop_lut6_I4_O)        0.124     4.448 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_1/O
-                         net (fo=1, routed)           5.056     9.504    m_debug_led_OBUF[0]
-    B22                  OBUF (Prop_obuf_I_O)         3.895    13.398 r  m_debug_led_OBUF[0]_inst/O
-                         net (fo=0)                   0.000    13.398    m_debug_led[0]
-    B22                                                               r  m_debug_led[0] (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 PC_LATCH/latched_input_reg[3]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            m_debug_header[9]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.326ns  (logic 4.554ns (34.171%)  route 8.773ns (65.829%))
+  Data Path Delay:        11.627ns  (logic 4.126ns (35.485%)  route 7.501ns (64.515%))
   Logic Levels:           4  (FDRE=1 LUT5=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y106        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[3]/C
-    SLICE_X84Y106        FDRE (Prop_fdre_C_Q)         0.518     0.518 f  PC_LATCH/latched_input_reg[3]/Q
-                         net (fo=2, routed)           1.070     1.588    PC_LATCH/s_pc_latch_out[3]
-    SLICE_X84Y106        LUT6 (Prop_lut6_I2_O)        0.124     1.712 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
-                         net (fo=22, routed)          2.156     3.868    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
-    SLICE_X76Y114        LUT5 (Prop_lut5_I4_O)        0.153     4.021 r  PC_LATCH/m_debug_header_OBUF[9]_inst_i_1/O
-                         net (fo=7, routed)           5.547     9.568    m_debug_led_OBUF[3]
-    E20                  OBUF (Prop_obuf_I_O)         3.759    13.326 r  m_debug_header_OBUF[9]_inst/O
-                         net (fo=0)                   0.000    13.326    m_debug_header[9]
-    E20                                                               r  m_debug_header[9] (OUT)
+    SLICE_X84Y107        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[1]/C
+    SLICE_X84Y107        FDRE (Prop_fdre_C_Q)         0.433     0.433 f  PC_LATCH/latched_input_reg[1]/Q
+                         net (fo=2, routed)           0.827     1.260    PC_LATCH/Q[1]
+    SLICE_X84Y106        LUT6 (Prop_lut6_I5_O)        0.105     1.365 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
+                         net (fo=22, routed)          2.056     3.421    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
+    SLICE_X76Y114        LUT5 (Prop_lut5_I4_O)        0.118     3.539 r  PC_LATCH/m_debug_header_OBUF[7]_inst_i_1/O
+                         net (fo=2, routed)           4.618     8.157    m_debug_header_OBUF[7]
+    D18                  OBUF (Prop_obuf_I_O)         3.470    11.627 r  m_debug_header_OBUF[7]_inst/O
+                         net (fo=0)                   0.000    11.627    m_debug_header[7]
+    D18                                                               r  m_debug_header[7] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 PC_LATCH/latched_input_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            m_debug_header[4]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.535ns  (logic 4.132ns (35.820%)  route 7.403ns (64.180%))
+  Logic Levels:           4  (FDRE=1 LUT5=1 LUT6=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X84Y107        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[1]/C
+    SLICE_X84Y107        FDRE (Prop_fdre_C_Q)         0.433     0.433 f  PC_LATCH/latched_input_reg[1]/Q
+                         net (fo=2, routed)           0.827     1.260    PC_LATCH/Q[1]
+    SLICE_X84Y106        LUT6 (Prop_lut6_I5_O)        0.105     1.365 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
+                         net (fo=22, routed)          2.065     3.430    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
+    SLICE_X76Y114        LUT5 (Prop_lut5_I3_O)        0.118     3.548 r  PC_LATCH/m_debug_header_OBUF[4]_inst_i_1/O
+                         net (fo=1, routed)           4.511     8.059    m_debug_header_OBUF[4]
+    F18                  OBUF (Prop_obuf_I_O)         3.476    11.535 r  m_debug_header_OBUF[4]_inst/O
+                         net (fo=0)                   0.000    11.535    m_debug_header[4]
+    F18                                                               r  m_debug_header[4] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
@@ -437,118 +433,122 @@ Slack:                    inf
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.254ns  (logic 4.776ns (36.031%)  route 8.479ns (63.969%))
+  Data Path Delay:        11.424ns  (logic 4.419ns (38.685%)  route 7.004ns (61.315%))
   Logic Levels:           4  (BUFG=1 IBUF=1 LUT5=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     AE8                                               0.000     0.000 r  m_fpga_clk (IN)
                          net (fo=0)                   0.000     0.000    m_fpga_clk
-    AE8                  IBUF (Prop_ibuf_I_O)         1.521     1.521 r  s_clk_g/O
-                         net (fo=2, routed)           3.528     5.048    clk_gen/CNT0/m_debug_header_OBUF[0]
-    SLICE_X77Y106        LUT5 (Prop_lut5_I4_O)        0.124     5.172 r  clk_gen/CNT0/m_debug_header_OBUF_BUFG[1]_inst_i_1/O
-                         net (fo=1, routed)           1.760     6.932    m_debug_header_OBUF[1]
-    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.096     7.028 r  m_debug_header_OBUF_BUFG[1]_inst/O
-                         net (fo=44, routed)          3.191    10.219    m_debug_header_OBUF_BUFG[1]
-    AF14                 OBUF (Prop_obuf_I_O)         3.035    13.254 r  m_adc_clk_OBUF_inst/O
-                         net (fo=0)                   0.000    13.254    m_adc_clk
+    AE8                  IBUF (Prop_ibuf_I_O)         1.452     1.452 r  s_clk_g/O
+                         net (fo=2, routed)           2.894     4.346    clk_gen/CNT0/m_debug_header_OBUF[0]
+    SLICE_X77Y106        LUT5 (Prop_lut5_I4_O)        0.105     4.451 r  clk_gen/CNT0/m_debug_header_OBUF_BUFG[1]_inst_i_1/O
+                         net (fo=1, routed)           1.449     5.900    m_debug_header_OBUF[1]
+    BUFGCTRL_X0Y1        BUFG (Prop_bufg_I_O)         0.081     5.981 r  m_debug_header_OBUF_BUFG[1]_inst/O
+                         net (fo=44, routed)          2.661     8.642    m_debug_header_OBUF_BUFG[1]
+    AF14                 OBUF (Prop_obuf_I_O)         2.782    11.424 r  m_adc_clk_OBUF_inst/O
+                         net (fo=0)                   0.000    11.424    m_adc_clk
     AF14                                                              r  m_adc_clk (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 PC_LATCH/latched_input_reg[3]/C
+  Source:                 main_ctrl/s_hot_reg[4]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            m_debug_header[7]
+  Destination:            m_debug_led[0]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.192ns  (logic 4.562ns (34.583%)  route 8.630ns (65.417%))
-  Logic Levels:           4  (FDRE=1 LUT5=1 LUT6=1 OBUF=1)
+  Data Path Delay:        11.417ns  (logic 4.616ns (40.433%)  route 6.801ns (59.567%))
+  Logic Levels:           6  (FDRE=1 LUT4=1 LUT6=3 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y106        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[3]/C
-    SLICE_X84Y106        FDRE (Prop_fdre_C_Q)         0.518     0.518 f  PC_LATCH/latched_input_reg[3]/Q
-                         net (fo=2, routed)           1.070     1.588    PC_LATCH/s_pc_latch_out[3]
-    SLICE_X84Y106        LUT6 (Prop_lut6_I2_O)        0.124     1.712 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
-                         net (fo=22, routed)          2.005     3.717    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
-    SLICE_X76Y114        LUT5 (Prop_lut5_I4_O)        0.150     3.867 r  PC_LATCH/m_debug_header_OBUF[7]_inst_i_1/O
-                         net (fo=2, routed)           5.555     9.422    m_debug_header_OBUF[7]
-    D18                  OBUF (Prop_obuf_I_O)         3.770    13.192 r  m_debug_header_OBUF[7]_inst/O
-                         net (fo=0)                   0.000    13.192    m_debug_header[7]
-    D18                                                               r  m_debug_header[7] (OUT)
+    SLICE_X77Y111        FDRE                         0.000     0.000 r  main_ctrl/s_hot_reg[4]/C
+    SLICE_X77Y111        FDRE (Prop_fdre_C_Q)         0.379     0.379 f  main_ctrl/s_hot_reg[4]/Q
+                         net (fo=16, routed)          1.344     1.723    main_ctrl/p_0_in4_in
+    SLICE_X78Y114        LUT4 (Prop_lut4_I1_O)        0.119     1.842 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_7/O
+                         net (fo=2, routed)           0.364     2.206    main_ctrl/m_debug_led_OBUF[0]_inst_i_7_n_0
+    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.267     2.473 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_4/O
+                         net (fo=7, routed)           0.387     2.860    main_ctrl/debug0__0
+    SLICE_X78Y114        LUT6 (Prop_lut6_I1_O)        0.105     2.965 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_6/O
+                         net (fo=1, routed)           0.546     3.511    main_ctrl/m_debug_led_OBUF[0]_inst_i_6_n_0
+    SLICE_X78Y114        LUT6 (Prop_lut6_I5_O)        0.105     3.616 r  main_ctrl/m_debug_led_OBUF[0]_inst_i_1/O
+                         net (fo=1, routed)           4.160     7.776    m_debug_led_OBUF[0]
+    B22                  OBUF (Prop_obuf_I_O)         3.641    11.417 r  m_debug_led_OBUF[0]_inst/O
+                         net (fo=0)                   0.000    11.417    m_debug_led[0]
+    B22                                                               r  m_debug_led[0] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 PC_LATCH/latched_input_reg[3]/C
+  Source:                 PC_LATCH/latched_input_reg[1]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            m_debug_led[3]
+  Destination:            m_debug_header[9]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.078ns  (logic 4.891ns (37.397%)  route 8.187ns (62.603%))
+  Data Path Delay:        11.409ns  (logic 4.117ns (36.089%)  route 7.291ns (63.911%))
   Logic Levels:           4  (FDRE=1 LUT5=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y106        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[3]/C
-    SLICE_X84Y106        FDRE (Prop_fdre_C_Q)         0.518     0.518 f  PC_LATCH/latched_input_reg[3]/Q
-                         net (fo=2, routed)           1.070     1.588    PC_LATCH/s_pc_latch_out[3]
-    SLICE_X84Y106        LUT6 (Prop_lut6_I2_O)        0.124     1.712 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
-                         net (fo=22, routed)          2.156     3.868    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
-    SLICE_X76Y114        LUT5 (Prop_lut5_I4_O)        0.153     4.021 r  PC_LATCH/m_debug_header_OBUF[9]_inst_i_1/O
-                         net (fo=7, routed)           4.961     8.982    m_debug_led_OBUF[3]
-    C24                  OBUF (Prop_obuf_I_O)         4.096    13.078 r  m_debug_led_OBUF[3]_inst/O
-                         net (fo=0)                   0.000    13.078    m_debug_led[3]
-    C24                                                               r  m_debug_led[3] (OUT)
+    SLICE_X84Y107        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[1]/C
+    SLICE_X84Y107        FDRE (Prop_fdre_C_Q)         0.433     0.433 f  PC_LATCH/latched_input_reg[1]/Q
+                         net (fo=2, routed)           0.827     1.260    PC_LATCH/Q[1]
+    SLICE_X84Y106        LUT6 (Prop_lut6_I5_O)        0.105     1.365 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
+                         net (fo=22, routed)          1.895     3.260    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
+    SLICE_X76Y114        LUT5 (Prop_lut5_I4_O)        0.119     3.379 r  PC_LATCH/m_debug_header_OBUF[9]_inst_i_1/O
+                         net (fo=7, routed)           4.570     7.948    m_debug_led_OBUF[3]
+    E20                  OBUF (Prop_obuf_I_O)         3.460    11.409 r  m_debug_header_OBUF[9]_inst/O
+                         net (fo=0)                   0.000    11.409    m_debug_header[9]
+    E20                                                               r  m_debug_header[9] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 PC_LATCH/latched_input_reg[3]/C
+  Source:                 PC_LATCH/latched_input_reg[1]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            m_debug_header[4]
+  Destination:            m_debug_header[10]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        13.075ns  (logic 4.565ns (34.917%)  route 8.509ns (65.083%))
+  Data Path Delay:        11.365ns  (logic 3.942ns (34.686%)  route 7.423ns (65.314%))
   Logic Levels:           4  (FDRE=1 LUT5=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y106        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[3]/C
-    SLICE_X84Y106        FDRE (Prop_fdre_C_Q)         0.518     0.518 f  PC_LATCH/latched_input_reg[3]/Q
-                         net (fo=2, routed)           1.070     1.588    PC_LATCH/s_pc_latch_out[3]
-    SLICE_X84Y106        LUT6 (Prop_lut6_I2_O)        0.124     1.712 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
-                         net (fo=22, routed)          2.007     3.719    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
-    SLICE_X76Y114        LUT5 (Prop_lut5_I3_O)        0.148     3.867 r  PC_LATCH/m_debug_header_OBUF[4]_inst_i_1/O
-                         net (fo=1, routed)           5.433     9.299    m_debug_header_OBUF[4]
-    F18                  OBUF (Prop_obuf_I_O)         3.775    13.075 r  m_debug_header_OBUF[4]_inst/O
-                         net (fo=0)                   0.000    13.075    m_debug_header[4]
-    F18                                                               r  m_debug_header[4] (OUT)
+    SLICE_X84Y107        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[1]/C
+    SLICE_X84Y107        FDRE (Prop_fdre_C_Q)         0.433     0.433 f  PC_LATCH/latched_input_reg[1]/Q
+                         net (fo=2, routed)           0.827     1.260    PC_LATCH/Q[1]
+    SLICE_X84Y106        LUT6 (Prop_lut6_I5_O)        0.105     1.365 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
+                         net (fo=22, routed)          2.065     3.430    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
+    SLICE_X76Y114        LUT5 (Prop_lut5_I3_O)        0.105     3.535 r  PC_LATCH/m_debug_header_OBUF[10]_inst_i_1/O
+                         net (fo=4, routed)           4.531     8.066    m_debug_header_OBUF[10]
+    F20                  OBUF (Prop_obuf_I_O)         3.299    11.365 r  m_debug_header_OBUF[10]_inst/O
+                         net (fo=0)                   0.000    11.365    m_debug_header[10]
+    F20                                                               r  m_debug_header[10] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 PC_LATCH/latched_input_reg[3]/C
+  Source:                 PC_LATCH/latched_input_reg[1]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            m_debug_header[5]
+  Destination:            m_debug_header[3]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        12.960ns  (logic 4.334ns (33.440%)  route 8.626ns (66.560%))
+  Data Path Delay:        11.325ns  (logic 3.968ns (35.042%)  route 7.356ns (64.958%))
   Logic Levels:           4  (FDRE=1 LUT5=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y106        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[3]/C
-    SLICE_X84Y106        FDRE (Prop_fdre_C_Q)         0.518     0.518 f  PC_LATCH/latched_input_reg[3]/Q
-                         net (fo=2, routed)           1.070     1.588    PC_LATCH/s_pc_latch_out[3]
-    SLICE_X84Y106        LUT6 (Prop_lut6_I2_O)        0.124     1.712 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
-                         net (fo=22, routed)          1.602     3.314    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
-    SLICE_X76Y113        LUT5 (Prop_lut5_I4_O)        0.124     3.438 r  PC_LATCH/m_debug_header_OBUF[5]_inst_i_1/O
-                         net (fo=7, routed)           5.954     9.392    m_debug_led_OBUF[4]
-    F17                  OBUF (Prop_obuf_I_O)         3.568    12.960 r  m_debug_header_OBUF[5]_inst/O
-                         net (fo=0)                   0.000    12.960    m_debug_header[5]
-    F17                                                               r  m_debug_header[5] (OUT)
+    SLICE_X84Y107        FDRE                         0.000     0.000 r  PC_LATCH/latched_input_reg[1]/C
+    SLICE_X84Y107        FDRE (Prop_fdre_C_Q)         0.433     0.433 f  PC_LATCH/latched_input_reg[1]/Q
+                         net (fo=2, routed)           0.827     1.260    PC_LATCH/Q[1]
+    SLICE_X84Y106        LUT6 (Prop_lut6_I5_O)        0.105     1.365 r  PC_LATCH/m_debug_header_OBUF[11]_inst_i_2/O
+                         net (fo=22, routed)          2.056     3.421    PC_LATCH/m_debug_header_OBUF[11]_inst_i_2_n_0
+    SLICE_X76Y114        LUT5 (Prop_lut5_I3_O)        0.105     3.526 r  PC_LATCH/m_debug_header_OBUF[3]_inst_i_1/O
+                         net (fo=1, routed)           4.473     7.999    m_debug_header_OBUF[3]
+    A17                  OBUF (Prop_obuf_I_O)         3.325    11.325 r  m_debug_header_OBUF[3]_inst/O
+                         net (fo=0)                   0.000    11.325    m_debug_header[3]
+    A17                                                               r  m_debug_header[3] (OUT)
   -------------------------------------------------------------------    -------------------
 
 
@@ -563,14 +563,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][3]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.196ns  (logic 0.128ns (65.396%)  route 0.068ns (34.604%))
+  Data Path Delay:        0.192ns  (logic 0.128ns (66.786%)  route 0.064ns (33.214%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X73Y113        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[0].gen_fdre[3].ff_ai/C
     SLICE_X73Y113        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[0].gen_fdre[3].ff_ai/Q
-                         net (fo=2, routed)           0.068     0.196    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][17]_0[3]
+                         net (fo=2, routed)           0.064     0.192    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][17]_0[3]
     SLICE_X73Y113        FDRE                                         r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][3]/D
   -------------------------------------------------------------------    -------------------
 
@@ -580,14 +580,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/input_delay_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[0].i_srl16e0/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.196ns  (logic 0.141ns (71.838%)  route 0.055ns (28.162%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X75Y112        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/axi_wrapper/data_in_channel_fifo/gen_real_time.data_out_reg[1]/C
     SLICE_X75Y112        FDRE (Prop_fdre_C_Q)         0.141     0.141 r  OPTMODE_CTRL/FFT/U0/i_synth/axi_wrapper/data_in_channel_fifo/gen_real_time.data_out_reg[1]/Q
-                         net (fo=1, routed)           0.056     0.197    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/input_delay_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[3].i_srl16e1_0[0]
+                         net (fo=1, routed)           0.055     0.196    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/input_delay_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[3].i_srl16e1_0[0]
     SLICE_X74Y112        SRL16E                                       r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/input_delay_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[0].i_srl16e0/D
   -------------------------------------------------------------------    -------------------
 
@@ -597,14 +597,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.gen_part_slices[0].ff_br/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.196ns  (logic 0.141ns (71.838%)  route 0.055ns (28.162%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X63Y114        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/control/twiddle_generator/tw0.twgen0/extra_reg.COSINE_reg[8]/C
     SLICE_X63Y114        FDRE (Prop_fdre_C_Q)         0.141     0.141 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/control/twiddle_generator/tw0.twgen0/extra_reg.COSINE_reg[8]/Q
-                         net (fo=1, routed)           0.056     0.197    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.gen_part_slices[0].ff_br_0[8]
+                         net (fo=1, routed)           0.055     0.196    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.gen_part_slices[0].ff_br_0[8]
     SLICE_X63Y114        FDRE                                         r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.gen_part_slices[0].ff_br/D
   -------------------------------------------------------------------    -------------------
 
@@ -614,14 +614,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_im/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[0].i_srl16e0/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.196ns  (logic 0.141ns (71.838%)  route 0.055ns (28.162%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X67Y113        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_im0/use_lut6_2.latency1.Q_reg[0]/C
     SLICE_X67Y113        FDRE (Prop_fdre_C_Q)         0.141     0.141 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_im0/use_lut6_2.latency1.Q_reg[0]/Q
-                         net (fo=1, routed)           0.056     0.197    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_im/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[8].i_srl16e1_0[0]
+                         net (fo=1, routed)           0.055     0.196    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_im/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[8].i_srl16e1_0[0]
     SLICE_X66Y113        SRL16E                                       r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_im/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[0].i_srl16e0/D
   -------------------------------------------------------------------    -------------------
 
@@ -631,14 +631,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/SQRT/U0/i_synth/i_synth/gen_sqrt.square_root/gen_iterations[19].gen_last.gen_rem/gen_inv_sqrt_out/gen_rtl.gen_reg.d_reg_reg[8]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.196ns  (logic 0.141ns (71.838%)  route 0.055ns (28.162%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X79Y119        FDRE                         0.000     0.000 r  OPTMODE_CTRL/SQRT/U0/i_synth/i_synth/gen_sqrt.square_root/gen_iterations[17].gen_post_mid.gen_rem/gen_inv_sqrt_out/gen_rtl.gen_reg.d_reg_reg[6]/C
     SLICE_X79Y119        FDRE (Prop_fdre_C_Q)         0.141     0.141 r  OPTMODE_CTRL/SQRT/U0/i_synth/i_synth/gen_sqrt.square_root/gen_iterations[17].gen_post_mid.gen_rem/gen_inv_sqrt_out/gen_rtl.gen_reg.d_reg_reg[6]/Q
-                         net (fo=1, routed)           0.056     0.197    OPTMODE_CTRL/SQRT/U0/i_synth/i_synth/gen_sqrt.square_root/gen_iterations[19].gen_last.gen_rem/gen_inv_sqrt_out/B[7]
+                         net (fo=1, routed)           0.055     0.196    OPTMODE_CTRL/SQRT/U0/i_synth/i_synth/gen_sqrt.square_root/gen_iterations[19].gen_last.gen_rem/gen_inv_sqrt_out/B[7]
     SLICE_X79Y119        FDRE                                         r  OPTMODE_CTRL/SQRT/U0/i_synth/i_synth/gen_sqrt.square_root/gen_iterations[19].gen_last.gen_rem/gen_inv_sqrt_out/gen_rtl.gen_reg.d_reg_reg[8]/D
   -------------------------------------------------------------------    -------------------
 
@@ -648,14 +648,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][14]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.201ns  (logic 0.128ns (63.665%)  route 0.073ns (36.335%))
+  Data Path Delay:        0.197ns  (logic 0.128ns (65.064%)  route 0.069ns (34.936%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X61Y116        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[3].gen_fdre[2].ff_ai/C
     SLICE_X61Y116        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[3].gen_fdre[2].ff_ai/Q
-                         net (fo=2, routed)           0.073     0.201    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][17]_0[14]
+                         net (fo=2, routed)           0.069     0.197    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][17]_0[14]
     SLICE_X61Y116        FDRE                                         r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][14]/D
   -------------------------------------------------------------------    -------------------
 
@@ -665,14 +665,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][8]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.210ns  (logic 0.128ns (60.917%)  route 0.082ns (39.083%))
+  Data Path Delay:        0.205ns  (logic 0.128ns (62.357%)  route 0.077ns (37.643%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X65Y114        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[2].gen_fdre[0].ff_ai/C
     SLICE_X65Y114        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[2].gen_fdre[0].ff_ai/Q
-                         net (fo=2, routed)           0.082     0.210    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][17]_0[8]
+                         net (fo=2, routed)           0.077     0.205    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][17]_0[8]
     SLICE_X64Y114        FDRE                                         r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/mult1_preadder_d_plus_a.mult1/mult/use_prim.iBdelx[0].iBdely[0].need_delay_line.Bdelay/dN.std_srl.shift_reg_reg[0][8]/D
   -------------------------------------------------------------------    -------------------
 
@@ -682,14 +682,14 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/dsp_preadder_1.reg_mult1_preadd_d/dN.std_srl.shift_reg_reg[0][5]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.232ns  (logic 0.128ns (55.202%)  route 0.104ns (44.798%))
+  Data Path Delay:        0.229ns  (logic 0.128ns (55.911%)  route 0.101ns (44.089%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X61Y119        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.gen_full_slices[1].gen_fdre[1].ff_bi/C
     SLICE_X61Y119        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.gen_full_slices[1].gen_fdre[1].ff_bi/Q
-                         net (fo=1, routed)           0.104     0.232    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/dsp_preadder_1.reg_mult1_preadd_d/dN.std_srl.shift_reg_reg[0][24]_0[5]
+                         net (fo=1, routed)           0.101     0.229    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/dsp_preadder_1.reg_mult1_preadd_d/dN.std_srl.shift_reg_reg[0][24]_0[5]
     SLICE_X63Y118        FDRE                                         r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/dsp_preadder_1.reg_mult1_preadd_d/dN.std_srl.shift_reg_reg[0][5]/D
   -------------------------------------------------------------------    -------------------
 
@@ -699,32 +699,32 @@ Slack:                    inf
   Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[2].gen_fdre[1].ff_ar/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.232ns  (logic 0.128ns (55.202%)  route 0.104ns (44.798%))
+  Data Path Delay:        0.229ns  (logic 0.128ns (55.911%)  route 0.101ns (44.089%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
     SLICE_X65Y114        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re1/use_lut6_2.latency1.Q_reg[9]/C
     SLICE_X65Y114        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re1/use_lut6_2.latency1.Q_reg[9]/Q
-                         net (fo=1, routed)           0.104     0.232    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/switched_in_data_1_re[9]
+                         net (fo=1, routed)           0.101     0.229    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/switched_in_data_1_re[9]
     SLICE_X67Y113        FDRE                                         r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/cmplx_mult/i_cmpy/three_mult_structure.use_dsp.i_dsp48/optionally_negate_inputs/apply_negation.registered_twos_comp_hblknm.a_larger_equal.gen_full_slices[2].gen_fdre[1].ff_ar/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re0/use_lut6_2.latency1.Q_reg[11]/C
+  Source:                 OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re0/use_lut6_2.latency1.Q_reg[9]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[5].i_srl16e1/D
+  Destination:            OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[4].i_srl16e1/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.233ns  (logic 0.128ns (55.026%)  route 0.105ns (44.974%))
+  Data Path Delay:        0.230ns  (logic 0.128ns (55.744%)  route 0.102ns (44.256%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X65Y116        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re0/use_lut6_2.latency1.Q_reg[11]/C
-    SLICE_X65Y116        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re0/use_lut6_2.latency1.Q_reg[11]/Q
-                         net (fo=1, routed)           0.105     0.233    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_re/D[11]
-    SLICE_X66Y116        SRL16E                                       r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[5].i_srl16e1/D
+    SLICE_X64Y116        FDRE                         0.000     0.000 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re0/use_lut6_2.latency1.Q_reg[9]/C
+    SLICE_X64Y116        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/i_switch_re0/use_lut6_2.latency1.Q_reg[9]/Q
+                         net (fo=1, routed)           0.102     0.230    OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_re/D[9]
+    SLICE_X66Y116        SRL16E                                       r  OPTMODE_CTRL/FFT/U0/i_synth/xfft_inst/non_floating_point.arch_c.xfft_inst/single_channel.datapath/pe/pipeline_balancer_re/no_sclr_lut.real_shift_ram.use_baseblock.use_hlutnm_srls.srl_loop[4].i_srl16e1/D
   -------------------------------------------------------------------    -------------------
 
 

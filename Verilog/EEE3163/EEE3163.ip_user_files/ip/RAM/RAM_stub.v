@@ -1,13 +1,13 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-// Date        : Wed May 11 12:50:13 2022
+// Date        : Mon May 16 03:36:59 2022
 // Host        : mshrimp running 64-bit Arch Linux
-// Command     : write_verilog -force -mode synth_stub
-//               /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top RAM -prefix
+//               RAM_ RAM_stub.v
 // Design      : RAM
 // Purpose     : Stub declaration of top-level module interface
-// Device      : xc7s75fgga676-1
+// Device      : xc7s75fgga676-2
 // --------------------------------------------------------------------------------
 
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.

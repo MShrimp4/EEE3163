@@ -1,6 +1,90 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Mon May 16 03:35:48 2022
+| Host         : mshrimp running 64-bit Arch Linux
+| Command      : upgrade_ip
+| Device       : xc7s75fgga676-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'RAM'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of RAM (xilinx.com:ip:blk_mem_gen:8.4 (Rev. 5)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Mon May 16 03:35:30 2022
+| Host         : mshrimp running 64-bit Arch Linux
+| Command      : upgrade_ip
+| Device       : xc7s75fgga676-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'xfft_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of xfft_0 (xilinx.com:ip:xfft:9.1 (Rev. 7)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Mon May 16 03:35:26 2022
+| Host         : mshrimp running 64-bit Arch Linux
+| Command      : upgrade_ip
+| Device       : xc7s75fgga676-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'mult_gen_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of mult_gen_0 (xilinx.com:ip:mult_gen:12.0 (Rev. 17)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Mon May 16 03:35:26 2022
+| Host         : mshrimp running 64-bit Arch Linux
+| Command      : upgrade_ip
+| Device       : xc7s75fgga676-2
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'cordic_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of cordic_0 (xilinx.com:ip:cordic:6.0 (Rev. 17)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
 | Date         : Sat May 14 03:24:21 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : upgrade_ip

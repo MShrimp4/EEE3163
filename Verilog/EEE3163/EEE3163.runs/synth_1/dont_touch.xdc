@@ -11,3 +11,6 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==mult_gen_0 
 
 # IP: ip/xfft_0/xfft_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==xfft_0 || ORIG_REF_NAME==xfft_0} -quiet] -quiet
+
+# IP: ip/RAM/RAM.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==RAM || ORIG_REF_NAME==RAM} -quiet] -quiet

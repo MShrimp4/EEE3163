@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s75fgga676-1" LaunchTime="1652638197" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PCFG_TOP.dcp">
-  <File Type="VDS-TIMING-PB" Name="PCFG_TOP_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="PCFG_TOP_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="PCFG_TOP.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="PCFG_TOP_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="PCFG_TOP_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="PCFG_TOP_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="PCFG_TOP.vds"/>
+<GenRun Id="synth_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1652639897" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PCFG_TOP.dcp">
   <File Type="REPORTS-TCL" Name="PCFG_TOP_reports.tcl"/>
   <File Type="PA-TCL" Name="PCFG_TOP.tcl"/>
+  <File Type="RDS-DCP" Name="PCFG_TOP.dcp"/>
+  <File Type="RDS-RDS" Name="PCFG_TOP.vds"/>
+  <File Type="RDS-UTIL" Name="PCFG_TOP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="PCFG_TOP_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/cordic_0/cordic_0.xci">
@@ -27,6 +24,15 @@
     </File>
     <File Path="$PSRCDIR/sources_1/ip/xfft_0/xfft_0.xci">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/RAM/RAM.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/ip/RAM/RAM.xci"/>
+        <Attr Name="ImportTime" Val="1652639748"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -130,14 +136,21 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/cordic_0.xcix">
-      <FileInfo>
+    <File Path="$PSRCDIR/sources_1/new/ad_mode_ctrl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/mult_gen_0.xcix">
+    <File Path="$PSRCDIR/sources_1/new/ad_transfer_mode_ctrl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/RAM.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -151,17 +164,17 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ad_mode_ctrl.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
+    <File Path="$PSRCDIR/sources_1/ip/mult_gen_0.xcix">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ad_transfer_mode_ctrl.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
+    <File Path="$PSRCDIR/sources_1/ip/cordic_0.xcix">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -204,5 +217,4 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="RAM"/>
 </GenRun>

@@ -173,7 +173,7 @@ BEGIN
   U0 : xfft_v9_1_7
     GENERIC MAP (
       C_XDEVICEFAMILY => "spartan7",
-      C_PART => "xc7s75fgga676-1",
+      C_PART => "xc7s75fgga676-2",
       C_S_AXIS_CONFIG_TDATA_WIDTH => 8,
       C_S_AXIS_DATA_TDATA_WIDTH => 16,
       C_M_AXIS_DATA_TDATA_WIDTH => 48,

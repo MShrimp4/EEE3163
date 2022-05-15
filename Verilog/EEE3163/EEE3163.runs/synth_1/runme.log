@@ -12,18 +12,19 @@ source PCFG_TOP.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/utils_1/imports/synth_1/PCFG_TOP.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/utils_1/imports/synth_1/PCFG_TOP.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top PCFG_TOP -part xc7s75fgga676-1
+Command: synth_design -top PCFG_TOP -part xc7s75fgga676-2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s75'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s75'
-INFO: [Device 21-403] Loading part xc7s75fgga676-1
+WARNING: [Vivado_Tcl 4-1101] Global synthesis options have changed for the design, incremental synthesis will not be run
+INFO: [Device 21-403] Loading part xc7s75fgga676-2
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 300189
+INFO: [Synth 8-7075] Helper process launched with PID 333797
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2588.770 ; gain = 0.000 ; free physical = 103 ; free virtual = 2798
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2613.781 ; gain = 0.000 ; free physical = 545 ; free virtual = 6028
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-1565] actual for formal port s_axis_config_tvalid is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:79]
 WARNING: [Synth 8-1565] actual for formal port s_axis_data_tdata is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:81]
@@ -67,8 +68,8 @@ INFO: [Synth 8-638] synthesizing module 'edge_detector' [/home/mshrimp/gitclones
 INFO: [Synth 8-256] done synthesizing module 'edge_detector' (8#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'signal_controller' (9#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'RAM_WRAPPER' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
-INFO: [Synth 8-3491] module 'RAM' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/RAM_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'RAM' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/RAM_stub.vhdl:20]
 INFO: [Synth 8-256] done synthesizing module 'RAM_WRAPPER' (10#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
 INFO: [Synth 8-638] synthesizing module 'ram_control' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd:23]
 	Parameter length bound to: 11 - type: integer 
@@ -78,16 +79,16 @@ WARNING: [Synth 8-614] signal 'rst_all' is read in the process but is not in the
 INFO: [Synth 8-256] done synthesizing module 'max_counter' (11#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/max_counter.vhd:33]
 INFO: [Synth 8-256] done synthesizing module 'ram_control' (12#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd:23]
 INFO: [Synth 8-638] synthesizing module 'Option_mode' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:22]
-INFO: [Synth 8-3491] module 'xfft_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:76]
-INFO: [Synth 8-638] synthesizing module 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/xfft_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'xfft_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/xfft_0_stub.vhdl:26]
 INFO: [Synth 8-638] synthesizing module 'delay' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/delay.vhd:20]
 	Parameter length bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'delay' (13#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/delay.vhd:20]
-INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/mult_gen_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:101]
-INFO: [Synth 8-3491] module 'cordic_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/realtime/cordic_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/mult_gen_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:101]
+INFO: [Synth 8-3491] module 'cordic_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/realtime/cordic_0_stub.vhdl:16]
 INFO: [Synth 8-256] done synthesizing module 'Option_mode' (14#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:22]
 WARNING: [Synth 8-3848] Net m_dac_gain_d in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:21]
 WARNING: [Synth 8-3848] Net m_dac_gain_clk in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:24]
@@ -125,37 +126,37 @@ WARNING: [Synth 8-7129] Port m_debug_sw[2] in module PCFG_TOP is either unconnec
 WARNING: [Synth 8-7129] Port m_debug_sw[1] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[0] in module PCFG_TOP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2588.770 ; gain = 0.000 ; free physical = 241 ; free virtual = 2036
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2613.781 ; gain = 0.000 ; free physical = 282 ; free virtual = 5768
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2588.770 ; gain = 0.000 ; free physical = 235 ; free virtual = 2031
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2613.781 ; gain = 0.000 ; free physical = 1138 ; free virtual = 6623
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2588.770 ; gain = 0.000 ; free physical = 235 ; free virtual = 2031
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2613.781 ; gain = 0.000 ; free physical = 1138 ; free virtual = 6623
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2588.770 ; gain = 0.000 ; free physical = 222 ; free virtual = 2021
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2613.781 ; gain = 0.000 ; free physical = 1128 ; free virtual = 6614
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Constraints 18-548] Could not create 'IOSTANDARD' constraint because invalid IOSTANDARD value 'LVCMOS_33' specified. The default IOSTANDARD will be used instead. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:189]
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-300156-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.gen/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-333777-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
 Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc]
 CRITICAL WARNING: [Coretcl 2-95] Port 'm_HDMI_CLK' not found. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:1]
 CRITICAL WARNING: [Coretcl 2-95] Port 'm_adc_lvds_da' not found. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:2]
@@ -339,22 +340,22 @@ Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE31
 INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'm_fpga_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:966]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2650.824 ; gain = 0.000 ; free physical = 1014 ; free virtual = 2871
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2677.664 ; gain = 0.000 ; free physical = 1110 ; free virtual = 6598
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2650.824 ; gain = 0.000 ; free physical = 1014 ; free virtual = 2871
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2677.664 ; gain = 0.000 ; free physical = 1110 ; free virtual = 6598
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 1085 ; free virtual = 2944
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1180 ; free virtual = 6667
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7s75fgga676-1
+Loading part: xc7s75fgga676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 1085 ; free virtual = 2944
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1180 ; free virtual = 6667
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -367,7 +368,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for PCRAM/RAM1. (constraint file  aut
 Applied set_property KEEP_HIERARCHY = SOFT for ADRAM/RAM1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for OPTIONRAM/RAM1. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 1085 ; free virtual = 2944
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1180 ; free virtual = 6667
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TOP_8254'
 ---------------------------------------------------------------------------------------------------
@@ -382,7 +383,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TOP_8
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'TOP_8254'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 1073 ; free virtual = 2937
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1173 ; free virtual = 6661
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -456,25 +457,25 @@ WARNING: [Synth 8-7129] Port m_debug_sw[2] in module PCFG_TOP is either unconnec
 WARNING: [Synth 8-7129] Port m_debug_sw[1] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[0] in module PCFG_TOP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 1032 ; free virtual = 2906
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1155 ; free virtual = 6647
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 907 ; free virtual = 2789
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1032 ; free virtual = 6528
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 907 ; free virtual = 2789
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1032 ; free virtual = 6528
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 903 ; free virtual = 2785
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1029 ; free virtual = 6524
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -492,37 +493,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -565,29 +566,29 @@ Report Cell Usage:
 |23    |OBUFT           |    13|
 +------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 906 ; free virtual = 2792
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1028 ; free virtual = 6523
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2650.824 ; gain = 0.000 ; free physical = 955 ; free virtual = 2842
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 955 ; free virtual = 2842
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2677.664 ; gain = 0.000 ; free physical = 1081 ; free virtual = 6576
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2677.664 ; gain = 63.883 ; free physical = 1081 ; free virtual = 6576
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2650.824 ; gain = 0.000 ; free physical = 951 ; free virtual = 2839
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2677.664 ; gain = 0.000 ; free physical = 1167 ; free virtual = 6663
 INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Constraints 18-548] Could not create 'IOSTANDARD' constraint because invalid IOSTANDARD value 'LVCMOS_33' specified. The default IOSTANDARD will be used instead. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2650.824 ; gain = 0.000 ; free physical = 979 ; free virtual = 2871
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2677.664 ; gain = 0.000 ; free physical = 1103 ; free virtual = 6599
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 8 instances
 
 Synth Design complete, checksum: 652ce51
 INFO: [Common 17-83] Releasing license: Synthesis
-70 Infos, 174 Warnings, 71 Critical Warnings and 0 Errors encountered.
+70 Infos, 175 Warnings, 71 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 2650.824 ; gain = 62.055 ; free physical = 1177 ; free virtual = 3069
+synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 2677.664 ; gain = 64.031 ; free physical = 1302 ; free virtual = 6798
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/PCFG_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file PCFG_TOP_utilization_synth.rpt -pb PCFG_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May 16 03:10:30 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon May 16 03:38:43 2022...

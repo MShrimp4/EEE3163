@@ -1,13 +1,13 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
--- Date        : Sat May 14 03:25:38 2022
+-- Date        : Mon May 16 03:37:00 2022
 -- Host        : mshrimp running 64-bit Arch Linux
 -- Command     : write_vhdl -force -mode synth_stub -rename_top cordic_0 -prefix
 --               cordic_0_ cordic_0_stub.vhdl
 -- Design      : cordic_0
 -- Purpose     : Stub declaration of top-level module interface
--- Device      : xc7s75fgga676-1
+-- Device      : xc7s75fgga676-2
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
