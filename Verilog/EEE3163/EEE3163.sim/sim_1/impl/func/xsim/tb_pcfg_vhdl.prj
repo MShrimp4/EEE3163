@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"tb_pcfg_func_impl.vhd" \
+"../../../../../EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd" \
+
+# Do not sort compile order
+nosort

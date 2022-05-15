@@ -1,0 +1,6 @@
+0.7
+2020.2
+Oct 19 2021
+02:56:52
+/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.sim/sim_1/impl/func/xsim/tb_pcfg_func_impl.vhd,1652606021,vhdl,,,,\RAM_WRAPPER__xdcDup__1\;\RAM_WRAPPER__xdcDup__2\;\latch__parameterized0\;\latch__parameterized0_0\;\latch__parameterized0_1\;\latch__parameterized0_2\;\latch__parameterized0_4\;edge_detector;edge_detector_5;latch;max_counter;max_counter_6;pcfg_top;ram;ram_blk_mem_gen_generic_cstr;ram_blk_mem_gen_generic_cstr_hd14;ram_blk_mem_gen_generic_cstr_hd7;ram_blk_mem_gen_prim_width;ram_blk_mem_gen_prim_width_hd15;ram_blk_mem_gen_prim_width_hd8;ram_blk_mem_gen_prim_wrapper;ram_blk_mem_gen_prim_wrapper_hd16;ram_blk_mem_gen_prim_wrapper_hd9;ram_blk_mem_gen_top;ram_blk_mem_gen_top_hd13;ram_blk_mem_gen_top_hd6;ram_blk_mem_gen_v8_4_5;ram_blk_mem_gen_v8_4_5_hd11;ram_blk_mem_gen_v8_4_5_hd4;ram_blk_mem_gen_v8_4_5_synth;ram_blk_mem_gen_v8_4_5_synth_hd12;ram_blk_mem_gen_v8_4_5_synth_hd5;ram_control;ram_control_3;ram_hd10;ram_hd3;ram_wrapper;signal_controller;top_8254;tw_8254_cnt,,,,,,,,
+/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd,1652605999,vhdl,,,,tb_pcfg,,,,,,,,
