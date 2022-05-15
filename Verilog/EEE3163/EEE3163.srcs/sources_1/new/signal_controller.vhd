@@ -5,17 +5,16 @@ entity signal_controller is
     Port (
          -- CLOCK
           s_clk          : in STD_LOGIC
-         ;sys_clk        : in STD_LOGIC
+         ;reset          : in STD_LOGIC
          -- R/W Enable
          ;s_wen          : in STD_LOGIC
          ;s_ren          : in STD_LOGIC
          ;s_oe_b         : in STD_LOGIC
          ;s_cmd_data     : in STD_LOGIC
          -- 
-         ;m_data         : in STD_LOGIC_VECTOR (7 downto 0)
+         ;s_data         : in STD_LOGIC_VECTOR (7 downto 0)
          -- Mode Control
          ;pcs_addr       : in STD_LOGIC
-         ;reset_addr     : in STD_LOGIC
          ;reset8254_addr : in STD_LOGIC
          ;pc_RAM_addr    : in STD_LOGIC
          ;da_start_addr  : in STD_LOGIC
@@ -41,16 +40,16 @@ entity signal_controller is
          ;OPTRAM_CTRL_rst  : out STD_LOGIC
          -- Enable Signals (Output)
          ;OUT_mux_sel    : out STD_LOGIC_VECTOR (1 downto 0)
-         ;IN_latch_en    : out STD_LOGIC
          ;DA_latch_en    : out STD_LOGIC
          ;AD_latch_en    : out STD_LOGIC
          -- Optional
-         );
+         --
+         ;debug : out STD_LOGIC_VECTOR (6 downto 0));
 end signal_controller;
 
 architecture Behavioral of signal_controller is
     -- Hot states
-    signal   s_hot    : STD_LOGIC_VECTOR (8 downto 0) := (others=>'0');
+    signal   s_hot    : STD_LOGIC_VECTOR (8 downto 0) := (0=>'1', others=>'0');
     signal   s_next_hot: STD_LOGIC_VECTOR (s_hot'length-1 downto 0);
     constant m_IDLE   : integer := 0;
     constant m_PC_R   : integer := 1;
@@ -71,20 +70,8 @@ architecture Behavioral of signal_controller is
     constant OPT_1    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_1 => '1', others => '0');
     constant OPT_2    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_2 => '1', others => '0');
     
-    -- Modes
-    signal pcs_mode       : STD_LOGIC;
-    signal reset_mode     : STD_LOGIC;
-    signal reset8254_mode : STD_LOGIC;
-    signal pc_RAM_mode    : STD_LOGIC;
-    signal da_start_mode  : STD_LOGIC;
-    signal da_stop_mode   : STD_LOGIC;
-    signal ad_RAM_mode    : STD_LOGIC;
-    signal adr_RAM_mode   : STD_LOGIC;
-    signal opt_step1_mode : STD_LOGIC;
-    signal opt_step2_mode : STD_LOGIC;
-    
     -- 
-    signal s_len      : STD_LOGIC_VECTOR (m_data'length-1 downto 0) := (others => '0');
+    signal s_len      : STD_LOGIC_VECTOR (s_data'length-1 downto 0) := (others => '0');
     signal en_latch   : STD_LOGIC;
     signal rising_w   : STD_LOGIC;
     signal rising_r   : STD_LOGIC;
@@ -93,17 +80,14 @@ begin
 -- Components
     path_ctrl   : entity work.data_path_control (Behavioral)
     port map(
-        pc_mode_r    => s_hot (m_PC_R) AND pc_RAM_mode,
-        pc_mode_w    => s_hot (m_PC_W) AND pc_RAM_mode,
+        pc_mode_r    => s_hot (m_PC_R) AND pc_RAM_addr,
+        pc_mode_w    => s_hot (m_PC_W) AND pc_RAM_addr,
         da_mode      => s_hot (m_DA),
         ad_mode      => s_hot (m_AD),
-        adr_mode     => s_hot (m_ADR)  AND adr_RAM_mode,
+        adr_mode     => s_hot (m_ADR)  AND adr_RAM_addr,
         opt2_mode    => s_hot (m_OPT_2),
-        ren          => s_ren,
-        wen          => s_wen,
         -- Output
         OUT_mux_sel  => OUT_mux_sel,
-        IN_latch_en  => IN_latch_en,
         DA_latch_en  => DA_latch_en,
         AD_latch_en  => AD_latch_en);
 
@@ -121,34 +105,34 @@ begin
     len_latch : entity work.latch (Behavioral)
     generic map(length=>s_len'length)
     port map(clk=>s_clk, en=>en_latch,
-             input=>m_data,
+             input=>s_data,
              output=>s_len);
 -- State
     -- TODO
     process (s_clk)
     begin
         if rising_edge (s_clk) then
-            if reset_mode then
-                s_hot <= (m_IDLE  => '1', others => '0');
+            if reset = '1' then
+                s_hot <= IDLE;
             else
                 case (s_hot) is
                     when IDLE =>
                         s_hot <= s_next_hot;
                     when PC_R =>
                         s_hot <= s_next_hot when s_next_hot (m_PC_R) = '0' AND s_next_hot /= IDLE
-                            else s_hot;
+                            else PC_R;
                     when PC_W =>
                         s_hot <= s_next_hot when s_next_hot (m_PC_W) = '0' AND s_next_hot /= IDLE
-                            else s_hot;
+                            else PC_W;
                     when DA =>
-                        s_hot <= IDLE when da_stop_mode = '1' else s_hot;
+                        s_hot <= IDLE when da_stop_addr = '1' else s_hot;
                     when AD =>
                         s_hot <= AD_T when s_len = AD_RAM_addra(s_len'length-1 downto 0) else s_hot; -- length 차이 어떻게 처리되나 ???
                     when AD_T =>
                         s_hot <= IDLE when ADRAM_CTRL_tc_r = '1' else s_hot;
                     when ADR =>
                         s_hot <= s_next_hot when s_next_hot (m_ADR) = '0' AND s_next_hot /= IDLE
-                            else s_hot;
+                            else ADR;
                     when OPT_1 =>
                         s_hot <= s_next_hot; --TODO
                     when OPT_2 =>
@@ -160,7 +144,7 @@ begin
         end if;
     end process;
     
-    s_next_hot(m_IDLE)  <= s_next_hot(s_hot'length-1 downto 1) ?= (s_hot'length-1 downto 1=>'0');
+    s_next_hot(m_IDLE)  <= '1' when s_next_hot(s_hot'length-1 downto 1) = (s_hot'length-1 downto 1=>'0') else '0';
     s_next_hot(m_PC_R)  <= '1' when pc_RAM_addr = '1' AND s_oe_b = '0' else '0';
     s_next_hot(m_PC_W)  <= '1' when pc_RAM_addr = '1' AND s_oe_b = '1' else '0';
     s_next_hot(m_DA)    <= '1' when da_start_addr = '1' else '0';
@@ -180,36 +164,39 @@ begin
    ADRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
    en_latch         <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
    OPTRAM_CTRL_rst  <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1' else '0';
-   
--- Modes
-  pcs_mode        <= s_cmd_data AND pcs_addr       ;
-  reset_mode      <= s_cmd_data AND reset_addr     ;
-  reset8254_mode  <= s_cmd_data AND reset8254_addr ;
-  pc_RAM_mode     <= s_cmd_data AND pc_RAM_addr    ;
-  da_start_mode   <= s_cmd_data AND da_start_addr  ;
-  da_stop_mode    <= s_cmd_data AND da_stop_addr   ;
-  ad_RAM_mode     <= s_cmd_data AND ad_RAM_addr    ;
-  adr_RAM_mode    <= s_cmd_data AND adr_RAM_addr   ;
-  opt_step1_mode  <= s_cmd_data AND opt_step1_addr ;
-  opt_step2_mode  <= s_cmd_data AND opt_step2_addr ;
 
 -- Combinational
 
    ADRAM_CTRL_wr  <= '1' when s_hot(m_AD)='1' AND s_len /= AD_RAM_addra(s_len'length-1 downto 0) else '0';
 
    ADRAM_CTRL_rd  <= '1'                         when s_hot(m_AD_T)   
-                else (adr_RAM_mode AND rising_r) when s_hot(m_ADR) 
+                else (adr_RAM_addr AND rising_r) when s_hot(m_ADR) 
                 else '0';
    
-   PCRAM_CTRL_wr  <= '1'                         when ADRAM_CTRL_r_rdy = '1'
-                else (pc_RAM_mode  AND rising_w) when s_hot(m_PC_W)    = '1'
+   PCRAM_CTRL_wr  <= '1'         when ADRAM_CTRL_r_rdy = '1'
+                else pc_RAM_addr when s_hot(m_PC_W)    = '1' AND rising_w = '1'
                 else '0';
 
-   PCRAM_CTRL_rd  <= '1'                         when s_hot(m_DA)   = '1'
-                else (pc_RAM_mode  AND rising_r) when s_hot(m_PC_R) = '1'
+   PCRAM_CTRL_rd  <= '1'         when s_hot(m_DA)      = '1'
+                else pc_RAM_addr when s_hot(m_PC_R)    = '1' AND rising_r = '1'
                 else '0';
  
    OPTRAM_CTRL_wr <= '0'; --TODO
    OPTRAM_CTRL_rd <= '0';
    
+   debug (2 downto 0) <= 
+         "000" when s_hot = IDLE
+    else "001" when s_hot = PC_R
+    else "010" when s_hot = PC_W
+    else "011" when s_hot = DA
+    else "100" when s_hot = AD
+    else "101" when s_hot = AD_T
+    else "110" when s_hot = ADR
+    else "111" when s_hot = OPT_1 OR s_hot = OPT_2
+    else "000";
+    
+    debug (3) <= adr_RAM_addr;
+    debug (4) <= pc_RAM_addr;
+    
+    debug (6 downto 5) <= "00";
 end Behavioral;

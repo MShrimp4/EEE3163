@@ -38,11 +38,13 @@ architecture Behavioral of max_counter is
 begin
     process (clk_c, clk_max)
     begin
-        if rising_edge (clk_c) then
-            if rst_all = '1' then
+        if rst_all = '1' then
                 max <= (others=>'0');
                 cnt <= (others=>'0');
-            elsif rst_c = '1' then
+        end if;
+        
+        if rising_edge (clk_c) then
+            if rst_c = '1' then
                 cnt <= (others=>'0');
             elsif ce_c = '1' then
                 cnt <= (others=>'0') when cnt_next = max else cnt_next;
@@ -50,10 +52,7 @@ begin
         end if;
  
         if rising_edge (clk_max) then
-            if rst_all = '1' then
-                max <= (others=>'0');
-                cnt <= (others=>'0');
-            elsif ce_max = '1' then
+            if ce_max = '1' then
                 max <= max + one;
             end if;
         end if;

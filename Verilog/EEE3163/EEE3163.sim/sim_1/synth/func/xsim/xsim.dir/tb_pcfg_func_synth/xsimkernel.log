@@ -1,4 +1,7 @@
-Running: xsim.dir/tb_pcfg_func_synth/xsimk -simmode gui -wdb tb_pcfg_func_synth.wdb -simrunnum 0 -socket 60033
+Running: xsim.dir/tb_pcfg_func_synth/xsimk -simmode gui -wdb tb_pcfg_func_synth.wdb -simrunnum 0 -socket 47029
 Design successfully loaded
-Design Loading Memory Usage: 36116 KB (Peak: 36124 KB)
-Design Loading CPU Usage: 10 ms
+Design Loading Memory Usage: 36188 KB (Peak: 36196 KB)
+Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 126124 KB (Peak: 175456 KB)
+Simulation CPU Usage: 600 ms

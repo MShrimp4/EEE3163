@@ -199,11 +199,11 @@ clk_gen : TOP_8254 port map(
            m_addr    => s_address(1 downto 0), --TODO : s_address(1 downto 0)
            m_cs_b    => not s_pcs_addr,
            m_wr_b    => not s_wen,
-		   m_out0    => sys_clk,
+	       m_out0    => sys_clk,
            m_out1    => open,
            m_out2    => open
 		   );
-		   
+
 s_m_8254_gate0	<= '1';
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
@@ -214,7 +214,7 @@ s_m_8254_reset  <= '1' when s_reset_b = '0' or s_reset8254_addr = '1' else '0';
 
 PC_LATCH    : entity work.latch (Behavioral)
     generic map(length=> 4 + m_address'length)
-    port map(clk=>s_clk, en=>'1',
+    port map(clk=>s_clk, en=> '1',
              input  => m_cmd_data & m_wen & m_ren & m_oe_b & m_address,
              output => s_pc_latch_out);
 s_cmd_data <= s_pc_latch_out(m_address'length-1+4);
@@ -228,14 +228,14 @@ IN_LATCH    : entity work.latch (Behavioral)
     port map(clk=>s_clk, en=>IN_latch_en,
              input  => m_data,
              output => s_IN_latch_dout);
+IN_latch_en <= m_oe_b AND m_cmd_data;
              
 OUT_LATCH   : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
     port map(clk=>sys_clk, en=>OUT_latch_en,
              input  => s_OUT_latch_din,
              output => s_tri_data);
-OUT_latch_en <= '1' when s_PCRAM_CTRL_r_rdy='1' OR s_ADRAM_CTRL_r_rdy='1' OR s_OPTRAM_CTRL_r_rdy='1'
-           else '0';
+OUT_latch_en <= s_PCRAM_CTRL_r_rdy OR s_ADRAM_CTRL_r_rdy OR s_OPTRAM_CTRL_r_rdy;
              
 DA_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -251,7 +251,7 @@ AD_LATCH    : entity work.latch (Behavioral)
 
 TRIBUF      : entity work.tristatebuffer (Behavioral)
     generic map(length=> m_data'length)
-    port map(en=> s_ren, --TODO: m_ren?
+    port map(en=> m_ren,
              Din=>s_tri_data, Dout=>m_data);
              
 PC_MUX      : entity work.mux (Behavioral)
@@ -278,6 +278,7 @@ OUT_mux_2   : entity work.mux (Behavioral)
 
 addr_decode : entity work.address_decoder (Behavioral)
     port map(addr_in=>        s_address,
+             en=>             s_cmd_data,
              pcs_addr=>       s_pcs_addr,
              reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,
@@ -291,14 +292,13 @@ addr_decode : entity work.address_decoder (Behavioral)
              
 main_ctrl   : entity work.signal_controller (Behavioral)
     port map(s_clk=>          s_clk,
-             sys_clk=>        sys_clk,
+             reset=>          NOT m_fpga_reset OR s_reset_addr,
              s_wen=>          s_wen,
              s_ren=>          s_ren,
              s_oe_b=>         s_oe_b,
              s_cmd_data=>     s_cmd_data,
-             m_data=>         m_data,
+             s_data=>         s_IN_latch_dout,
              pcs_addr=>       s_pcs_addr,
-             reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,
              pc_RAM_addr=>    s_pc_RAM_addr,
              da_start_addr=>  s_da_start_addr,
@@ -324,9 +324,9 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              OPTRAM_CTRL_rst  => s_OPTRAM_CTRL_rst,
              -- Enable Signals (Output)
              OUT_mux_sel    => s_OUT_mux_sel,
-             IN_latch_en    => IN_latch_en,
              DA_latch_en    => DA_latch_en,
-             AD_latch_en    => AD_latch_en);
+             AD_latch_en    => AD_latch_en,
+             debug          => s_debug_led);
              
              
 PCRAM       : entity work.RAM_WRAPPER (Behavioral)
@@ -418,6 +418,16 @@ OPTRAM_CTRL : entity work.ram_control (Behavioral)
           RAM_rd       => s_OPT_RAM_enb);
 
 --for debug 
+    s_debug_header (2) <= s_pcs_addr;
+    s_debug_header (3) <= s_reset_addr;
+    s_debug_header (4) <= s_reset8254_addr;
+    s_debug_header (5) <= s_pc_RAM_addr;
+    s_debug_header (6) <= s_da_start_addr;
+    s_debug_header (7) <= s_da_stop_addr;
+    s_debug_header (8) <= s_ad_RAM_addr;
+    s_debug_header (9) <= s_adr_RAM_addr;
+    s_debug_header (10) <= s_opt_step1_addr;
+    s_debug_header (11) <= s_opt_step2_addr;
 
 -- Don't change this----------------
 m_debug_header(0)	<= s_clk;   
