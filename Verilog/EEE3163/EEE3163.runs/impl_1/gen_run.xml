@@ -1,62 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1652639897">
-  <File Type="RCFI_FILE" Name="PCFG_TOP.rcfi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="PCFG_TOP_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-RPX" Name="PCFG_TOP_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="PCFG_TOP_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="PCFG_TOP_methodology_drc_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="PCFG_TOP_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="PCFG_TOP_postroute_physopt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="PCFG_TOP_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="PCFG_TOP_postplace_pwropt.dcp"/>
-  <File Type="PWROPT-DCP" Name="PCFG_TOP_pwropt.dcp"/>
-  <File Type="PLACE-DCP" Name="PCFG_TOP_placed.dcp"/>
-  <File Type="OPT-DCP" Name="PCFG_TOP_opt.dcp"/>
-  <File Type="ROUTE-BUS-SKEW" Name="PCFG_TOP_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="PCFG_TOP_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="PCFG_TOP_timing_summary_routed.rpx"/>
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1652689727">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BITSTR-SYSDEF" Name="PCFG_TOP.sysdef"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="PCFG_TOP.ltx"/>
-  <File Type="BITSTR-SYSDEF" Name="PCFG_TOP.sysdef"/>
+  <File Type="BG-BGN" Name="PCFG_TOP.bgn"/>
+  <File Type="RNPI_FILE" Name="PCFG_TOP.rnpi"/>
+  <File Type="BG-DRC" Name="PCFG_TOP.drc"/>
+  <File Type="CFI_FILE" Name="PCFG_TOP.cfi"/>
+  <File Type="RCFI_FILE" Name="PCFG_TOP.rcfi"/>
   <File Type="BITSTR-MMI" Name="PCFG_TOP.mmi"/>
   <File Type="BITSTR-BMM" Name="PCFG_TOP_bd.bmm"/>
   <File Type="BITSTR-NKY" Name="PCFG_TOP.nky"/>
   <File Type="BITSTR-RBT" Name="PCFG_TOP.rbt"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="PCFG_TOP_bus_skew_routed.rpx"/>
-  <File Type="REPORTS-TCL" Name="PCFG_TOP_reports.tcl"/>
   <File Type="RBD_FILE" Name="PCFG_TOP.rbd"/>
   <File Type="BITSTR-MSK" Name="PCFG_TOP.msk"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="PCFG_TOP_bus_skew_routed.pb"/>
-  <File Type="PA-TCL" Name="PCFG_TOP.tcl"/>
-  <File Type="ROUTE-TIMING-PB" Name="PCFG_TOP_timing_summary_routed.pb"/>
-  <File Type="OPT-DRC" Name="PCFG_TOP_drc_opted.rpt"/>
   <File Type="NPI_FILE" Name="PCFG_TOP.npi"/>
   <File Type="BG-BIN" Name="PCFG_TOP.bin"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="PCFG_TOP_timing_summary_routed.rpt"/>
-  <File Type="RNPI_FILE" Name="PCFG_TOP.rnpi"/>
-  <File Type="BG-BGN" Name="PCFG_TOP.bgn"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="PCFG_TOP_routed_bb.dcp"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="RDI-RDI" Name="PCFG_TOP.vdi"/>
-  <File Type="CFI_FILE" Name="PCFG_TOP.cfi"/>
-  <File Type="BG-DRC" Name="PCFG_TOP.drc"/>
-  <File Type="ROUTE-ERROR-DCP" Name="PCFG_TOP_routed_error.dcp"/>
   <File Type="PDI-FILE" Name="PCFG_TOP.pdi"/>
   <File Type="BG-BIT" Name="PCFG_TOP.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="PCFG_TOP_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="PCFG_TOP_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="PCFG_TOP_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="PCFG_TOP_timing_summary_postroute_physopted.rpx"/>
+  <File Type="RDI-RDI" Name="PCFG_TOP.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="PCFG_TOP_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="PCFG_TOP_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="PCFG_TOP_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="PCFG_TOP_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW" Name="PCFG_TOP_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="PCFG_TOP_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="PCFG_TOP_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="PCFG_TOP_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="PCFG_TOP_timing_summary_routed.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="PCFG_TOP_route_status.pb"/>
-  <File Type="OPT-HWDEF" Name="PCFG_TOP.hwdef"/>
-  <File Type="PLACE-IO" Name="PCFG_TOP_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="PCFG_TOP_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="PCFG_TOP_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="PCFG_TOP_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_pre_placed.rpt"/>
-  <File Type="ROUTE-DRC" Name="PCFG_TOP_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="PCFG_TOP_drc_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="PCFG_TOP_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="PCFG_TOP_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="PCFG_TOP_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="PCFG_TOP_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="PCFG_TOP_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="PCFG_TOP_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="PCFG_TOP_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="PCFG_TOP_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="PCFG_TOP_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="PCFG_TOP_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="PCFG_TOP_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="PCFG_TOP_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="PCFG_TOP_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="PCFG_TOP_routed_bb.dcp"/>
   <File Type="ROUTE-DCP" Name="PCFG_TOP_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="PCFG_TOP_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="PCFG_TOP_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="PCFG_TOP_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="PCFG_TOP_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="PCFG_TOP_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="PCFG_TOP_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="PCFG_TOP_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="PCFG_TOP_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="PCFG_TOP_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="PCFG_TOP_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="PCFG_TOP_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="PCFG_TOP_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="PCFG_TOP_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="PCFG_TOP_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="PCFG_TOP_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="PCFG_TOP_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="PCFG_TOP_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="PCFG_TOP.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="PCFG_TOP_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="PCFG_TOP_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="PCFG_TOP_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="PCFG_TOP_timing_summary_init.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="PCFG_TOP_bus_skew_routed.rpx"/>
+  <File Type="REPORTS-TCL" Name="PCFG_TOP_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="PCFG_TOP_bus_skew_routed.pb"/>
+  <File Type="PA-TCL" Name="PCFG_TOP.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/cordic_0/cordic_0.xci">
@@ -187,28 +205,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/ad_mode_ctrl.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/ad_transfer_mode_ctrl.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/RAM.xcix">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/xfft_0.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/cordic_0.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -222,10 +219,31 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/cordic_0.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/xfft_0.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/RAM.xcix">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ad_mode_ctrl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ad_transfer_mode_ctrl.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
@@ -275,6 +293,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

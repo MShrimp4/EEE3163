@@ -49,15 +49,16 @@ Compiling package cordic_v6_0_17.cordic_pack
 Compiling package cordic_v6_0_17.cordic_hdl_comps
 Compiling package c_addsub_v12_0_14.c_addsub_v12_0_14_viv_comp
 Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(iostandard="LVCMOS_33")(1,...]
+Compiling architecture behavioral of entity xil_defaultlib.edge_detector [edge_detector_default]
 Compiling architecture behavioral of entity xil_defaultlib.TW_8254_CNT [tw_8254_cnt_default]
 Compiling architecture behavioral of entity xil_defaultlib.TOP_8254 [top_8254_default]
-Compiling architecture behavioral of entity xil_defaultlib.latch [\latch(length=13)\]
+Compiling architecture behavioral of entity xil_defaultlib.latch [\latch(length=4)\]
+Compiling architecture behavioral of entity xil_defaultlib.latch [\latch(length=9)\]
 Compiling architecture behavioral of entity xil_defaultlib.latch [\latch(length=8)\]
 Compiling architecture behavioral of entity xil_defaultlib.tristatebuffer [\tristatebuffer(length=8)\]
 Compiling architecture behavioral of entity xil_defaultlib.mux [\mux(length=8)\]
 Compiling architecture behavioral of entity xil_defaultlib.address_decoder [address_decoder_default]
 Compiling architecture behavioral of entity xil_defaultlib.data_path_control [data_path_control_default]
-Compiling architecture behavioral of entity xil_defaultlib.edge_detector [edge_detector_default]
 Compiling architecture behavioral of entity xil_defaultlib.signal_controller [signal_controller_default]
 Compiling architecture gnd_v of entity unisim.GND [gnd_default]
 Compiling architecture rb18_internal_vhdl_v of entity unisim.RB18_INTERNAL_VHDL [\RB18_INTERNAL_VHDL(bram_size=18...]

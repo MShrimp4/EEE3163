@@ -96,6 +96,8 @@ signal s_debug_header : std_logic_vector (15 downto 2);
 -----------------
 constant ramadr_len : integer := 11;
 
+signal s_rising_d   : STD_LOGIC;
+
 -- Latch Enable
 signal IN_latch_en  : STD_LOGIC;
 signal OUT_latch_en : STD_LOGIC;
@@ -107,8 +109,10 @@ signal s_cmd_data       : STD_LOGIC;
 signal s_wen            : STD_LOGIC;
 signal s_ren            : STD_LOGIC;
 signal s_oe_b           : STD_LOGIC;
+signal s_pc_latch_out   : STD_LOGIC_VECTOR (3 downto 0);
+
+-- Address Latch
 signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
-signal s_pc_latch_out   : STD_LOGIC_VECTOR (m_address'length-1+4 downto 0);
 
 -- Latch Data
 signal s_OUT_latch_din  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
@@ -192,12 +196,16 @@ port map(I=>m_fpga_clk, O=>s_clk);
 m_dac_clk   <= s_clk;    -- dac clk
 m_adc_clk   <= sys_clk;    -- adc clk
 
+EDGE_1  : entity work.edge_detector (Behavioral)
+    port map (clk=>s_clk, i=>s_cmd_data,
+              rising=>s_rising_d);
+
 clk_gen : TOP_8254 port map( 
            m_clk0    => s_clk,
            m_clk1    => s_clk,
            m_clk2    => s_clk,
            m_clk_ctr => s_clk,
-           m_reset   => s_m_8254_reset, --8254 reset과 혼용될 수 있도록 변경
+           m_reset   => s_rising_d AND s_m_8254_reset, --8254 reset과 혼용될 수 있도록 변경
            m_data    => m_data,                  
            m_gate0   => s_m_8254_gate0,
            m_gate1   => s_m_8254_gate1,
@@ -210,31 +218,36 @@ clk_gen : TOP_8254 port map(
            m_out2    => open
 		   );
 
-s_m_8254_gate0	<= '1';
+s_m_8254_gate0	<= NOT s_m_8254_reset;
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
 
-s_m_8254_reset  <= '1' when s_reset_b = '0' or s_reset8254_addr = '1' else '0';
+s_m_8254_reset  <= (NOT s_reset_b OR s_reset8254_addr);
 
 -- Components
 
 PC_LATCH    : entity work.latch (Behavioral)
-    generic map(length=> 4 + m_address'length)
+    generic map(length=> s_pc_latch_out'length)
     port map(clk=>s_clk, en=> '1',
-             input  => m_cmd_data & m_wen & m_ren & m_oe_b & m_address,
+             input  => m_cmd_data & m_wen & m_ren & m_oe_b,
              output => s_pc_latch_out);
-s_cmd_data <= s_pc_latch_out(m_address'length-1+4);
-s_wen      <= s_pc_latch_out(m_address'length-1+3);
-s_ren      <= s_pc_latch_out(m_address'length-1+2);
-s_oe_b     <= s_pc_latch_out(m_address'length-1+1);
-s_address  <= s_pc_latch_out(m_address'length-1 downto 0);
+s_cmd_data <= s_pc_latch_out(3);
+s_wen      <= s_pc_latch_out(2);
+s_ren      <= s_pc_latch_out(1);
+s_oe_b     <= s_pc_latch_out(0);
+
+ADDR_LATCH  : entity work.latch (Behavioral)
+    generic map(length=> m_address'length)
+    port map(clk=>s_clk, en=>m_cmd_data,
+             input=>  m_address,
+             output=> s_address);
              
 IN_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
     port map(clk=>s_clk, en=>IN_latch_en,
              input  => m_data,
              output => s_IN_latch_dout);
-IN_latch_en <= m_oe_b AND m_cmd_data;
+IN_latch_en <= '1'; -- m_oe_b AND m_cmd_data;
              
 OUT_LATCH   : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -441,18 +454,6 @@ OPTMODE_CTRL : entity work.Option_mode (Behavioral)
 			m_yout 		=> s_OPT_RAM_din,
 		    m_yout_valid=> s_OPTRAM_CTRL_wr
 		   );
-
---for debug 
-    s_debug_header (2) <= s_pcs_addr;
-    s_debug_header (3) <= s_reset_addr;
-    s_debug_header (4) <= s_reset8254_addr;
-    s_debug_header (5) <= s_pc_RAM_addr;
-    s_debug_header (6) <= s_da_start_addr;
-    s_debug_header (7) <= s_da_stop_addr;
-    s_debug_header (8) <= s_ad_RAM_addr;
-    s_debug_header (9) <= s_adr_RAM_addr;
-    s_debug_header (10) <= s_opt_step1_addr;
-    s_debug_header (11) <= s_opt_step2_addr;
 
 -- Don't change this----------------
 m_debug_header(0)	<= s_clk;   

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Mon May 16 03:39:31 2022
+| Date             : Mon May 16 17:30:06 2022
 | Host             : mshrimp running 64-bit Arch Linux
 | Command          : report_power -file PCFG_TOP_power_routed.rpt -pb PCFG_TOP_power_summary_routed.pb -rpx PCFG_TOP_power_routed.rpx
 | Design           : PCFG_TOP
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.114        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.011        |
+| Dynamic (W)              | 0.012        |
 | Device Static (W)        | 0.103        |
 | Effective TJA (C/W)      | 2.4          |
 | Max Ambient (C)          | 84.7         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.000 |        3 |       --- |             --- |
-| Slice Logic             |     0.003 |     2961 |       --- |             --- |
-|   LUT as Logic          |     0.002 |      879 |     48000 |            1.83 |
-|   Register              |    <0.001 |     1269 |     96000 |            1.32 |
+| Slice Logic             |     0.003 |     2958 |       --- |             --- |
+|   LUT as Logic          |     0.002 |      876 |     48000 |            1.83 |
+|   Register              |    <0.001 |     1270 |     96000 |            1.32 |
 |   CARRY4                |    <0.001 |      107 |     16000 |            0.67 |
 |   LUT as Shift Register |    <0.001 |       63 |     17600 |            0.36 |
 |   BUFG                  |    <0.001 |        2 |        32 |            6.25 |
 |   F7/F8 Muxes           |    <0.001 |       39 |     64000 |            0.06 |
-|   Others                |     0.000 |      397 |       --- |             --- |
-| Signals                 |     0.004 |     2022 |       --- |             --- |
+|   Others                |     0.000 |      400 |       --- |             --- |
+| Signals                 |     0.004 |     2029 |       --- |             --- |
 | Block RAM               |    <0.001 |        3 |        90 |            3.33 |
 | DSPs                    |     0.002 |        5 |       140 |            3.57 |
 | I/O                     |     0.002 |       74 |       400 |           18.50 |
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.024 |       0.009 |      0.014 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.021 |       0.000 |      0.021 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -141,7 +141,7 @@ Table of Contents
 +----------------+-----------+
 | Name           | Power (W) |
 +----------------+-----------+
-| PCFG_TOP       |     0.011 |
+| PCFG_TOP       |     0.012 |
 |   OPTMODE_CTRL |     0.009 |
 |     FFT        |     0.006 |
 |       U0       |     0.006 |
