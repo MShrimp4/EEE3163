@@ -84,6 +84,7 @@ signal s_m_8254_gate2				: std_logic;
 
 signal s_m_8254_reset               : std_logic;
 
+signal m_sys_clk : std_logic;
 signal sys_clk : std_logic;
 signal s_reset_b : std_logic;
 
@@ -213,10 +214,13 @@ clk_gen : TOP_8254 port map(
            m_addr    => s_address(1 downto 0), --TODO : s_address(1 downto 0)
            m_cs_b    => not s_pcs_addr,
            m_wr_b    => not s_wen,
-	       m_out0    => sys_clk,
+	       m_out0    => m_sys_clk,
            m_out1    => open,
            m_out2    => open
 		   );
+
+s_sys_clk_g : BUFG 
+port map (I=>m_sys_clk , O=>sys_clk);
 
 s_m_8254_gate0	<= NOT s_m_8254_reset;
 s_m_8254_gate1	<= '1';
@@ -349,8 +353,7 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              -- Enable Signals (Output)
              OUT_mux_sel    => s_OUT_mux_sel,
              DA_latch_en    => DA_latch_en,
-             AD_latch_en    => AD_latch_en,
-             debug          => s_debug_led);
+             AD_latch_en    => AD_latch_en);
              
              
 PCRAM       : entity work.RAM_WRAPPER (Behavioral)

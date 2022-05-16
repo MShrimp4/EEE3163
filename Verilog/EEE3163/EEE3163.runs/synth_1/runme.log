@@ -21,25 +21,25 @@ WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis b
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 461743
+INFO: [Synth 8-7075] Helper process launched with PID 574357
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2599.781 ; gain = 0.000 ; free physical = 133 ; free virtual = 2861
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2623.781 ; gain = 0.000 ; free physical = 140 ; free virtual = 3864
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-1565] actual for formal port s_axis_config_tvalid is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:79]
 WARNING: [Synth 8-1565] actual for formal port s_axis_data_tdata is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:81]
-WARNING: [Synth 8-1565] actual for formal port m_reset is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:208]
-WARNING: [Synth 8-1565] actual for formal port m_cs_b is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:214]
-WARNING: [Synth 8-1565] actual for formal port m_wr_b is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:215]
-WARNING: [Synth 8-1565] actual for formal port input is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:232]
-WARNING: [Synth 8-1565] actual for formal port reset is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:314]
-WARNING: [Synth 8-1565] actual for formal port m_reset is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:446]
-WARNING: [Synth 8-1565] actual for formal port m_xin_valid is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:450]
+WARNING: [Synth 8-1565] actual for formal port m_reset is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:209]
+WARNING: [Synth 8-1565] actual for formal port m_cs_b is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:215]
+WARNING: [Synth 8-1565] actual for formal port m_wr_b is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:216]
+WARNING: [Synth 8-1565] actual for formal port input is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:236]
+WARNING: [Synth 8-1565] actual for formal port reset is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:318]
+WARNING: [Synth 8-1565] actual for formal port m_reset is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:449]
+WARNING: [Synth 8-1565] actual for formal port m_xin_valid is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:453]
 INFO: [Synth 8-638] synthesizing module 'PCFG_TOP' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:37]
 	Parameter IOSTANDARD bound to: LVCMOS_33 - type: string 
-INFO: [Synth 8-113] binding component instance 's_clk_g' to cell 'IBUF' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:193]
+INFO: [Synth 8-113] binding component instance 's_clk_g' to cell 'IBUF' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:194]
 INFO: [Synth 8-638] synthesizing module 'edge_detector' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'edge_detector' (1#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd:20]
-INFO: [Synth 8-3491] module 'TOP_8254' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:29' bound to instance 'clk_gen' of component 'TOP_8254' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:203]
+INFO: [Synth 8-3491] module 'TOP_8254' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:29' bound to instance 'clk_gen' of component 'TOP_8254' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:204]
 INFO: [Synth 8-638] synthesizing module 'TOP_8254' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:52]
 INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/tw_8254_cnt.vhd:6' bound to instance 'CNT0' of component 'TW_8254_CNT' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:158]
 INFO: [Synth 8-638] synthesizing module 'TW_8254_CNT' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/tw_8254_cnt.vhd:16]
@@ -48,6 +48,7 @@ INFO: [Synth 8-256] done synthesizing module 'TW_8254_CNT' (2#1) [/home/mshrimp/
 INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/tw_8254_cnt.vhd:6' bound to instance 'CNT1' of component 'TW_8254_CNT' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:170]
 INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/tw_8254_cnt.vhd:6' bound to instance 'CNT2' of component 'TW_8254_CNT' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:182]
 INFO: [Synth 8-256] done synthesizing module 'TOP_8254' (3#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd:52]
+INFO: [Synth 8-113] binding component instance 's_sys_clk_g' to cell 'BUFG' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:222]
 INFO: [Synth 8-638] synthesizing module 'latch' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/latch.vhd:12]
 	Parameter length bound to: 4 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'latch' (4#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/latch.vhd:12]
@@ -65,14 +66,14 @@ INFO: [Synth 8-638] synthesizing module 'mux' [/home/mshrimp/gitclones/EEE3163/V
 INFO: [Synth 8-256] done synthesizing module 'mux' (6#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/mux.vhd:23]
 INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/address_decoder.vhd:19]
 INFO: [Synth 8-256] done synthesizing module 'address_decoder' (7#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/address_decoder.vhd:19]
-INFO: [Synth 8-638] synthesizing module 'signal_controller' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd:55]
+INFO: [Synth 8-638] synthesizing module 'signal_controller' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd:52]
 INFO: [Synth 8-638] synthesizing module 'data_path_control' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/data_path_control.vhd:18]
 WARNING: [Synth 8-3848] Net PC_mux_sel in module/entity data_path_control does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/data_path_control.vhd:12]
 INFO: [Synth 8-256] done synthesizing module 'data_path_control' (8#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/data_path_control.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'signal_controller' (9#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd:55]
+INFO: [Synth 8-256] done synthesizing module 'signal_controller' (9#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd:52]
 INFO: [Synth 8-638] synthesizing module 'RAM_WRAPPER' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
-INFO: [Synth 8-3491] module 'RAM' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/RAM_stub.vhdl:20]
+INFO: [Synth 8-3491] module 'RAM' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'RAM' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/RAM_stub.vhdl:20]
 INFO: [Synth 8-256] done synthesizing module 'RAM_WRAPPER' (10#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
 INFO: [Synth 8-638] synthesizing module 'ram_control' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd:23]
 	Parameter length bound to: 11 - type: integer 
@@ -82,20 +83,22 @@ WARNING: [Synth 8-614] signal 'rst_all' is read in the process but is not in the
 INFO: [Synth 8-256] done synthesizing module 'max_counter' (11#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/max_counter.vhd:33]
 INFO: [Synth 8-256] done synthesizing module 'ram_control' (12#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd:23]
 INFO: [Synth 8-638] synthesizing module 'Option_mode' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:22]
-INFO: [Synth 8-3491] module 'xfft_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:76]
-INFO: [Synth 8-638] synthesizing module 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/xfft_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'xfft_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'xfft_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/xfft_0_stub.vhdl:26]
 INFO: [Synth 8-638] synthesizing module 'delay' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/delay.vhd:20]
 	Parameter length bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'delay' (13#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/delay.vhd:20]
-INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/mult_gen_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:101]
-INFO: [Synth 8-3491] module 'cordic_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:111]
-INFO: [Synth 8-638] synthesizing module 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/realtime/cordic_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/mult_gen_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:101]
+INFO: [Synth 8-3491] module 'cordic_0' declared at '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/realtime/cordic_0_stub.vhdl:16]
 INFO: [Synth 8-256] done synthesizing module 'Option_mode' (14#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:22]
 WARNING: [Synth 8-3848] Net m_dac_gain_d in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:21]
 WARNING: [Synth 8-3848] Net m_dac_gain_clk in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:24]
-WARNING: [Synth 8-3848] Net s_ADRAM_CTRL_rst_r in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:163]
+WARNING: [Synth 8-3848] Net s_debug_header in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:93]
+WARNING: [Synth 8-3848] Net s_debug_led in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:91]
+WARNING: [Synth 8-3848] Net s_ADRAM_CTRL_rst_r in module/entity PCFG_TOP does not have driver. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:164]
 INFO: [Synth 8-256] done synthesizing module 'PCFG_TOP' (15#1) [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:37]
 WARNING: [Synth 8-7129] Port PC_mux_sel in module data_path_control is either unconnected or has no load
 WARNING: [Synth 8-7129] Port pc_mode_w in module data_path_control is either unconnected or has no load
@@ -116,6 +119,27 @@ WARNING: [Synth 8-7129] Port m_dac_gain_d[2] in module PCFG_TOP is either unconn
 WARNING: [Synth 8-7129] Port m_dac_gain_d[1] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_dac_gain_d[0] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_dac_gain_clk in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[15] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[14] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[13] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[12] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[11] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[10] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[9] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[8] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[7] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[6] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[5] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[4] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[3] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[2] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[6] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[5] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[4] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[3] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[2] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[1] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[0] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[7] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[6] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[5] in module PCFG_TOP is either unconnected or has no load
@@ -125,37 +149,37 @@ WARNING: [Synth 8-7129] Port m_debug_sw[2] in module PCFG_TOP is either unconnec
 WARNING: [Synth 8-7129] Port m_debug_sw[1] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[0] in module PCFG_TOP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2599.781 ; gain = 0.000 ; free physical = 243 ; free virtual = 2082
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2623.781 ; gain = 0.000 ; free physical = 258 ; free virtual = 3155
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2599.781 ; gain = 0.000 ; free physical = 235 ; free virtual = 2075
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2623.781 ; gain = 0.000 ; free physical = 268 ; free virtual = 3165
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2599.781 ; gain = 0.000 ; free physical = 235 ; free virtual = 2075
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2623.781 ; gain = 0.000 ; free physical = 268 ; free virtual = 3165
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2599.781 ; gain = 0.000 ; free physical = 1149 ; free virtual = 2993
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2623.781 ; gain = 0.000 ; free physical = 725 ; free virtual = 3625
 INFO: [Project 1-570] Preparing netlist for logic optimization
-WARNING: [Constraints 18-548] Could not create 'IOSTANDARD' constraint because invalid IOSTANDARD value 'LVCMOS_33' specified. The default IOSTANDARD will be used instead. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:193]
+WARNING: [Constraints 18-548] Could not create 'IOSTANDARD' constraint because invalid IOSTANDARD value 'LVCMOS_33' specified. The default IOSTANDARD will be used instead. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:194]
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
-Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
-Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-461719-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
+Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
+Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/.Xil/Vivado-574332-mshrimp/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
 Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc]
 CRITICAL WARNING: [Coretcl 2-95] Port 'm_HDMI_CLK' not found. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:1]
 CRITICAL WARNING: [Coretcl 2-95] Port 'm_adc_lvds_da' not found. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:2]
@@ -303,28 +327,7 @@ CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of conn
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[6]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:358]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[7]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:362]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[0]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:465]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[10]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:469]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[11]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:473]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[12]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:477]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[13]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:481]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[14]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:485]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[15]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:489]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[1]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:493]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[2]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:497]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[3]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:501]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[4]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:505]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[5]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:509]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[6]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:513]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[7]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:517]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[8]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:521]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[9]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:525]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[0]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:529]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[1]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:533]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[2]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:537]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[3]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:541]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[4]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:545]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[5]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:549]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[6]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:553]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[7]' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:557]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_clk' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:861]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_clk' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:902]
@@ -333,32 +336,33 @@ CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of conn
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_oe_b' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:959]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_ren' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:961]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_wen' [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:963]
-INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'm_fpga_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:966]
 Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/PCFG_TOP_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PCFG_TOP_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/PCFG_TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/dont_touch.xdc]
-INFO: [Constraints 18-483] create_clock: no pin(s)/port(s)/net(s) specified as objects, only virtual clock 'm_fpga_clk' will be created. If you don't want this, please specify pin(s)/ports(s)/net(s) as objects to the command. [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/constrs_1/imports/src/pcfg2019_constraints.xdc:966]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2663.664 ; gain = 0.000 ; free physical = 1016 ; free virtual = 2918
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2687.664 ; gain = 0.000 ; free physical = 1044 ; free virtual = 3995
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2663.664 ; gain = 0.000 ; free physical = 1016 ; free virtual = 2919
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2687.664 ; gain = 0.000 ; free physical = 1044 ; free virtual = 3995
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'OPTMODE_CTRL/MULT_IMAG' at clock pin 'CLK' is different from the actual clock period '25.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'OPTMODE_CTRL/MULT_REAL' at clock pin 'CLK' is different from the actual clock period '25.000', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '1000.000' specified during out-of-context synthesis of instance 'OPTMODE_CTRL/SQRT' at clock pin 'aclk' is different from the actual clock period '25.000', this can lead to different synthesis results.
 WARNING: [Designutils 20-4072] Reference run did not run incremental synthesis because the design is too small; reverting to default synthesis
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 1076 ; free virtual = 2992
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 1108 ; free virtual = 4064
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s75fgga676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 1076 ; free virtual = 2992
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 1108 ; free virtual = 4064
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -371,7 +375,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for PCRAM/RAM1. (constraint file  aut
 Applied set_property KEEP_HIERARCHY = SOFT for ADRAM/RAM1. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for OPTIONRAM/RAM1. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 1076 ; free virtual = 2992
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 1107 ; free virtual = 4063
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TOP_8254'
 ---------------------------------------------------------------------------------------------------
@@ -386,7 +390,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TOP_8
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'TOP_8254'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 1068 ; free virtual = 2988
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 1118 ; free virtual = 4076
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -414,8 +418,6 @@ Detailed RTL Component Info :
 	   2 Input    8 Bit        Muxes := 6     
 	   6 Input    6 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 2     
-	   8 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
 	   2 Input    1 Bit        Muxes := 47    
 	   6 Input    1 Bit        Muxes := 3     
@@ -435,7 +437,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3917] design PCFG_TOP has port m_debug_led[6] driven by constant 0
 WARNING: [Synth 8-7129] Port m_dac_gain_d[7] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_dac_gain_d[6] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_dac_gain_d[5] in module PCFG_TOP is either unconnected or has no load
@@ -445,6 +446,27 @@ WARNING: [Synth 8-7129] Port m_dac_gain_d[2] in module PCFG_TOP is either unconn
 WARNING: [Synth 8-7129] Port m_dac_gain_d[1] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_dac_gain_d[0] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_dac_gain_clk in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[15] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[14] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[13] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[12] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[11] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[10] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[9] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[8] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[7] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[6] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[5] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[4] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[3] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_header[2] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[6] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[5] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[4] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[3] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[2] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[1] in module PCFG_TOP is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_debug_led[0] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[7] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[6] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[5] in module PCFG_TOP is either unconnected or has no load
@@ -454,25 +476,25 @@ WARNING: [Synth 8-7129] Port m_debug_sw[2] in module PCFG_TOP is either unconnec
 WARNING: [Synth 8-7129] Port m_debug_sw[1] in module PCFG_TOP is either unconnected or has no load
 WARNING: [Synth 8-7129] Port m_debug_sw[0] in module PCFG_TOP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 1039 ; free virtual = 2969
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 1092 ; free virtual = 4057
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 913 ; free virtual = 2852
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 970 ; free virtual = 3943
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 913 ; free virtual = 2852
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 956 ; free virtual = 3929
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2850
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 954 ; free virtual = 3928
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -490,37 +512,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 971 ; free virtual = 3930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 971 ; free virtual = 3930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 972 ; free virtual = 3930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 970 ; free virtual = 3929
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 972 ; free virtual = 3930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 972 ; free virtual = 3930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -547,45 +569,45 @@ Report Cell Usage:
 |7     |xfft_0_bbox     |     1|
 |8     |BUFG            |     2|
 |9     |CARRY4          |    33|
-|10    |LUT1            |    52|
-|11    |LUT2            |    67|
-|12    |LUT3            |    37|
-|13    |LUT4            |    85|
-|14    |LUT5            |    57|
-|15    |LUT6            |    98|
+|10    |LUT1            |    51|
+|11    |LUT2            |    60|
+|12    |LUT3            |    67|
+|13    |LUT4            |    47|
+|14    |LUT5            |    45|
+|15    |LUT6            |   103|
 |16    |FDCE            |    32|
 |17    |FDPE            |     4|
-|18    |FDRE            |   178|
+|18    |FDRE            |   177|
 |19    |FDSE            |     7|
 |20    |IBUF            |    23|
 |21    |IOBUF           |     8|
-|22    |OBUF            |    34|
-|23    |OBUFT           |     9|
+|22    |OBUF            |    13|
+|23    |OBUFT           |    30|
 +------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 911 ; free virtual = 2851
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 972 ; free virtual = 3930
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2663.664 ; gain = 0.000 ; free physical = 962 ; free virtual = 2901
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2663.664 ; gain = 63.883 ; free physical = 962 ; free virtual = 2901
+Synthesis finished with 0 errors, 0 critical warnings and 39 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 2687.664 ; gain = 0.000 ; free physical = 1018 ; free virtual = 3978
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2687.664 ; gain = 63.883 ; free physical = 1018 ; free virtual = 3978
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2663.664 ; gain = 0.000 ; free physical = 954 ; free virtual = 2896
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2687.664 ; gain = 0.000 ; free physical = 1012 ; free virtual = 3974
 INFO: [Netlist 29-17] Analyzing 41 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Constraints 18-548] Could not create 'IOSTANDARD' constraint because invalid IOSTANDARD value 'LVCMOS_33' specified. The default IOSTANDARD will be used instead. 'IOSTANDARD' is ignored by Vivado but preserved for implementation tool.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2663.664 ; gain = 0.000 ; free physical = 980 ; free virtual = 2927
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2687.664 ; gain = 0.000 ; free physical = 1043 ; free virtual = 4008
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 8 instances
 
-Synth Design complete, checksum: 42e8d7a4
+Synth Design complete, checksum: 48954e27
 INFO: [Common 17-83] Releasing license: Synthesis
-72 Infos, 166 Warnings, 75 Critical Warnings and 0 Errors encountered.
+71 Infos, 212 Warnings, 54 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:19 ; elapsed = 00:00:18 . Memory (MB): peak = 2663.664 ; gain = 64.031 ; free physical = 1179 ; free virtual = 3125
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 2687.664 ; gain = 64.031 ; free physical = 1250 ; free virtual = 4215
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/PCFG_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file PCFG_TOP_utilization_synth.rpt -pb PCFG_TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May 16 17:29:16 2022...
+INFO: [Common 17-206] Exiting Vivado at Mon May 16 22:30:57 2022...

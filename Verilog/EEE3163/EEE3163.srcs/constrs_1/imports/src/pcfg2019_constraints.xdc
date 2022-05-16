@@ -963,4 +963,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports m_ren]
 set_property DIRECTION IN [get_ports m_wen]
 set_property IOSTANDARD LVCMOS33 [get_ports m_wen]
 
-create_clock -period 25.000 -name m_fpga_clk -waveform {0.000 12.500}
+create_clock -period 25.000 -name m_fpga_clk -waveform {0.000 12.500} [get_ports m_fpga_clk]
+
+create_generated_clock -name sys_clk -source [get_pins s_clk_g/O] -multiply_by 1 [get_pins s_sys_clk_g/I]
