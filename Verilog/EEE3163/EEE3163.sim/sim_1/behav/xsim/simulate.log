@@ -1,3 +1,2 @@
 Time resolution is 1 ps
-$stop called at time : 2474800 ns : File "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd" Line 330
-INFO: xsimkernel Simulation Memory Usage: 134036 KB (Peak: 183160 KB), Simulation CPU Usage: 12710 ms
+$stop called at time : 1078340 ns : File "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd" Line 338

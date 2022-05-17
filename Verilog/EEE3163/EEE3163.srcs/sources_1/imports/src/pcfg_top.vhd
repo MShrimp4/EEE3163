@@ -258,7 +258,7 @@ OUT_LATCH   : entity work.latch (Behavioral)
     port map(clk=>sys_clk, en=>OUT_latch_en,
              input  => s_OUT_latch_din,
              output => s_tri_data);
-OUT_latch_en <= s_PCRAM_CTRL_r_rdy OR s_ADRAM_CTRL_r_rdy OR s_OPTRAM_CTRL_r_rdy;
+OUT_latch_en <= '1'; --s_PCRAM_CTRL_r_rdy OR s_ADRAM_CTRL_r_rdy OR s_OPTRAM_CTRL_r_rdy;
              
 DA_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -425,7 +425,7 @@ ADRAM_CTRL : entity work.ram_control (Behavioral)
           RAM_wr       => s_AD_RAM_ena,
           RAM_rd       => s_AD_RAM_enb);
           
-OPTRAM_CTRL : entity work.ram_control (Behavioral)
+OPTRAM_CTRL : entity work.optram_ctrl (Behavioral)
     generic map (length=>ramadr_len)
     port map
          (clk_w        => s_clk,

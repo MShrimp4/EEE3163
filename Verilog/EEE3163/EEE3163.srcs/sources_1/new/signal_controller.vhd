@@ -149,18 +149,18 @@ begin
     s_next_hot(m_OPT_2) <= '1' when opt_step2_addr = '1' else '0';
 
 -- Mealy Outputs
-   PCRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_W) = '1'
-                  else '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)   = '1'
+   PCRAM_CTRL_rst   <= '1' when s_hot(m_PC_W) = '0' AND s_next_hot(m_PC_W) = '1'
+                  else '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)   = '1'
                   else '0';
-   PCRAM_CTRL_rst_r <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_PC_R)  = '1'
-                  else '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1'
-                  -- else '1' when s_hot(m_IDLE) AND s_next_hot(m_DA)   --optional!
+   PCRAM_CTRL_rst_r <= '1' when s_hot(m_PC_R) = '0' AND s_next_hot(m_PC_R)  = '1'
+                  else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1'
+                  -- else '1' when s_hot(m_DA) AND s_next_hot(m_DA)   --optional!
                   else '0';
-   ADRAM_CTRL_rst   <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
-   en_latch         <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_AD)    = '1' else '0';
-   OPTRAM_CTRL_rst  <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1' else '0';
-   OPTMODE_CTRL_rst <= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_1) = '1' else '0';
-   OPTRAM_CTRL_rst_r<= '1' when s_hot(m_IDLE) = '1' AND s_next_hot(m_OPT_2) = '1' else '0';
+   ADRAM_CTRL_rst   <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
+   en_latch         <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
+   OPTRAM_CTRL_rst  <= '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
+   OPTMODE_CTRL_rst <= '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
+   OPTRAM_CTRL_rst_r<= '1' when s_hot(m_OPT_2)= '0' AND s_next_hot(m_OPT_2) = '1' else '0';
 
 -- Combinational
 
@@ -181,7 +181,7 @@ begin
                 else pc_RAM_addr when s_hot(m_PC_R)  AND NOT s_oe_b AND rising_d
                 else '0';
 
-   OPTRAM_CTRL_rd <= opt_step2_addr when s_hot(m_OPT_2) AND NOT s_oe_b AND rising_d
+   OPTRAM_CTRL_rd <= opt_step2_addr when s_hot(m_OPT_2) AND NOT s_oe_b --AND rising_d
                 else '0';
                 
    OPTMODE_CTRL_en <= s_hot(m_OPT_1) AND OPTMODE_CTRL_rdy;

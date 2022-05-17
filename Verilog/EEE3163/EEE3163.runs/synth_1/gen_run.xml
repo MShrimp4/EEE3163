@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1652707828" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PCFG_TOP.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1652758083" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/PCFG_TOP.dcp">
   <File Type="VDS-TIMING-PB" Name="PCFG_TOP_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="PCFG_TOP_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="PCFG_TOP.dcp"/>
@@ -47,6 +47,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/latch.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/src/Option_mode.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../src/Option_mode.vhd"/>
@@ -73,13 +79,19 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/latch.vhd">
+    <File Path="$PSRCDIR/sources_1/new/mux.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/mux.vhd">
+    <File Path="$PSRCDIR/sources_1/new/max_counter.vhd">
+      <FileInfo SFType="VHDL2008">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/optram_ctrl.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -98,12 +110,6 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/signal_controller.vhd">
-      <FileInfo SFType="VHDL2008">
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/max_counter.vhd">
       <FileInfo SFType="VHDL2008">
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

@@ -1,0 +1,345 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
+| Date         : Tue May 17 12:29:59 2022
+| Host         : mshrimp running 64-bit Arch Linux
+| Command      : report_methodology -file PCFG_TOP_methodology_drc_routed.rpt -pb PCFG_TOP_methodology_drc_routed.pb -rpx PCFG_TOP_methodology_drc_routed.rpx
+| Design       : PCFG_TOP
+| Device       : xc7s75fgga676-2
+| Speed File   : -2
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 60
++-----------+------------------+-------------------------------+------------+
+| Rule      | Severity         | Description                   | Violations |
++-----------+------------------+-------------------------------+------------+
+| TIMING-17 | Critical Warning | Non-clocked sequential cell   | 20         |
+| LUTAR-1   | Warning          | LUT drives async reset alert  | 1          |
+| TIMING-16 | Warning          | Large setup violation         | 2          |
+| TIMING-18 | Warning          | Missing input or output delay | 37         |
++-----------+------------------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-17#1 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[0]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#2 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[10]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#3 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[11]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#4 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[12]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#5 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[13]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#6 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[14]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#7 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[15]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#8 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[1]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#9 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[2]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#10 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[3]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#11 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[4]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#12 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[5]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#13 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[6]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#14 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[7]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#15 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[8]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#16 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_REG_reg[9]/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#17 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_mode_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#18 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_wr_L_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#19 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_wr_M_reg/C is not reached by a timing clock
+Related violations: <none>
+
+TIMING-17#20 Critical Warning
+Non-clocked sequential cell  
+The clock pin clk_gen/CNT0/s_wr_wait_reg/C is not reached by a timing clock
+Related violations: <none>
+
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell ADDR_LATCH/FSM_onehot_state[5]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) clk_gen/CNT0/s_CNT2_reg[0]/CLR, clk_gen/CNT0/s_CNT2_reg[10]/CLR,
+clk_gen/CNT0/s_CNT2_reg[11]/CLR, clk_gen/CNT0/s_CNT2_reg[12]/CLR,
+clk_gen/CNT0/s_CNT2_reg[13]/CLR, clk_gen/CNT0/s_CNT2_reg[14]/CLR,
+clk_gen/CNT0/s_CNT2_reg[15]/CLR, clk_gen/CNT0/s_CNT2_reg[1]/CLR,
+clk_gen/CNT0/s_CNT2_reg[3]/CLR, clk_gen/CNT0/s_CNT2_reg[4]/CLR,
+clk_gen/CNT0/s_CNT2_reg[5]/CLR, clk_gen/CNT0/s_CNT2_reg[6]/CLR,
+clk_gen/CNT0/s_CNT2_reg[7]/CLR, clk_gen/CNT0/s_CNT2_reg[9]/CLR,
+clk_gen/CNT0/s_REG_reg[0]/CLR (the first 15 of 36 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.844 ns between ADDR_LATCH/latched_input_reg[0]/C (clocked by m_fpga_clk) and OPTIONRAM/RAM1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/REGCEB (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -2.198 ns between ADDR_LATCH/latched_input_reg[0]/C (clocked by m_fpga_clk) and OPTIONRAM/RAM1/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_noinit.ram/DEVICE_7SERIES.NO_BMM_INFO.SDP.SIMPLE_PRIM18.ram/ENBWREN (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[0] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[1] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[2] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[3] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[4] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[5] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[6] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An input delay is missing on m_adc_d[7] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An input delay is missing on m_address[0] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An input delay is missing on m_address[1] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#11 Warning
+Missing input or output delay  
+An input delay is missing on m_address[2] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#12 Warning
+Missing input or output delay  
+An input delay is missing on m_address[3] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#13 Warning
+Missing input or output delay  
+An input delay is missing on m_address[4] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#14 Warning
+Missing input or output delay  
+An input delay is missing on m_address[5] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#15 Warning
+Missing input or output delay  
+An input delay is missing on m_address[6] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#16 Warning
+Missing input or output delay  
+An input delay is missing on m_address[7] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#17 Warning
+Missing input or output delay  
+An input delay is missing on m_address[8] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#18 Warning
+Missing input or output delay  
+An input delay is missing on m_cmd_data relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An input delay is missing on m_data[0] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#20 Warning
+Missing input or output delay  
+An input delay is missing on m_data[1] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#21 Warning
+Missing input or output delay  
+An input delay is missing on m_data[2] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#22 Warning
+Missing input or output delay  
+An input delay is missing on m_data[3] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#23 Warning
+Missing input or output delay  
+An input delay is missing on m_data[4] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#24 Warning
+Missing input or output delay  
+An input delay is missing on m_data[5] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#25 Warning
+Missing input or output delay  
+An input delay is missing on m_data[6] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#26 Warning
+Missing input or output delay  
+An input delay is missing on m_data[7] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#27 Warning
+Missing input or output delay  
+An input delay is missing on m_fpga_reset relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#28 Warning
+Missing input or output delay  
+An input delay is missing on m_oe_b relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#29 Warning
+Missing input or output delay  
+An input delay is missing on m_wen relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#30 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[0] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#31 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[1] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#32 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[2] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#33 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[3] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#34 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[4] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#35 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[5] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#36 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[6] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+TIMING-18#37 Warning
+Missing input or output delay  
+An output delay is missing on m_dac_d[7] relative to clock(s) m_fpga_clk
+Related violations: <none>
+
+

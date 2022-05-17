@@ -214,7 +214,37 @@ BEGIN
       -- hold reset state for 100 ns.
 		wait for 100 ns;	
 		m_reset_b  <= '1';
+		wait for 10 us;		
+		
+		--==========Option mode sequence===========
+		--PC Write mode : PC RAM에 "Sample_Input_1.dat" Write	
+		s_dat_en <= '1';
+			for i in 0 to 511 loop
+			s_dat_clk <= '1';
+			wait for 0.1 us; -- 1 us
+			CMD_WR('1' & x"30",option_data,m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+			s_dat_clk <= '0';
+			wait for 0.1 us; -- 1 us
+			end loop;
 		wait for 10 us;
+		
+		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		wait for 0.25 us;
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		wait for 0.25 us;
+		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
+		wait for 10 us;
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
+		
+		--Option mode(step1)
+		CMD_WR('1' & x"60","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		wait for 300 us;
+		
+	    --Option mode(step2)
+		for i in 0 to 511 loop
+		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAM값 읽기
+		wait for 0.05 us; -- 1 us
+		end loop;
 		
 		 -- 8254 setting (m_clk를 4분주해서 div_clk을 만들기 위한 과정)
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
@@ -303,29 +333,7 @@ BEGIN
 		CMD_RD('1' & x"51",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
 		wait for 0.25 us; -- 1 us
 		end loop;
-		wait for 18.25 us;--wait for 10 us;		
-		
-		--==========Option mode sequence===========
-		--PC Write mode : PC RAM에 "Sample_Input_1.dat" Write	
-		s_dat_en <= '1';
-			for i in 0 to 511 loop
-			s_dat_clk <= '1';
-			wait for 1 us;
-			CMD_WR('1' & x"30",option_data,m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-			s_dat_clk <= '0';
-			wait for 1 us;
-			end loop;
-		wait for 10 us;
-		
-		--Option mode(step1)
-		CMD_WR('1' & x"60","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 300 us;
-		
-	    --Option mode(step2)
-		for i in 0 to 511 loop
-		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAM값 읽기
-		wait for 1 us;
-		end loop;
+		wait for 18.25 us;--wait for 10 us;
 		
 		stop;
 			   

@@ -65,3 +65,4 @@ begin
     tc_c   <= '1' when cnt_next = max else '0';
     tc_max <= '1' when max = (length-1 downto 0 => '1') else '0';
 end Behavioral;
+
