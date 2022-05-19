@@ -7,11 +7,8 @@ entity signal_controller is
           s_clk          : in STD_LOGIC
          ;reset          : in STD_LOGIC
          -- R/W Enable
-         ;s_wen          : in STD_LOGIC
-         ;s_ren          : in STD_LOGIC
          ;s_oe_b         : in STD_LOGIC
-         ;s_cmd_data     : in STD_LOGIC
-         -- 
+         --
          ;s_data         : in STD_LOGIC_VECTOR (7 downto 0)
          -- Mode Control
          ;pcs_addr       : in STD_LOGIC
@@ -30,12 +27,15 @@ entity signal_controller is
          ;PCRAM_CTRL_tc_r : in STD_LOGIC
          -- RAM control output
          ;PCRAM_CTRL_rd    : out STD_LOGIC
+         ;PCRAM_CTRL_fastr : out STD_LOGIC
          ;PCRAM_CTRL_wr    : out STD_LOGIC
          ;PCRAM_CTRL_rst   : out STD_LOGIC
          ;PCRAM_CTRL_rst_r : out STD_LOGIC
          ;ADRAM_CTRL_rd    : out STD_LOGIC
+         ;ADRAM_CTRL_fastr : out STD_LOGIC
          ;ADRAM_CTRL_wr    : out STD_LOGIC
          ;ADRAM_CTRL_rst   : out STD_LOGIC
+         ;ADRAM_CTRL_rst_r : out STD_LOGIC
          ;OPTRAM_CTRL_rd   : out STD_LOGIC
          ;OPTRAM_CTRL_rst  : out STD_LOGIC
          ;OPTRAM_CTRL_rst_r: out STD_LOGIC
@@ -46,7 +46,9 @@ entity signal_controller is
          -- Enable Signals (Output)
          ;OUT_mux_sel    : out STD_LOGIC_VECTOR (1 downto 0)
          ;DA_latch_en    : out STD_LOGIC
-         ;AD_latch_en    : out STD_LOGIC);
+         ;AD_latch_en    : out STD_LOGIC
+         -- DEBUG
+         ;debug_state    : out STD_LOGIC_VECTOR (6 downto 0));
 end signal_controller;
 
 architecture Behavioral of signal_controller is
@@ -71,12 +73,11 @@ architecture Behavioral of signal_controller is
     constant ADR      : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_ADR   => '1', others => '0');
     constant OPT_1    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_1 => '1', others => '0');
     constant OPT_2    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_2 => '1', others => '0');
-    
-    -- 
+
+    --
     signal s_len      : STD_LOGIC_VECTOR (s_data'length-1 downto 0) := (others => '0');
     signal en_latch   : STD_LOGIC;
     signal AD_LAST    : STD_LOGIC;
-    signal rising_d   : STD_LOGIC;
 begin
 
 -- Components
@@ -93,12 +94,6 @@ begin
         DA_latch_en  => DA_latch_en,
         AD_latch_en  => AD_latch_en);
 
-    rising_d_detector : entity work.edge_detector (Behavioral)
-    port map(
-        clk=> s_clk, i=> s_cmd_data,
-        rising=> rising_d
-    );
-        
     len_latch : entity work.latch (Behavioral)
     generic map(length=>s_len'length)
     port map(clk=>s_clk, en=>en_latch,
@@ -137,7 +132,7 @@ begin
             end if;
         end if;
     end process;
-    
+
     s_next_hot(m_IDLE)  <= '1' when s_next_hot(s_hot'length-1 downto 1) = (s_hot'length-1 downto 1=>'0') else '0';
     s_next_hot(m_PC_R)  <= '1' when pc_RAM_addr    = '1' AND s_oe_b = '0' else '0';
     s_next_hot(m_PC_W)  <= '1' when pc_RAM_addr    = '1' AND s_oe_b = '1' else '0';
@@ -145,7 +140,7 @@ begin
     s_next_hot(m_AD)    <= '1' when ad_RAM_addr    = '1' else '0';
     s_next_hot(m_AD_T)  <= '0';
     s_next_hot(m_ADR)   <= '1' when adr_RAM_addr   = '1' else '0';
-    s_next_hot(m_OPT_1) <= '1' when opt_step1_addr = '1' else '0';
+    s_next_hot(m_OPT_1) <= '1' when opt_step1_addr = '1' AND OPTMODE_CTRL_rdy = '1' else '0';
     s_next_hot(m_OPT_2) <= '1' when opt_step2_addr = '1' else '0';
 
 -- Mealy Outputs
@@ -157,6 +152,7 @@ begin
                   -- else '1' when s_hot(m_DA) AND s_next_hot(m_DA)   --optional!
                   else '0';
    ADRAM_CTRL_rst   <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
+   ADRAM_CTRL_rst_r <= '1' when s_hot(m_ADR ) = '0' AND s_next_hot(m_ADR)   = '1' else '0';
    en_latch         <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
    OPTRAM_CTRL_rst  <= '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
    OPTMODE_CTRL_rst <= '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
@@ -168,22 +164,27 @@ begin
 
    ADRAM_CTRL_wr  <= '1' when s_hot(m_AD)='1' AND s_len /= AD_RAM_addra(s_len'length-1 downto 0) else '0';
 
-   ADRAM_CTRL_rd  <= '1'          when s_hot(m_AD_T)   
-                else adr_RAM_addr when s_hot(m_ADR) AND NOT s_oe_b AND rising_d
+   ADRAM_CTRL_rd  <= '1'          when s_hot(m_AD_T)
+                else adr_RAM_addr when s_hot(m_ADR) AND NOT s_oe_b
                 else '0';
-   
+
    PCRAM_CTRL_wr  <= '1'         when ADRAM_CTRL_r_rdy = '1'
-                else pc_RAM_addr when s_hot(m_PC_W) AND     s_oe_b AND rising_d
+                else pc_RAM_addr when s_hot(m_PC_W) AND     s_oe_b
                 else '0';
 
    PCRAM_CTRL_rd  <= '1'         when s_hot(m_DA)
                 else '1'         when OPTMODE_CTRL_en
-                else pc_RAM_addr when s_hot(m_PC_R)  AND NOT s_oe_b AND rising_d
+                else pc_RAM_addr when s_hot(m_PC_R)  AND NOT s_oe_b
                 else '0';
+
+   PCRAM_CTRL_fastr <= '0' when s_hot (m_PC_R) else '1';
+   ADRAM_CTRL_fastr <= '0' when s_hot (m_ADR)  else '1';
 
    OPTRAM_CTRL_rd <= opt_step2_addr when s_hot(m_OPT_2) AND NOT s_oe_b --AND rising_d
                 else '0';
-                
+
    OPTMODE_CTRL_en <= s_hot(m_OPT_1) AND OPTMODE_CTRL_rdy;
+
+   debug_state  <= s_hot (6 downto 0);
 
 end Behavioral;

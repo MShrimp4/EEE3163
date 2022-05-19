@@ -5,6 +5,7 @@ entity optram_ctrl is
     generic (length : integer := 11);
     port (clk_w : in STD_LOGIC
          ;clk_r : in STD_LOGIC
+
          ;wr    : in STD_LOGIC
          ;rd    : in STD_LOGIC
          ;rst   : in STD_LOGIC

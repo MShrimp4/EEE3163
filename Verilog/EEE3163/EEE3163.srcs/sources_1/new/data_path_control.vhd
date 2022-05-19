@@ -9,7 +9,6 @@ entity data_path_control is
          ;adr_mode   : in STD_LOGIC
          ;opt2_mode  : in STD_LOGIC
          -- Output
-         ;PC_mux_sel   : out STD_LOGIC
          ;OUT_mux_sel  : out STD_LOGIC_VECTOR (1 downto 0)
          ;DA_latch_en  : out STD_LOGIC
          ;AD_latch_en  : out STD_LOGIC);
