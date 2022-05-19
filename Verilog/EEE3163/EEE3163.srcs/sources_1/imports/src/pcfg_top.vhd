@@ -254,10 +254,9 @@ ADDR_LATCH  : entity work.latch (Behavioral)
 
 IN_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
-    port map(clk=>s_clk, en=>IN_latch_en,
+    port map(clk=>s_clk, en=>'1',
              input  => m_data,
              output => s_IN_latch_dout);
-IN_latch_en <= '1'; -- m_oe_b AND m_cmd_data;
 
 OUT_LATCH   : entity work.latch (Behavioral)
     generic map(length=> m_data'length)

@@ -235,6 +235,7 @@ BEGIN
 		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
 		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
+		wait for 10 us;
 		
 		--Option mode(step1)
 		CMD_WR('1' & x"60","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);

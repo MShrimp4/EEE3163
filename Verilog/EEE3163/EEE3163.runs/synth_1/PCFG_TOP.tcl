@@ -94,7 +94,6 @@ read_vhdl -library xil_defaultlib {
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/data_path_control.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/mux.vhd
-  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/optram_ctrl.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/tristatebuff.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd
