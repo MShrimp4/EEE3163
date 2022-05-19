@@ -2,8 +2,8 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Tue May 17 12:28:04 2022
-# Process ID: 503163
+# Start of session at: Thu May 19 01:50:47 2022
+# Process ID: 107713
 # Current directory: /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1
 # Command line: vivado -log PCFG_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PCFG_TOP.tcl
 # Log file: /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.runs/synth_1/PCFG_TOP.vds

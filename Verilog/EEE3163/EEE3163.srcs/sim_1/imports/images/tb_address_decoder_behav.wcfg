@@ -3,21 +3,20 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="tb_pcfg_behav.wdb" id="1">
+      <db_ref path="tb_pcfg_func_impl.wdb" id="1">
          <top_modules>
             <top_module name="tb_pcfg" />
-            <top_module name="vcomponents" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="831.000001 us"></ZoomEndTime>
-      <Cursor1Time time="644.920000 us"></Cursor1Time>
+      <ZoomStartTime time="1,053,340.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,060,365.001 ns"></ZoomEndTime>
+      <Cursor1Time time="1,057,150.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="136"></NameColumnWidth>
-      <ValueColumnWidth column_width="61"></ValueColumnWidth>
+      <NameColumnWidth column_width="135"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="19" />
    <wvobject type="group" fp_name="group106">
@@ -37,10 +36,6 @@
          <obj_property name="ElementShortName">doutb[7:0]</obj_property>
          <obj_property name="ObjectShortName">doutb[7:0]</obj_property>
          <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/tb_pcfg/uut/PCRAM/addrb">
-         <obj_property name="ElementShortName">addrb[10:0]</obj_property>
-         <obj_property name="ObjectShortName">addrb[10:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group107">
@@ -80,14 +75,13 @@
    <wvobject type="array" fp_name="/tb_pcfg/m_data">
       <obj_property name="ElementShortName">m_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">m_data[7:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
       <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
       <obj_property name="AnalogYRangeMin">0.000000</obj_property>
       <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
-      <obj_property name="CellHeight">100</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_pcfg/m_DAC_data">
       <obj_property name="ElementShortName">m_DAC_data[7:0]</obj_property>
@@ -164,8 +158,8 @@
          <obj_property name="ObjectShortName">mult_tvalid</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/tb_pcfg/uut/OPTMODE_CTRL/fft_output">
-         <obj_property name="ElementShortName">fft_output[47:0]</obj_property>
-         <obj_property name="ObjectShortName">fft_output[47:0]</obj_property>
+         <obj_property name="ElementShortName">fft_output[41:0]</obj_property>
+         <obj_property name="ObjectShortName">fft_output[41:0]</obj_property>
       </wvobject>
       <wvobject type="logic" fp_name="/tb_pcfg/uut/OPTMODE_CTRL/fft_valid">
          <obj_property name="ElementShortName">fft_valid</obj_property>

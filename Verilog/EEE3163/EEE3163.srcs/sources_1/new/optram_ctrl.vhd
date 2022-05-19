@@ -21,14 +21,15 @@ entity optram_ctrl is
 end optram_ctrl;
 
 architecture Behavioral of optram_ctrl is
-    signal r_delay    : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    signal r_delay   : STD_LOGIC_VECTOR (2 downto 0);
+    signal r_falling : STD_LOGIC;
 begin
     counter : entity work.max_counter (Behavioral)
     generic map (length=> 11)
     port map (
           clk_c    =>clk_r,
           clk_max  =>clk_w,
-          ce_c     =>r_delay (1) AND NOT r_delay (0),
+          ce_c     =>r_falling,
           ce_max   =>wr,
           rst_c    =>rst_r,
           rst_all  =>rst,
@@ -40,11 +41,12 @@ begin
     process (clk_r)
     begin
         if rising_edge (clk_r) then
-            r_delay <= r_delay(0) & rd;
+            r_delay   <= r_delay(1 downto 0) & rd;
+            r_falling <= r_delay(1) AND NOT r_delay(0);
         end if;
     end process;
 
     RAM_wr  <= wr;
-    RAM_rd  <= rd OR r_delay (0);
-    r_ready <= r_delay (1);
+    RAM_rd  <= r_delay(0) OR r_delay (1);
+    r_ready <= r_delay (2);
 end Behavioral;
