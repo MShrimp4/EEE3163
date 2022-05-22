@@ -1,14 +1,21 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'Option_mode'
-WARNING: [VRFC 10-3093] actual for formal port 's_axis_config_tvalid' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:83]
-WARNING: [VRFC 10-3093] actual for formal port 's_axis_data_tdata' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:85]
-WARNING: [VRFC 10-3093] actual for formal port 'input' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd:125]
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/data_path_control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'data_path_control'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'edge_detector'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'signal_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_control'
+WARNING: [VRFC 10-3093] actual for formal port 'ce_c' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd:36]
+WARNING: [VRFC 10-3093] actual for formal port 'ce_max' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd:37]
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'PCFG_TOP'
-WARNING: [VRFC 10-3093] actual for formal port 'm_reset' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:209]
-WARNING: [VRFC 10-3093] actual for formal port 'm_cs_b' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:215]
-WARNING: [VRFC 10-3093] actual for formal port 'm_wr_b' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:216]
-WARNING: [VRFC 10-3093] actual for formal port 'input' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:236]
-WARNING: [VRFC 10-3093] actual for formal port 'reset' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:318]
-WARNING: [VRFC 10-3093] actual for formal port 'm_reset' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:449]
-WARNING: [VRFC 10-3093] actual for formal port 'm_xin_valid' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:453]
+WARNING: [VRFC 10-3093] actual for formal port 'm_reset' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:213]
+WARNING: [VRFC 10-3093] actual for formal port 'm_cs_b' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:219]
+WARNING: [VRFC 10-3093] actual for formal port 'm_wr_b' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:220]
+WARNING: [VRFC 10-3093] actual for formal port 'input' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:239]
+WARNING: [VRFC 10-3093] actual for formal port 'reset' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:322]
+WARNING: [VRFC 10-3093] actual for formal port 'm_reset' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:465]
+WARNING: [VRFC 10-3093] actual for formal port 'm_xin_valid' is neither a static name nor a globally static expression [/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd:469]
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sim_1/imports/src/tb_pcfg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_pcfg'

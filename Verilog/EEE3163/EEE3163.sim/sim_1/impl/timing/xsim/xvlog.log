@@ -1,12 +1,12 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.sim/sim_1/impl/timing/xsim/tb_pcfg_time_impl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IOBUF_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module IOBUF_HD1
-INFO: [VRFC 10-311] analyzing module IOBUF_HD2
-INFO: [VRFC 10-311] analyzing module IOBUF_HD3
-INFO: [VRFC 10-311] analyzing module IOBUF_HD4
-INFO: [VRFC 10-311] analyzing module IOBUF_HD5
-INFO: [VRFC 10-311] analyzing module IOBUF_HD6
-INFO: [VRFC 10-311] analyzing module IOBUF_HD7
+INFO: [VRFC 10-311] analyzing module IOBUF_HD15
+INFO: [VRFC 10-311] analyzing module IOBUF_HD16
+INFO: [VRFC 10-311] analyzing module IOBUF_HD17
+INFO: [VRFC 10-311] analyzing module IOBUF_HD18
+INFO: [VRFC 10-311] analyzing module IOBUF_HD19
+INFO: [VRFC 10-311] analyzing module IOBUF_HD20
+INFO: [VRFC 10-311] analyzing module IOBUF_HD21
 INFO: [VRFC 10-311] analyzing module Option_mode
 INFO: [VRFC 10-311] analyzing module PCFG_TOP
 INFO: [VRFC 10-311] analyzing module RAM

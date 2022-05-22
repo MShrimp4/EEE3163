@@ -45,8 +45,8 @@ entity signal_controller is
          ;OPTMODE_CTRL_en  : out STD_LOGIC
          -- Enable Signals (Output)
          ;OUT_mux_sel    : out STD_LOGIC_VECTOR (1 downto 0)
+         ;PC_mux_sel     : out STD_LOGIC
          ;DA_latch_en    : out STD_LOGIC
-         ;AD_latch_en    : out STD_LOGIC
          -- DEBUG
          ;debug_state    : out STD_LOGIC_VECTOR (6 downto 0));
 end signal_controller;
@@ -81,19 +81,6 @@ architecture Behavioral of signal_controller is
 begin
 
 -- Components
-    path_ctrl   : entity work.data_path_control (Behavioral)
-    port map(
-        pc_mode_r    => s_hot (m_PC_R) AND pc_RAM_addr,
-        pc_mode_w    => s_hot (m_PC_W) AND pc_RAM_addr,
-        da_mode      => s_hot (m_DA),
-        ad_mode      => s_hot (m_AD),
-        adr_mode     => s_hot (m_ADR)  AND adr_RAM_addr,
-        opt2_mode    => s_hot (m_OPT_2),
-        -- Output
-        OUT_mux_sel  => OUT_mux_sel,
-        DA_latch_en  => DA_latch_en,
-        AD_latch_en  => AD_latch_en);
-
     len_latch : entity work.latch (Behavioral)
     generic map(length=>s_len'length)
     port map(clk=>s_clk, en=>en_latch,
@@ -144,18 +131,22 @@ begin
     s_next_hot(m_OPT_2) <= '1' when opt_step2_addr = '1' else '0';
 
 -- Mealy Outputs
-   PCRAM_CTRL_rst   <= '1' when s_hot(m_PC_W) = '0' AND s_next_hot(m_PC_W) = '1'
+   PCRAM_CTRL_rst   <= '1' when reset
+                  else '1' when s_hot(m_PC_W) = '0' AND s_next_hot(m_PC_W) = '1'
                   else '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)   = '1'
                   else '0';
    PCRAM_CTRL_rst_r <= '1' when s_hot(m_PC_R) = '0' AND s_next_hot(m_PC_R)  = '1'
                   else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1'
-                  -- else '1' when s_hot(m_DA) AND s_next_hot(m_DA)   --optional!
+                  else '1' when s_hot(m_DA)   = '0' AND s_next_hot(m_DA)    = '1' --optional!
                   else '0';
-   ADRAM_CTRL_rst   <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
+   ADRAM_CTRL_rst   <= '1' when reset
+                  else '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
    ADRAM_CTRL_rst_r <= '1' when s_hot(m_ADR ) = '0' AND s_next_hot(m_ADR)   = '1' else '0';
    en_latch         <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
-   OPTRAM_CTRL_rst  <= '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
-   OPTMODE_CTRL_rst <= '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
+   OPTRAM_CTRL_rst  <= '1' when reset
+                  else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
+   OPTMODE_CTRL_rst <= '1' when reset
+                  else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
    OPTRAM_CTRL_rst_r<= '1' when s_hot(m_OPT_2)= '0' AND s_next_hot(m_OPT_2) = '1' else '0';
 
 -- Combinational
@@ -168,7 +159,7 @@ begin
                 else adr_RAM_addr when s_hot(m_ADR) AND NOT s_oe_b
                 else '0';
 
-   PCRAM_CTRL_wr  <= '1'         when ADRAM_CTRL_r_rdy = '1'
+   PCRAM_CTRL_wr  <= '1'         when PC_mux_sel = '1'
                 else pc_RAM_addr when s_hot(m_PC_W) AND     s_oe_b
                 else '0';
 
@@ -184,6 +175,13 @@ begin
                 else '0';
 
    OPTMODE_CTRL_en <= s_hot(m_OPT_1) AND OPTMODE_CTRL_rdy;
+   
+   OUT_mux_sel  <= "00" when s_hot(m_PC_R)  = '1' AND pc_RAM_addr  = '1'
+              else "01" when s_hot(m_OPT_2) = '1'
+              else "10" when s_hot(m_ADR)   = '1' AND adr_RAM_addr = '1'
+              else "00";
+   PC_mux_sel   <= ADRAM_CTRL_r_rdy AND NOT s_hot(m_ADR);
+   DA_latch_en  <= '1'  when s_hot (m_DA)   = '1' else '0';
 
    debug_state  <= s_hot (6 downto 0);
 

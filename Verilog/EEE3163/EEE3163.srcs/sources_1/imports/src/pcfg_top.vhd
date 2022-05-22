@@ -98,10 +98,7 @@ constant ramadr_len : integer := 11;
 signal s_rising_d   : STD_LOGIC;
 
 -- Latch Enable
---signal IN_latch_en  : STD_LOGIC;
-signal OUT_latch_en : STD_LOGIC;
 signal DA_latch_en  : STD_LOGIC;
-signal AD_latch_en  : STD_LOGIC;
 
 -- PC Latch
 signal s_cmd_data       : STD_LOGIC;
@@ -226,9 +223,9 @@ clk_gen : TOP_8254 port map(
 s_sys_clk_g : BUFG
 port map (I=>m_sys_clk , O=>sys_clk);
 
-s_m_8254_gate0	<= NOT s_reset8254_addr;
-s_m_8254_gate1	<= '1';
-s_m_8254_gate2	<= '1';
+s_m_8254_gate0	<= s_reset_b AND NOT s_reset8254_addr;
+s_m_8254_gate1	<= '0';
+s_m_8254_gate2	<= '0';
 
 -- Components
 
@@ -248,7 +245,7 @@ CMD_EDGE    : entity work.edge_detector (Behavioral)
 
 ADDR_LATCH  : entity work.latch (Behavioral)
     generic map(length=> m_address'length)
-    port map(clk=>s_clk, en=>m_cmd_data,
+    port map(clk=>s_clk, en=>'1',
              input=>  m_address,
              output=> s_address);
 
@@ -260,10 +257,9 @@ IN_LATCH    : entity work.latch (Behavioral)
 
 OUT_LATCH   : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
-    port map(clk=>sys_clk, en=>OUT_latch_en,
+    port map(clk=>sys_clk, en=>'1',
              input  => s_OUT_latch_din,
              output => s_tri_data);
-OUT_latch_en <= '1';
 
 DA_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -273,7 +269,7 @@ DA_LATCH    : entity work.latch (Behavioral)
 
 AD_LATCH    : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
-    port map(clk=>sys_clk, en=>AD_latch_en,
+    port map(clk=>sys_clk, en=>'1',
              input  => m_adc_d,
              output => s_AD_RAM_din);
 
@@ -356,8 +352,8 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              OPTMODE_CTRL_en  => s_OPTMODE_CTRL_en,
              -- Enable Signals (Output)
              OUT_mux_sel    => s_OUT_mux_sel,
+             PC_mux_sel     => s_PC_mux_sel,
              DA_latch_en    => DA_latch_en,
-             AD_latch_en    => AD_latch_en,
              debug_state    => s_debug_led (6 downto 0));
 
 
@@ -412,7 +408,6 @@ PCRAM_CTRL : entity work.ram_control (Behavioral)
           RAM_addr_rd  => s_PC_RAM_addrb,
           RAM_wr       => s_PC_RAM_ena,
           RAM_rd       => s_PC_RAM_enb);
-s_PC_MUX_sel <= s_ADRAM_CTRL_r_rdy AND s_ADRAM_CTRL_fastr;
 
 ADRAM_CTRL : entity work.ram_control (Behavioral)
     generic map (length=>ramadr_len)

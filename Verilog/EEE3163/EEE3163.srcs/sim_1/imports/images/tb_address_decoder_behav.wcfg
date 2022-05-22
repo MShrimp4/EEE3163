@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="4,195.000001 us"></ZoomEndTime>
-      <Cursor1Time time="890.150740 us"></Cursor1Time>
+      <ZoomStartTime time="698.187681 us"></ZoomStartTime>
+      <ZoomEndTime time="712.357682 us"></ZoomEndTime>
+      <Cursor1Time time="700.549347 us"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="131"></NameColumnWidth>
+      <NameColumnWidth column_width="123"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="19" />
@@ -76,13 +76,14 @@
    <wvobject type="array" fp_name="/tb_pcfg/m_data">
       <obj_property name="ElementShortName">m_data[7:0]</obj_property>
       <obj_property name="ObjectShortName">m_data[7:0]</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
       <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_AUTO</obj_property>
       <obj_property name="AnalogYRangeMin">0.000000</obj_property>
       <obj_property name="AnalogYRRangeMax">0.000000</obj_property>
       <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
       <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
       <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/tb_pcfg/m_DAC_data">
       <obj_property name="ElementShortName">m_DAC_data[7:0]</obj_property>
