@@ -151,6 +151,7 @@ signal s_OPT_RAM_dout   : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 
 signal s_PCRAM_CTRL_wr     : STD_LOGIC;
 signal s_PCRAM_CTRL_rd     : STD_LOGIC;
+signal s_PCRAM_CTRL_fastw  : STD_LOGIC;
 signal s_PCRAM_CTRL_fastr  : STD_LOGIC;
 signal s_PCRAM_CTRL_tc_r   : STD_LOGIC;
 signal s_PCRAM_CTRL_rst    : STD_LOGIC;
@@ -335,6 +336,7 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              PCRAM_CTRL_tc_r => s_PCRAM_CTRL_tc_r,
              -- RAM control output
              PCRAM_CTRL_rd    => s_PCRAM_CTRL_rd,
+             PCRAM_CTRL_fastw => s_PCRAM_CTRL_fastw,
              PCRAM_CTRL_fastr => s_PCRAM_CTRL_fastr,
              PCRAM_CTRL_wr    => s_PCRAM_CTRL_wr,
              PCRAM_CTRL_rst   => s_PCRAM_CTRL_rst,
@@ -394,7 +396,7 @@ PCRAM_CTRL : entity work.ram_control (Behavioral)
     port map
          (clk_w        => s_clk,
           clk_r        => s_clk,
-          fastw        => s_PC_MUX_sel,
+          fastw        => s_PCRAM_CTRL_fastw,
           fastr        => s_PCRAM_CTRL_fastr,
           wr           => s_PCRAM_CTRL_wr,
           rd           => s_PCRAM_CTRL_rd,

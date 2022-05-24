@@ -106,7 +106,7 @@ ARCHITECTURE behavior OF tb_pcfg IS
 		Data_tmp   				<= (others=>'Z'); 
  		CMD_DATA_tmp			<= '0';
 		WEN_tmp 				<= '0';
-		wait for 10 ns;
+		wait for 60 ns;
 	end CMD_WR; 
 	
 	----Read mode-----
@@ -134,7 +134,7 @@ ARCHITECTURE behavior OF tb_pcfg IS
 		CMD_DATA_tmp			<= '0';
 		REN_tmp 				<= '0';
 		n_OE					<= '1';
-		wait for 10 ns;
+		wait for 60 ns;
 	end CMD_RD;
 	
 -- Added Features
@@ -221,19 +221,16 @@ BEGIN
 		s_dat_en <= '1';
 			for i in 0 to 511 loop
 			s_dat_clk <= '1';
-			wait for 0.1 us; -- 1 us
+			wait for 30 ns; -- 1 us
 			CMD_WR('1' & x"30",option_data,m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
 			s_dat_clk <= '0';
-			wait for 0.1 us; -- 1 us
+			wait for 10 ns; -- 1 us
 			end loop;
 		wait for 1 us; --10 us
 		
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 		
@@ -244,14 +241,12 @@ BEGIN
 	    --Option mode(step2)
 		for i in 0 to 511 loop
 		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAM값 읽기
-		wait for 0.1 us; -- 1 us
 		end loop;
 		
 		 -- 8254 setting (m_clk를 4분주해서 div_clk을 만들기 위한 과정)
+		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 				
@@ -259,31 +254,23 @@ BEGIN
 		----PC Write		
 		for i in 0 to 10 loop
 		CMD_WR('1' & x"30",conv_std_logic_vector(i,8),m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	
-		wait for 1 us;
 		end loop;
 		
 		-- PC read mode : 8254reset => 8254 1분주 => PC read mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
-		for i in 0 to 10 loop
+		for i in 0 to 21 loop
 		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 0.1 us; -- 1 us
 		end loop;
-		wait for 1 us;--wait for 10 us;		
+		wait for 1 us;--wait for 10 us;	
 
 	    -- DA mode : 8254reset => 8254 n 분주 => DA mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
-		wait for 10 us;
+		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 0C
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 		CMD_RD('1' & x"40",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
@@ -296,46 +283,34 @@ BEGIN
 				
 		-- AD mode : 8254reset => 8254 n분주 => AD mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 		CMD_WR('1' & x"50","00001011",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
+		wait for 5 us;
 
 		-- PC read mode : 8254reset => 8254 1분주 => PC read mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
-		for i in 0 to 10 loop
+		for i in 0 to 21 loop
 		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- PC RAM에 10개 읽기
-		wait for 0.1 us; -- 1 us
 		end loop;
 		wait for 1 us;--wait for 10 us;		
 		
 		-- ADR mode : 8254reset => 8254 1분주 => ADR mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
 		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
-		for i in 0 to 10 loop
+		for i in 0 to 21 loop
 		CMD_RD('1' & x"51",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 0.1 us; -- 1 us
 		end loop;
 		wait for 1 us;--wait for 10 us;
-		
 		stop;
 			   
 			   

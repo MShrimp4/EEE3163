@@ -31,16 +31,21 @@ architecture Behavioral of ad_count_ctrl is
     signal max_count : STD_LOGIC_VECTOR (7 downto 0);
     signal write_done : STD_LOGIC;
 begin
-    process (s_clk, sys_clk)
+    process (s_clk)
     begin
         if rising_edge (s_clk) then
-            if reset = '1' then
+            if request_reset = '1' then
+                if state = INIT then
+                    request_reset <= '0';
+                end if;
+            elsif reset = '1' then
                 request_reset <= '1';
-            elsif request_reset <= '1' AND state = IDLE then
-                request_reset <= '0';
             end if;
         end if;
+    end process;
 
+    process (sys_clk)
+    begin
         if rising_edge (sys_clk) then
             if request_reset = '1' then
                 state <= INIT;

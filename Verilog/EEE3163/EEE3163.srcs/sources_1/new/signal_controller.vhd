@@ -28,6 +28,7 @@ entity signal_controller is
          ;PCRAM_CTRL_tc_r : in STD_LOGIC
          -- RAM control output
          ;PCRAM_CTRL_rd    : out STD_LOGIC
+         ;PCRAM_CTRL_fastw : out STD_LOGIC
          ;PCRAM_CTRL_fastr : out STD_LOGIC
          ;PCRAM_CTRL_wr    : out STD_LOGIC
          ;PCRAM_CTRL_rst   : out STD_LOGIC
@@ -199,6 +200,7 @@ begin
                 else pc_RAM_addr when s_hot(m_PC_R)  = '1' AND s_oe_b = '0'
                 else '0';
 
+   PCRAM_CTRL_fastw <= NOT s_hot (m_PC_W);
    PCRAM_CTRL_fastr <= NOT s_hot (m_PC_R);
    ADRAM_CTRL_fastr <= NOT s_hot (m_ADR);
 
@@ -217,7 +219,24 @@ begin
    s_PC_mux_sel <= ADRAM_CTRL_r_rdy AND NOT s_hot(m_ADR);
    PC_mux_sel   <= s_PC_mux_sel;
    DA_latch_en  <= '1'  when s_hot (m_DA)   = '1' else '0';
-
-   debug_state  <= s_hot (6 downto 0);
+   
+   debug_state (2 downto 0)
+               <= "000" when s_hot(0) = '1'
+             else "001" when s_hot(1) = '1'
+             else "010" when s_hot(2) = '1'
+             else "011" when s_hot(3) = '1'
+             else "100" when s_hot(4) = '1'
+             else "101" when s_hot(5) = '1'
+             else "110" when s_hot(6) = '1'
+             else "111";
+             
+   debug_state (3)
+               <= s_AD_MODE_ready;
+   debug_state (4)
+               <= s_AD_MODE_done;
+   debug_state (5)
+               <= OPTMODE_CTRL_rdy;
+   debug_state (6)
+               <= '0';
 
 end Behavioral;

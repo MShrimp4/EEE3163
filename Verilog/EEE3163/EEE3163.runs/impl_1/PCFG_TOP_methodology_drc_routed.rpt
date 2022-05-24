@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Tue May 24 19:43:26 2022
+| Date         : Tue May 24 22:58:41 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : report_methodology -file PCFG_TOP_methodology_drc_routed.rpt -pb PCFG_TOP_methodology_drc_routed.pb -rpx PCFG_TOP_methodology_drc_routed.rpx
 | Design       : PCFG_TOP
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 77
+             Violations found: 69
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell   | 20         |
 | LUTAR-1   | Warning          | LUT drives async reset alert  | 1          |
-| TIMING-16 | Warning          | Large setup violation         | 19         |
+| TIMING-16 | Warning          | Large setup violation         | 11         |
 | TIMING-18 | Warning          | Missing input or output delay | 37         |
 +-----------+------------------+-------------------------------+------------+
 
@@ -137,7 +137,7 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell ADDR_LATCH/FSM_onehot_state[5]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) clk_gen/CNT0/s_CNT2_reg[0]/CLR, clk_gen/CNT0/s_CNT2_reg[10]/CLR,
+LUT cell ADDR_LATCH/FSM_onehot_state[5]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) clk_gen/CNT0/s_CNT2_reg[0]/CLR, clk_gen/CNT0/s_CNT2_reg[10]/CLR,
 clk_gen/CNT0/s_CNT2_reg[11]/CLR, clk_gen/CNT0/s_CNT2_reg[12]/CLR,
 clk_gen/CNT0/s_CNT2_reg[13]/CLR, clk_gen/CNT0/s_CNT2_reg[14]/CLR,
 clk_gen/CNT0/s_CNT2_reg[15]/CLR, clk_gen/CNT0/s_CNT2_reg[1]/CLR,
@@ -149,97 +149,57 @@ Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.174 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[2]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[0]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#2 Warning
 Large setup violation  
-There is a large setup violation of -1.247 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[7]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[10]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#3 Warning
 Large setup violation  
-There is a large setup violation of -1.250 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[5]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[1]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#4 Warning
 Large setup violation  
-There is a large setup violation of -1.251 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[0]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[3]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#5 Warning
 Large setup violation  
-There is a large setup violation of -1.268 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[4]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[4]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#6 Warning
 Large setup violation  
-There is a large setup violation of -1.276 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[6]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[6]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#7 Warning
 Large setup violation  
-There is a large setup violation of -1.299 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[1]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.603 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[8]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#8 Warning
 Large setup violation  
-There is a large setup violation of -1.372 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OUT_LATCH/latched_input_reg[3]/D (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.641 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[2]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#9 Warning
 Large setup violation  
-There is a large setup violation of -1.782 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[9]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.641 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[5]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#10 Warning
 Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[0]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.641 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[7]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-16#11 Warning
 Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[10]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[1]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[2]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[3]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[4]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[5]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -1.788 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[6]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -1.885 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[7]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -1.885 ns between ADDR_LATCH/latched_input_reg[2]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[8]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.641 ns between OPTRAM_CTRL/counter/max_reg[3]/C (clocked by m_fpga_clk) and OPTRAM_CTRL/counter/cnt_reg[9]/R (clocked by sys_clk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

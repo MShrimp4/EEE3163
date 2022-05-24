@@ -37,7 +37,7 @@ architecture Behavioral of max_counter is
     signal cnt_next : STD_LOGIC_VECTOR (length-1 downto 0);
     signal max : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
-    process (clk_c, clk_max)
+    process (clk_c)
     begin
         if rising_edge (clk_c) then
             if rst_all = '1' OR rst_c = '1' OR max = zero then
@@ -50,7 +50,10 @@ begin
                 end if;
             end if;
         end if;
- 
+    end process;
+    
+    process (clk_max)
+    begin
         if rising_edge (clk_max) then
             if rst_all = '1' then
                 max <= (others=>'0');
