@@ -32,27 +32,29 @@ end max_counter;
 
 architecture Behavioral of max_counter is
     constant one : STD_LOGIC_VECTOR (length-1 downto 0) := (0=> '1', others=> '0');
+    constant zero : STD_LOGIC_VECTOR (length-1 downto 0) := (others=> '0');
     signal cnt : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
     signal cnt_next : STD_LOGIC_VECTOR (length-1 downto 0);
     signal max : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
     process (clk_c, clk_max)
     begin
-        if rst_all = '1' then
-                max <= (others=>'0');
-                cnt <= (others=>'0');
-        end if;
-        
         if rising_edge (clk_c) then
-            if rst_c = '1' then
+            if rst_all = '1' OR rst_c = '1' OR max = zero then
                 cnt <= (others=>'0');
             elsif ce_c = '1' then
-                cnt <= (others=>'0') when cnt_next = max else cnt_next;
+                if cnt_next = max then
+                    cnt <= (others=>'0');
+                else
+                    cnt <= cnt_next;
+                end if;
             end if;
         end if;
  
         if rising_edge (clk_max) then
-            if ce_max = '1' then
+            if rst_all = '1' then
+                max <= (others=>'0');
+            elsif ce_max = '1' then
                 max <= max + one;
             end if;
         end if;

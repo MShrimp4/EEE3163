@@ -1,12 +1,12 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.sim/sim_1/impl/timing/xsim/tb_pcfg_time_impl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IOBUF_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module IOBUF_HD15
-INFO: [VRFC 10-311] analyzing module IOBUF_HD16
-INFO: [VRFC 10-311] analyzing module IOBUF_HD17
-INFO: [VRFC 10-311] analyzing module IOBUF_HD18
-INFO: [VRFC 10-311] analyzing module IOBUF_HD19
-INFO: [VRFC 10-311] analyzing module IOBUF_HD20
-INFO: [VRFC 10-311] analyzing module IOBUF_HD21
+INFO: [VRFC 10-311] analyzing module IOBUF_HD1
+INFO: [VRFC 10-311] analyzing module IOBUF_HD2
+INFO: [VRFC 10-311] analyzing module IOBUF_HD3
+INFO: [VRFC 10-311] analyzing module IOBUF_HD4
+INFO: [VRFC 10-311] analyzing module IOBUF_HD5
+INFO: [VRFC 10-311] analyzing module IOBUF_HD6
+INFO: [VRFC 10-311] analyzing module IOBUF_HD7
 INFO: [VRFC 10-311] analyzing module Option_mode
 INFO: [VRFC 10-311] analyzing module PCFG_TOP
 INFO: [VRFC 10-311] analyzing module RAM
@@ -17,6 +17,7 @@ INFO: [VRFC 10-311] analyzing module RAM_WRAPPER__xdcDup__1
 INFO: [VRFC 10-311] analyzing module RAM_WRAPPER__xdcDup__2
 INFO: [VRFC 10-311] analyzing module TOP_8254
 INFO: [VRFC 10-311] analyzing module TW_8254_CNT
+INFO: [VRFC 10-311] analyzing module ad_count_ctrl
 INFO: [VRFC 10-311] analyzing module cordic_0
 INFO: [VRFC 10-311] analyzing module delay
 INFO: [VRFC 10-311] analyzing module delay_7
@@ -29,10 +30,10 @@ INFO: [VRFC 10-311] analyzing module latch__parameterized1_0
 INFO: [VRFC 10-311] analyzing module latch__parameterized1_1
 INFO: [VRFC 10-311] analyzing module latch__parameterized1_3
 INFO: [VRFC 10-311] analyzing module latch__parameterized1_5
-INFO: [VRFC 10-311] analyzing module latch__parameterized2
+INFO: [VRFC 10-311] analyzing module latch__parameterized1_9
 INFO: [VRFC 10-311] analyzing module max_counter
+INFO: [VRFC 10-311] analyzing module max_counter_10
 INFO: [VRFC 10-311] analyzing module max_counter_6
-INFO: [VRFC 10-311] analyzing module max_counter_9
 INFO: [VRFC 10-311] analyzing module mult_gen_0
 INFO: [VRFC 10-311] analyzing module mult_gen_0_HD18
 INFO: [VRFC 10-311] analyzing module ram_control

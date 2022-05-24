@@ -315,6 +315,7 @@ addr_decode : entity work.address_decoder (Behavioral)
 
 main_ctrl   : entity work.signal_controller (Behavioral)
     port map(s_clk=>          s_clk,
+             sys_clk=>        sys_clk,
              reset=>          NOT m_fpga_reset OR s_reset_addr,
              s_oe_b=>         s_oe_b,
              s_data=>         s_IN_latch_dout,

@@ -92,18 +92,17 @@ read_vhdl -library xil_defaultlib {
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/latch.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/Option_mode.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd
+  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ad_count_ctrl.vhd
+  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/address_decoder.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/edge_detector.vhd
+  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/max_counter.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/mux.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/tristatebuff.vhd
+  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/ram_control.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/top_8254.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/tw_8254_cnt.vhd
   /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/imports/src/pcfg_top.vhd
-}
-read_vhdl -vhdl2008 -library xil_defaultlib {
-  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/max_counter.vhd
-  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/address_decoder.vhd
-  /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/new/signal_controller.vhd
 }
 read_ip -quiet /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/cordic_0/cordic_0.xci
 set_property used_in_implementation false [get_files -all /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.srcs/sources_1/ip/cordic_0/cordic_0_ooc.xdc]
