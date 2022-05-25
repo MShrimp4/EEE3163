@@ -55,7 +55,7 @@ ARCHITECTURE behavior OF tb_pcfg IS
    signal m_OE_b : std_logic := '1';
    signal m_wen : std_logic := '0';
    signal m_ren : std_logic := '0';
-   signal m_ADC_data : std_logic_vector(7 downto 0) := "00000110"; --(others => '0'); --ì´ê±° ë°”ê¿ˆ
+   signal m_ADC_data : std_logic_vector(7 downto 0) := "00000110"; --(others => '0'); --?´ê±? ë°”ê¿ˆ
 
 	--BiDirs
    signal m_data : std_logic_vector(7 downto 0);
@@ -173,9 +173,9 @@ BEGIN
    end process;
  
    Option_input_data : process(s_dat_clk)
-   file	       filein1      :   text is in "Sample_Input_1.dat"; --ì›í•˜ëŠ” datíŒŒì¼ ì´ë¦„ì„ ì ì–´ì£¼ì„¸ìš” fs=40MHz
-   variable    linein1      :   line;							 --Sample_Input_1.dat : 3*cos(2Ï€f0/fs*n) + sin(2Ï€f1/fs*n), f0=0.5MHz, f1=3.3MHz
-   variable    inputtmp1    :   integer;						 --Sample_Input_2.dat : 3*cos(2Ï€f2/fs*n) - 4*sin(2Ï€f3/fs*n) - 2*sin(2Ï€f4/fs*n), f2=1MHz, f3=2MHz, f4=4.7MHz
+   file	       filein1      :   text is in "Sample_Input_1.dat"; --?›?•˜?Š” dat?ŒŒ?¼ ?´ë¦„ì„ ? ?–´ì£¼ì„¸?š” fs=40MHz
+   variable    linein1      :   line;							 --Sample_Input_1.dat : 3*cos(2?f0/fs*n) + sin(2?f1/fs*n), f0=0.5MHz, f1=3.3MHz
+   variable    inputtmp1    :   integer;						 --Sample_Input_2.dat : 3*cos(2?f2/fs*n) - 4*sin(2?f3/fs*n) - 2*sin(2?f4/fs*n), f2=1MHz, f3=2MHz, f4=4.7MHz
    begin
    	if rising_edge(s_dat_clk) then
            if s_dat_en = '1' then
@@ -198,7 +198,7 @@ BEGIN
 	ADC_input : process
 	begin
       m_ADC_data <= m_ADC_data + x"04";
-      wait for m_clk_period*13; -- ììœ ë¡­ê²Œ ë³€ê²½ ê°€ëŠ¥
+      wait for m_clk_period*1; -- ??œ ë¡?ê²? ë³?ê²? ê°??Š¥
 	end process;
    
 	
@@ -210,7 +210,7 @@ BEGIN
 		m_reset_b  <= '1';
 		wait for 10 us;
 		
-		 -- 8254 setting (m_clkë¥¼ 4ë¶„ì£¼í•´ì„œ div_clkì„ ë§Œë“¤ê¸° ìœ„í•œ ê³¼ì •)
+		 -- 8254 setting (m_clkë¥? 4ë¶„ì£¼?•´?„œ div_clk?„ ë§Œë“¤ê¸? ?œ„?•œ ê³¼ì •)
 		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
 		wait for 10 us;
 		CMD_WR('1' & x"10","00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
@@ -279,7 +279,7 @@ BEGIN
 		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 		for i in 0 to 10 loop
-		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- PC RAMì— 10ê°œ ì½ê¸°
+		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- PC RAM?— 10ê°? ?½ê¸?
 		wait for 1 us;
 		end loop;
 		wait for 10 us;		
@@ -300,7 +300,7 @@ BEGIN
 		wait for 10 us;
 		
 		--==========Option mode sequence===========
-		--PC Write mode : PC RAMì— "Sample_Input_1.dat" Write	
+		--PC Write mode : PC RAM?— "Sample_Input_1.dat" Write	
 		s_dat_en <= '1';
 			for i in 0 to 511 loop
 			s_dat_clk <= '1';
@@ -317,7 +317,7 @@ BEGIN
 		
 	    --Option mode(step2)
 		for i in 0 to 511 loop
-		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAMê°’ ì½ê¸°
+		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAMê°? ?½ê¸?
 		wait for 1 us;
 		end loop;
 			   
