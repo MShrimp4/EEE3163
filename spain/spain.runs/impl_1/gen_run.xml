@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1653485668">
+  <File Type="BITSTR-BMM" Name="PCFG_TOP_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="PCFG_TOP_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="PCFG_TOP_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="PCFG_TOP_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="PCFG_TOP.tcl"/>
+  <File Type="OPT-TIMING" Name="PCFG_TOP_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="PCFG_TOP_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="PCFG_TOP_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="PCFG_TOP_reports.tcl"/>
+  <File Type="OPT-DRC" Name="PCFG_TOP_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="PCFG_TOP.hwdef"/>
+  <File Type="PWROPT-DCP" Name="PCFG_TOP_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="PCFG_TOP_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="PCFG_TOP_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="PCFG_TOP_placed.dcp"/>
+  <File Type="PLACE-IO" Name="PCFG_TOP_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="PCFG_TOP_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="PCFG_TOP_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="PCFG_TOP_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="PCFG_TOP_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="PCFG_TOP.bgn"/>
+  <File Type="PLACE-TIMING" Name="PCFG_TOP_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="PCFG_TOP_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="PCFG_TOP.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="PCFG_TOP_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="PCFG_TOP_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="PCFG_TOP_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="PCFG_TOP.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="PCFG_TOP_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="PCFG_TOP_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="PCFG_TOP_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="PCFG_TOP_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="PCFG_TOP_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="PCFG_TOP_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="PCFG_TOP.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="PCFG_TOP_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="PCFG_TOP.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="PCFG_TOP_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="PCFG_TOP_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="PCFG_TOP.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="PCFG_TOP_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="PCFG_TOP_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="PCFG_TOP_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="PCFG_TOP_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="PCFG_TOP_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="PCFG_TOP_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="PCFG_TOP_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="PCFG_TOP_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="PCFG_TOP_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="PCFG_TOP_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="PCFG_TOP_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="PCFG_TOP_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="PCFG_TOP_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="PCFG_TOP_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="PCFG_TOP_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="PCFG_TOP_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="PCFG_TOP_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="PCFG_TOP_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="PCFG_TOP_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="PCFG_TOP.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="PCFG_TOP_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="PCFG_TOP.rbt"/>
+  <File Type="BITSTR-NKY" Name="PCFG_TOP.nky"/>
+  <File Type="BG-DRC" Name="PCFG_TOP.drc"/>
+  <File Type="RDI-RDI" Name="PCFG_TOP.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/delay.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/latch.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Option_mode.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RAM_WRAPPER.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ad_count_ctrl.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/address_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/max_counter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mux.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/tristatebuff.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/signal_controller.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ram_control.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_8254.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/tw_8254_cnt.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pcfg_top.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/spain/tb_pcfg.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/tb_pcfg.vhd"/>
+        <Attr Name="ImportTime" Val="1651565916"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="PCFG_TOP"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/spain/pcfg2019_constraints.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/pcfg2019_constraints.xdc"/>
+        <Attr Name="ImportTime" Val="1559566630"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="RAM"/>
+  <BlockFileSet Type="BlockSrcs" Name="xfft_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="mult_gen_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cordic_0"/>
+</GenRun>
