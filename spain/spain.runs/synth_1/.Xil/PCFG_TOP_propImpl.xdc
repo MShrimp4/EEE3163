@@ -737,6 +737,8 @@ set_property src_info {type:XDC file:1 line:469 export:INPUT save:INPUT read:REA
 set_property DIRECTION INOUT [get_ports {m_debug_header[10]}]
 set_property src_info {type:XDC file:1 line:473 export:INPUT save:INPUT read:READ} [current_design]
 set_property DIRECTION INOUT [get_ports {m_debug_header[11]}]
+set_property src_info {type:XDC file:1 line:489 export:INPUT save:INPUT read:READ} [current_design]
+set_property DIRECTION INOUT [get_ports {m_debug_header[15]}]
 set_property src_info {type:XDC file:1 line:493 export:INPUT save:INPUT read:READ} [current_design]
 set_property DIRECTION INOUT [get_ports {m_debug_header[1]}]
 set_property src_info {type:XDC file:1 line:497 export:INPUT save:INPUT read:READ} [current_design]

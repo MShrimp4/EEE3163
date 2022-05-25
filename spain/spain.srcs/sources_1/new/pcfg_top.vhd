@@ -220,7 +220,7 @@ clk_gen : TOP_8254 port map(
 
 s_m_8254_reset  <= NOT s_reset_b OR s_reset8254_addr;
 s_m_8254_cs_b   <= NOT s_pcs_addr;
-s_m_8254_wr_b   <= NOT s_wen;
+s_m_8254_wr_b   <= s_oe_b;
 s_m_8254_gate0	<= '1';
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';
@@ -316,7 +316,7 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              reset=>          s_ctrl_reset,
              s_oe_b=>         s_oe_b,
              s_data=>         s_IN_latch_dout,
-             pcs_addr=>       '1',--s_pcs_addr,
+             pcs_addr=>       s_pcs_addr,
              reset8254_addr=> s_reset8254_addr,
              pc_RAM_addr=>    s_pc_RAM_addr,
              da_start_addr=>  s_da_start_addr,
@@ -485,7 +485,7 @@ s_debug_header (11) <= s_opt_step2_addr;
 --s_debug_header (12) <= ;
 --s_debug_header (13) <= ;
 --s_debug_header (14) <= ;
---s_debug_header (15) <= s_cmd_data;
+s_debug_header (15) <= s_cmd_data;
 -- Don't change this----------------
 m_debug_header(0)	<= s_clk;
 m_debug_header(1)	<= sys_clk;
