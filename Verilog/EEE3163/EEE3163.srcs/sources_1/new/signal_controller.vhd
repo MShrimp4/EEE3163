@@ -54,27 +54,9 @@ entity signal_controller is
 end signal_controller;
 
 architecture Behavioral of signal_controller is
-    -- Hot states
-    signal   s_hot    : STD_LOGIC_VECTOR (8 downto 0) := (0=>'1', others=>'0');
-    signal   s_next_hot: STD_LOGIC_VECTOR (s_hot'length-1 downto 0);
-    constant m_IDLE   : integer := 0;
-    constant m_PC_R   : integer := 1;
-    constant m_PC_W   : integer := 2;
-    constant m_DA     : integer := 3;
-    constant m_AD     : integer := 4;
-    constant m_AD_T   : integer := 5;
-    constant m_ADR    : integer := 6;
-    constant m_OPT_1  : integer := 7;
-    constant m_OPT_2  : integer := 8;
-    constant IDLE     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_IDLE  => '1', others => '0');
-    constant PC_R     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_PC_R  => '1', others => '0');
-    constant PC_W     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_PC_W  => '1', others => '0');
-    constant DA       : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_DA    => '1', others => '0');
-    constant AD       : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_AD    => '1', others => '0');
-    constant AD_T     : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_AD_T  => '1', others => '0');
-    constant ADR      : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_ADR   => '1', others => '0');
-    constant OPT_1    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_1 => '1', others => '0');
-    constant OPT_2    : STD_LOGIC_VECTOR (s_hot'length-1 downto 0) := (m_OPT_2 => '1', others => '0');
+    type st is (sIDLE, sPC_R, sPC_W, sDA, sAD, sAD_T, sADR, sOPT1, sOPT2);
+    signal state : st := sIDLE;
+    signal next_state : st ;
 
     --
     signal s_len      : STD_LOGIC_VECTOR (s_data'length-1 downto 0) := (others => '0');
@@ -82,9 +64,13 @@ architecture Behavioral of signal_controller is
     --
     signal s_PC_mux_sel : STD_LOGIC;
     signal s_OPTMODE_CTRL_en : STD_LOGIC;
+    signal s_AD_MODE_CTRL_start : STD_LOGIC;
     signal s_AD_MODE_CTRL_ack : STD_LOGIC;
     signal s_AD_MODE_done  : STD_LOGIC;
     signal s_AD_MODE_ready : STD_LOGIC;
+    --
+    signal got_lettuce : STD_LOGIC := '0';
+    signal lettuce     : STD_LOGIC;
 begin
 
 -- Components
@@ -99,7 +85,7 @@ begin
          s_clk   => s_clk,
          sys_clk => sys_clk,
          reset   => reset,
-         start   => s_hot(m_AD),
+         start   => s_AD_MODE_CTRL_start,
          ack     => s_AD_MODE_CTRL_ack,
          count_to=> s_len,
          count   => AD_RAM_addra (7 downto 0),
@@ -108,135 +94,156 @@ begin
          --
          mem_rst => ADRAM_CTRL_rst,
          wr      => ADRAM_CTRL_wr);
+    s_AD_MODE_CTRL_start <= '1' when      state = sAD else '0';
+    s_AD_MODE_CTRL_ack   <= '1' when NOT (state = sAD) else '0';
+
 -- State
     -- TODO
     process (s_clk)
     begin
         if rising_edge (s_clk) then
+            if lettuce = '1' then
+                got_lettuce <= '1';
+            end if;
+        
             if reset = '1' then
-                s_hot <= IDLE;
+                state <= sIDLE;
             else
-                case (s_hot) is
-                    when IDLE =>
-                        s_hot <= s_next_hot;
-                    when PC_R =>
-                        if s_next_hot (m_PC_R) = '0' AND s_next_hot /= IDLE then
-                            s_hot <= s_next_hot;
+                case (state) is
+                    when sIDLE =>
+                        state <= next_state;
+                    when sPC_R =>
+                        if next_state /= sPC_R AND next_state /= sIDLE then
+                            state <= next_state;
                         end if;
-                    when PC_W =>
-                        if s_next_hot (m_PC_W) = '0' AND s_next_hot /= IDLE then
-                            s_hot <= s_next_hot;
+                    when sPC_W =>
+                        if next_state /= sPC_W AND next_state /= sIDLE then
+                            state <= next_state;
                         end if;
-                    when DA =>
+                    when sDA =>
                         if da_stop_addr = '1' then
-                            s_hot <= IDLE;
+                            state <= sIDLE;
                         end if;
-                    when AD =>
+                    when sAD =>
                         if s_AD_MODE_done = '1' then
-                            s_hot <= AD_T;
+                            state <= sAD_T;
                         end if;
-                    when AD_T =>
+                    when sAD_T =>
                         if ADRAM_CTRL_tc_r = '1' then
-                            s_hot <= IDLE;
+                            state <= sIDLE;
                         end if;
-                    when ADR =>
-                        if s_next_hot (m_ADR) = '0' AND s_next_hot /= IDLE then
-                            s_hot <= s_next_hot;
+                    when sADR =>
+                        if next_state /= sADR AND next_state /= sIDLE then
+                            state <= next_state;
                         end if;
-                    when OPT_1 =>
+                    when sOPT1 =>
                         if PCRAM_CTRL_tc_r = '1' then
-                            s_hot <= IDLE;
+                            state <= sIDLE;
                         end if;
-                    when OPT_2 =>
-                        if s_next_hot (m_OPT_2) = '0' AND s_next_hot /= IDLE then
-                            s_hot <= s_next_hot;
+                    when sOPT2 =>
+                        if next_state /= sOPT2 AND next_state /= sIDLE then
+                            state <= next_state;
                         end if;
                     when others =>
-                        s_hot <= IDLE;
+                        state <= sIDLE;
                 end case;
             end if;
         end if;
     end process;
 
-    s_next_hot(m_IDLE)  <= '1' when s_next_hot(s_hot'length-1 downto 1) = (s_hot'length-1 downto 1=>'0') else '0';
-    s_next_hot(m_PC_R)  <= '1' when pc_RAM_addr    = '1' AND s_oe_b = '0' else '0';
-    s_next_hot(m_PC_W)  <= '1' when pc_RAM_addr    = '1' AND s_oe_b = '1' else '0';
-    s_next_hot(m_DA)    <= '1' when da_start_addr  = '1' else '0';
-    s_next_hot(m_AD)    <= '1' when ad_RAM_addr    = '1' else '0';
-    s_next_hot(m_AD_T)  <= '0';
-    s_next_hot(m_ADR)   <= '1' when adr_RAM_addr   = '1' else '0';
-    s_next_hot(m_OPT_1) <= '1' when opt_step1_addr = '1' AND OPTMODE_CTRL_rdy = '1' else '0';
-    s_next_hot(m_OPT_2) <= '1' when opt_step2_addr = '1' else '0';
+    next_state <= sPC_R when pc_RAM_addr    = '1' AND s_oe_b = '0'
+             else sPC_W when pc_RAM_addr    = '1' AND s_oe_b = '1'
+             else sDA   when da_start_addr  = '1'
+             else sAD   when ad_RAM_addr    = '1'
+           --else sAD_T when FALSE
+             else sADR  when adr_RAM_addr   = '1'
+             else sOPT1 when opt_step1_addr = '1' AND OPTMODE_CTRL_rdy = '1'
+             else sOPT2 when opt_step2_addr = '1'
+             else sIDLE;
 
 -- Mealy Outputs
    PCRAM_CTRL_rst   <= '1' when reset = '1'
-                  else '1' when s_hot(m_PC_W) = '0' AND s_next_hot(m_PC_W) = '1'
-                  else '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)   = '1'
+                  else '1' when state /= sPC_W AND next_state = sPC_W
+                  else '1' when state /= sAD   AND next_state = sAD
                   else '0';
-   PCRAM_CTRL_rst_r <= '1' when s_hot(m_PC_R) = '0' AND s_next_hot(m_PC_R)  = '1'
-                  else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1'
-                  else '1' when s_hot(m_DA)   = '0' AND s_next_hot(m_DA)    = '1' --optional!
+   PCRAM_CTRL_rst_r <= '1' when state /= sPC_R AND next_state = sPC_R
+                  else '1' when state /= sOPT1 AND next_state = sOPT1
+                  else '1' when state /= sDA   AND next_state = sDA --optional!
                   else '0';
-   ADRAM_CTRL_rst_r <= '1' when s_hot(m_ADR ) = '0' AND s_next_hot(m_ADR)   = '1' else '0';
-   en_latch         <= '1' when s_hot(m_AD  ) = '0' AND s_next_hot(m_AD)    = '1' else '0';
+   ADRAM_CTRL_rst_r <= '1' when state /= sADR  AND next_state = sADR  else '0';
+   en_latch         <= '1' when state /= sAD   AND next_state = sAD   else '0';
    OPTRAM_CTRL_rst  <= '1' when reset = '1'
-                  else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
+                  else '1' when state /= sOPT1 AND next_state = sOPT1 else '0';
    OPTMODE_CTRL_rst <= '1' when reset = '1'
-                  else '1' when s_hot(m_OPT_1)= '0' AND s_next_hot(m_OPT_1) = '1' else '0';
-   OPTRAM_CTRL_rst_r<= '1' when s_hot(m_OPT_2)= '0' AND s_next_hot(m_OPT_2) = '1' else '0';
+                  else '1' when state /= sOPT1 AND next_state = sOPT1 else '0';
+   OPTRAM_CTRL_rst_r<= '1' when state /= sOPT2 AND next_state = sOPT2 else '0';
 
 -- Combinational
 
-   ADRAM_CTRL_rd  <= '1'          when s_hot(m_AD_T) = '1'
-                else adr_RAM_addr when s_hot(m_ADR)  = '1' AND s_oe_b = '0'
+   ADRAM_CTRL_rd  <= '1'          when state = sAD_T
+                else adr_RAM_addr when state = sADR  AND s_oe_b = '0'
                 else '0';
 
    PCRAM_CTRL_wr  <= '1'         when s_PC_mux_sel   = '1'
-                else pc_RAM_addr when s_hot(m_PC_W)  = '1' AND s_oe_b = '1'
+                else pc_RAM_addr when state = sPC_W AND s_oe_b = '1'
                 else '0';
 
-   PCRAM_CTRL_rd  <= '1'         when s_hot(m_DA)    = '1'
+   PCRAM_CTRL_rd  <= '1'         when state = sDA
                 else '1'         when s_OPTMODE_CTRL_en = '1'
-                else pc_RAM_addr when s_hot(m_PC_R)  = '1' AND s_oe_b = '0'
+                else pc_RAM_addr when state = sPC_R AND s_oe_b = '0'
                 else '0';
 
-   PCRAM_CTRL_fastw <= NOT s_hot (m_PC_W);
-   PCRAM_CTRL_fastr <= NOT s_hot (m_PC_R);
-   ADRAM_CTRL_fastr <= NOT s_hot (m_ADR);
+   PCRAM_CTRL_fastw <= '1' when NOT (state = sPC_W) else '0';
+   PCRAM_CTRL_fastr <= '1' when NOT (state = sPC_R) else '0';
+   ADRAM_CTRL_fastr <= '1' when NOT (state = sADR ) else '0';
 
-   OPTRAM_CTRL_rd <= opt_step2_addr when s_hot(m_OPT_2) = '1' AND s_oe_b = '0' --AND rising_d
+   OPTRAM_CTRL_rd <= opt_step2_addr when state = sOPT2 AND s_oe_b = '0' --AND rising_d
                 else '0';
 
-   s_OPTMODE_CTRL_en <= s_hot(m_OPT_1) AND OPTMODE_CTRL_rdy;
+   s_OPTMODE_CTRL_en <= '1' when state = sOPT1 AND OPTMODE_CTRL_rdy = '1' else '0';
    OPTMODE_CTRL_en <= s_OPTMODE_CTRL_en;
    
-   s_AD_MODE_CTRL_ack <= NOT s_hot(m_AD);
    
-   OUT_mux_sel  <= "00" when s_hot(m_PC_R)  = '1' AND pc_RAM_addr  = '1'
-              else "01" when s_hot(m_OPT_2) = '1'
-              else "10" when s_hot(m_ADR)   = '1' AND adr_RAM_addr = '1'
+   OUT_mux_sel  <= "00" when state = sPC_R AND pc_RAM_addr  = '1'
+              else "01" when state = sOPT2 
+              else "10" when state = sADR  AND adr_RAM_addr = '1'
               else "00";
-   s_PC_mux_sel <= ADRAM_CTRL_r_rdy AND NOT s_hot(m_ADR);
+
+   s_PC_mux_sel <= '1' when ADRAM_CTRL_r_rdy = '1' AND NOT (state = sADR) else '0';
    PC_mux_sel   <= s_PC_mux_sel;
-   DA_latch_en  <= '1'  when s_hot (m_DA)   = '1' else '0';
+   DA_latch_en  <= '1' when state = sDA else '0';
    
    debug_state (2 downto 0)
-               <= "000" when s_hot(0) = '1'
-             else "001" when s_hot(1) = '1'
-             else "010" when s_hot(2) = '1'
-             else "011" when s_hot(3) = '1'
-             else "100" when s_hot(4) = '1'
-             else "101" when s_hot(5) = '1'
-             else "110" when s_hot(6) = '1'
+               <= "000" when state = sIDLE
+             else "001" when state = sPC_R
+             else "010" when state = sPC_W
+             else "011" when state = sDA
+             else "100" when state = sAD
+             else "101" when state = sAD_T
+             else "110" when state = sADR
              else "111";
              
-   debug_state (3)
-               <= s_AD_MODE_ready;
-   debug_state (4)
-               <= s_AD_MODE_done;
-   debug_state (5)
-               <= OPTMODE_CTRL_rdy;
-   debug_state (6)
-               <= '0';
+   debug_state (5 downto 3)
+               <= "000" when next_state = sIDLE
+             else "001" when next_state = sPC_R
+             else "010" when next_state = sPC_W
+             else "011" when next_state = sDA
+             else "100" when next_state = sAD
+             else "101" when next_state = sAD_T
+             else "110" when next_state = sADR
+             else "111";
+   lettuce
+               <= '1' when
+         pcs_addr = '1' OR
+         reset8254_addr = '1' OR 
+         pc_RAM_addr = '1' OR 
+         da_start_addr = '1' OR 
+         da_stop_addr = '1' OR 
+         ad_RAM_addr = '1' OR 
+         adr_RAM_addr = '1' OR 
+         opt_step1_addr = '1' OR 
+         opt_step2_addr = '1'
+         else '0';
+    debug_state (6) <= got_lettuce;
 
 end Behavioral;

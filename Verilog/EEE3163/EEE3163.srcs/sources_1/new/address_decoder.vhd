@@ -19,13 +19,13 @@ end address_decoder;
 architecture Behavioral of address_decoder is
 begin
     pcs_addr       <= en when addr_in (8 downto 2) = "1000100" else '0'; --0x110~0x113
-    reset_addr     <= en when ("000" & addr_in) = x"120" else '0';
-    reset8254_addr <= en when ("000" & addr_in) = x"121" else '0';
-    pc_RAM_addr    <= en when ("000" & addr_in) = x"130" else '0';
-    da_start_addr  <= en when ("000" & addr_in) = x"140" else '0';
-    da_stop_addr   <= en when ("000" & addr_in) = x"141" else '0';
-    ad_RAM_addr    <= en when ("000" & addr_in) = x"150" else '0';
-    adr_RAM_addr   <= en when ("000" & addr_in) = x"151" else '0';
-    opt_step1_addr <= en when ("000" & addr_in) = x"160" else '0';
-    opt_step2_addr <= en when ("000" & addr_in) = x"161" else '0';
+    reset_addr     <= en when addr_in = '1' & x"20" else '0';
+    reset8254_addr <= en when addr_in = '1' & x"21" else '0';
+    pc_RAM_addr    <= en when addr_in = '1' & x"30" else '0';
+    da_start_addr  <= en when addr_in = '1' & x"40" else '0';
+    da_stop_addr   <= en when addr_in = '1' & x"41" else '0';
+    ad_RAM_addr    <= en when addr_in = '1' & x"50" else '0';
+    adr_RAM_addr   <= en when addr_in = '1' & x"51" else '0';
+    opt_step1_addr <= en when addr_in = '1' & x"60" else '0';
+    opt_step2_addr <= en when addr_in = '1' & x"61" else '0';
 end Behavioral;

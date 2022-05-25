@@ -91,13 +91,15 @@ ARCHITECTURE behavior OF tb_pcfg IS
 				signal 		n_OE			: out   std_logic) is
 	begin
 	 
-		Address_tmp				<= Addr; 
+		Address_tmp				<= (others=>'0'); 
 		Data_tmp   				<= Data_in;
 		CMD_DATA_tmp 			<= '1';
 		WEN_tmp 				<= '0';
 		REN_tmp 				<= '0';
 		n_OE					<= '1';
-		wait for m_clk_period*5;
+		wait for m_clk_period*1;
+		Address_tmp				<= Addr; 
+		wait for m_clk_period*4;
 	
 		WEN_tmp 				<= '1';
 		wait for m_clk_period*5;
@@ -121,13 +123,15 @@ ARCHITECTURE behavior OF tb_pcfg IS
 				signal		n_OE			: out	std_logic
 				) is
 	begin
-		Address_tmp				<= Addr; 
+		Address_tmp				<= (others=>'0'); 
 		CMD_DATA_tmp 			<= '1';
 		WEN_tmp 				<= '0';
 		REN_tmp 				<= '0';
 		n_OE					<= '0';
 		Data_tmp				<= "ZZZZZZZZ";
-		wait for m_clk_period*5;
+		wait for m_clk_period*1;
+		Address_tmp				<= Addr; 
+		wait for m_clk_period*4;
 		REN_tmp 				<= '1';
 		wait for m_clk_period*5;
 		Address_tmp				<= (others=>'Z'); 
@@ -204,7 +208,7 @@ BEGIN
 	ADC_input : process
 	begin
       m_ADC_data <= m_ADC_data + x"04";
-      wait for m_clk_period*13; -- 자유롭게 변경 가능
+      wait for m_clk_period; -- 자유롭게 변경 가능
 	end process;
    
 	

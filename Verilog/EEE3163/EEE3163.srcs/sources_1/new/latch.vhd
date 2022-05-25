@@ -12,10 +12,12 @@ end latch;
 architecture Behavioral of latch is
     signal latched_input : STD_LOGIC_VECTOR (length-1 downto 0) := (others=>'0');
 begin
-    process (en, clk)
+    process (clk)
     begin
-        if en = '1' and rising_edge (clk) then
-            latched_input <= input;
+        if rising_edge (clk) then
+            if en = '1' then
+                latched_input <= input;
+            end if;
         end if;
     end process;
     

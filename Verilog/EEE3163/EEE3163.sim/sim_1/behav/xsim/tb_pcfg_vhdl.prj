@@ -10,7 +10,6 @@ vhdl xil_defaultlib  \
 "../../../../EEE3163.srcs/sources_1/new/RAM_WRAPPER.vhd" \
 "../../../../EEE3163.srcs/sources_1/new/ad_count_ctrl.vhd" \
 "../../../../EEE3163.srcs/sources_1/new/address_decoder.vhd" \
-"../../../../EEE3163.srcs/sources_1/new/edge_detector.vhd" \
 "../../../../EEE3163.srcs/sources_1/new/max_counter.vhd" \
 "../../../../EEE3163.srcs/sources_1/new/mux.vhd" \
 "../../../../EEE3163.srcs/sources_1/new/tristatebuff.vhd" \

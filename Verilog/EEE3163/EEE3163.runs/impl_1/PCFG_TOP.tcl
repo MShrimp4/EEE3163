@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -124,7 +125,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 3
-  open_checkpoint PCFG_TOP_postroute_physopt.dcp
+  open_checkpoint PCFG_TOP_routed.dcp
   set_property webtalk.parent_dir /home/mshrimp/gitclones/EEE3163/Verilog/EEE3163/EEE3163.cache/wt [current_project]
 set_property TOP PCFG_TOP [current_fileset]
 OPTRACE "read constraints: write_bitstream" START { }

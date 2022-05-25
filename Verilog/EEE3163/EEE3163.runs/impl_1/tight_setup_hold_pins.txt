@@ -1,7 +1,0 @@
-+==============+===============+=================================================+
-| Launch Clock | Capture Clock | Pin                                             |
-+==============+===============+=================================================+
-| m_fpga_clk   | sys_clk       | main_ctrl/ad_ctrl/FSM_sequential_state_reg[1]/D |
-| m_fpga_clk   | sys_clk       | main_ctrl/ad_ctrl/FSM_sequential_state_reg[2]/D |
-| m_fpga_clk   | sys_clk       | main_ctrl/ad_ctrl/FSM_sequential_state_reg[0]/D |
-+--------------+---------------+-------------------------------------------------+

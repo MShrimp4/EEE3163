@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date         : Tue May 24 22:58:41 2022
+| Date         : Wed May 25 20:54:10 2022
 | Host         : mshrimp running 64-bit Arch Linux
 | Command      : report_drc -file PCFG_TOP_drc_routed.rpt -pb PCFG_TOP_drc_routed.pb -rpx PCFG_TOP_drc_routed.rpx
 | Design       : PCFG_TOP
@@ -71,12 +71,12 @@ Related violations: <none>
 
 PDRC-153#1 Warning
 Gated clock check  
-Net clk_gen/CNT0/s_wr is a gated clock net sourced by a combinational pin clk_gen/CNT0/s_REG[15]_i_2/O, cell clk_gen/CNT0/s_REG[15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Net clk_gen/CNT0_i_2_n_0 is a gated clock net sourced by a combinational pin clk_gen/CNT0_i_2/O, cell clk_gen/CNT0_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>
 
 PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
-A LUT clk_gen/CNT0/s_REG[15]_i_2 is driving clock pin of 20 cells. This could lead to large hold time violations. Involved cells are:
+A LUT clk_gen/CNT0_i_2 is driving clock pin of 20 cells. This could lead to large hold time violations. Involved cells are:
 clk_gen/CNT0/s_REG_reg[0], clk_gen/CNT0/s_REG_reg[10],
 clk_gen/CNT0/s_REG_reg[11], clk_gen/CNT0/s_REG_reg[12],
 clk_gen/CNT0/s_REG_reg[13], clk_gen/CNT0/s_REG_reg[14],
