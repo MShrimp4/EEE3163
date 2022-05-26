@@ -1,0 +1,803 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu May 26 15:58:58 2022
+# Process ID: 10384
+# Current directory: D:/vivado_projects/spain/spain.runs/synth_1
+# Command line: vivado.exe -log PCFG_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PCFG_TOP.tcl
+# Log file: D:/vivado_projects/spain/spain.runs/synth_1/PCFG_TOP.vds
+# Journal file: D:/vivado_projects/spain/spain.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source PCFG_TOP.tcl -notrace
+Command: synth_design -top PCFG_TOP -part xc7s75fgga676-2 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7s75'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s75'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 14220 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 381.086 ; gain = 101.945
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'PCFG_TOP' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:37]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+INFO: [Synth 8-113] binding component instance 's_clk_g' to cell 'IBUF' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:199]
+INFO: [Synth 8-3491] module 'TOP_8254' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:29' bound to instance 'clk_gen' of component 'TOP_8254' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:204]
+INFO: [Synth 8-638] synthesizing module 'TOP_8254' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:52]
+INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:6' bound to instance 'CNT0' of component 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:16]
+WARNING: [Synth 8-6014] Unused sequential element s_CNT3_reg was removed.  [D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'TW_8254_CNT' (1#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:16]
+INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:6' bound to instance 'CNT1' of component 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:170]
+INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:6' bound to instance 'CNT2' of component 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:182]
+INFO: [Synth 8-256] done synthesizing module 'TOP_8254' (2#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'delay' [D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd:20]
+	Parameter length bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'delay' (3#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'safe_latch' [D:/vivado_projects/spain/spain.srcs/sources_1/new/safe_latch.vhd:13]
+	Parameter length bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'safe_latch' (4#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/safe_latch.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'latch' [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
+	Parameter length bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'latch' (5#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'tristatebuffer' [D:/vivado_projects/spain/spain.srcs/sources_1/new/tristatebuff.vhd:34]
+	Parameter length bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tristatebuffer' (6#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/tristatebuff.vhd:34]
+INFO: [Synth 8-638] synthesizing module 'mux' [D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd:23]
+	Parameter length bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'mux' (7#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (8#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd:19]
+INFO: [Synth 8-638] synthesizing module 'signal_controller' [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'ad_count_ctrl' [D:/vivado_projects/spain/spain.srcs/sources_1/new/ad_count_ctrl.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'ad_count_ctrl' (9#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/ad_count_ctrl.vhd:27]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'debug_state_reg' in module 'signal_controller' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:262]
+WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'debug_state_reg' in module 'signal_controller' in the same process may cause logic issues. 
+ Please split the sync and async parts into different processes [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:272]
+INFO: [Synth 8-256] done synthesizing module 'signal_controller' (10#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'RAM_WRAPPER' [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
+INFO: [Synth 8-3491] module 'RAM' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'RAM' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/RAM_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'RAM_WRAPPER' (11#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
+INFO: [Synth 8-638] synthesizing module 'ram_control' [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:25]
+	Parameter length bound to: 11 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'max_counter' [D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd:33]
+	Parameter length bound to: 11 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'max_counter' (12#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd:33]
+WARNING: [Synth 8-3936] Found unconnected internal register 'w_delay_reg' and it is trimmed from '2' to '1' bits. [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'ram_control' (13#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:25]
+INFO: [Synth 8-638] synthesizing module 'Option_mode' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:22]
+INFO: [Synth 8-3491] module 'xfft_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'xfft_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/xfft_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:98]
+INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:106]
+INFO: [Synth 8-3491] module 'cordic_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:116]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-10384-DESKTOP-19UI20G/realtime/cordic_0_stub.vhdl:16]
+INFO: [Synth 8-256] done synthesizing module 'Option_mode' (14#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:22]
+WARNING: [Synth 8-3848] Net m_dac_gain_d in module/entity PCFG_TOP does not have driver. [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:21]
+WARNING: [Synth 8-3848] Net m_dac_gain_clk in module/entity PCFG_TOP does not have driver. [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'PCFG_TOP' (15#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:37]
+WARNING: [Synth 8-3331] design signal_controller has unconnected port pcs_addr
+WARNING: [Synth 8-3331] design signal_controller has unconnected port reset8254_addr
+WARNING: [Synth 8-3331] design signal_controller has unconnected port AD_RAM_addra[10]
+WARNING: [Synth 8-3331] design signal_controller has unconnected port AD_RAM_addra[9]
+WARNING: [Synth 8-3331] design signal_controller has unconnected port AD_RAM_addra[8]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[7]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[6]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[5]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[4]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[3]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[2]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[1]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_d[0]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_clk
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_header[14]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_header[13]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_header[12]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_wen
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[7]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[6]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[5]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[4]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[3]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[2]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[1]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 436.914 ; gain = 157.773
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 436.914 ; gain = 157.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 436.914 ; gain = 157.773
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7s75fgga676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'PCRAM/RAM1'
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'ADRAM/RAM1'
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM/RAM_in_context.xdc] for cell 'OPTIONRAM/RAM1'
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/xfft_0/xfft_0/xfft_0_in_context.xdc] for cell 'OPTMODE_CTRL/FFT'
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_REAL'
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0/mult_gen_0_in_context.xdc] for cell 'OPTMODE_CTRL/MULT_IMAG'
+Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
+Finished Parsing XDC File [d:/vivado_projects/spain/spain.srcs/sources_1/ip/cordic_0/cordic_0/cordic_0_in_context.xdc] for cell 'OPTMODE_CTRL/SQRT'
+Parsing XDC File [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_HDMI_CLK' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:1]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_adc_lvds_da' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:2]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_adc_lvds_db' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:3]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_adc_lvds_dco' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:4]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_adc_lvds_fco' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:5]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_ddr3_ck' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:6]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_ddr3_ldqs' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:7]
+CRITICAL WARNING: [Coretcl 2-95] Port 'm_ddr3_udqs' not found. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:8]
+CRITICAL WARNING: [Coretcl 2-163] Could not find the bus bit index in 'm_hdmi_d[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:9]
+CRITICAL WARNING: [Coretcl 2-163] Could not find the bus bit index in 'm_hdmi_d[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:10]
+CRITICAL WARNING: [Coretcl 2-163] Could not find the bus bit index in 'm_hdmi_d[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:11]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_da'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_da_n'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_db'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_db_n'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_fco'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_fco_n'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_csb'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_sclk'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_sdio'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_reset'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_dco'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_lvds_dco_n'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[3]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[4]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:28]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[5]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[6]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[7]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[8]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[9]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[10]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[11]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[12]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[13]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[14]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[15]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[16]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[17]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_a[18]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:43]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[3]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[4]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:47]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[5]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:48]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[6]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:49]
+WARNING: [Vivado 12-584] No ports matched 'm_sram_io[7]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:50]
+WARNING: [Vivado 12-584] No ports matched 'm_SRAM_CE_B'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:51]
+WARNING: [Vivado 12-584] No ports matched 'm_SRAM_OE_B'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:52]
+WARNING: [Vivado 12-584] No ports matched 'm_SRAM_WE_B'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'm_SPI_S_B'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:54]
+WARNING: [Vivado 12-584] No ports matched 'm_spi_dq[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:55]
+WARNING: [Vivado 12-584] No ports matched 'm_spi_dq[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:56]
+WARNING: [Vivado 12-584] No ports matched 'm_spi_dq[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:57]
+WARNING: [Vivado 12-584] No ports matched 'm_spi_dq[3]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:58]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:59]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:60]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:61]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[3]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:62]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[4]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:63]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[5]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:64]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[6]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:65]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[7]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:66]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[8]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:67]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[9]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:68]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[10]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:69]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[11]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:70]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[12]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[13]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[14]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:73]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_dq[15]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:74]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:75]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:76]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:77]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[3]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:78]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[4]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:79]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[5]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:80]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[6]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:81]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[7]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:82]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[8]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:83]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[9]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:84]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[10]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:85]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[11]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:86]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[12]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:87]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_a[13]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:88]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_ba[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:89]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_ba[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_ba[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_cas_b'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_ras_b'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_cs_b'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_we_b'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_reset_b'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:96]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_cke'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:97]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_ldm'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:98]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_udm'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:99]
+WARNING: [Vivado 12-584] No ports matched 'm_ddr3_odt'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'm_adc_pwrdwn'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:110]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:126]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[2]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:128]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[3]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:129]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[4]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:130]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[5]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:131]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[6]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:132]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pa[7]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:133]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pe0[0]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:151]
+WARNING: [Vivado 12-584] No ports matched 'm_usb_pe0[1]'. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:152]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:152]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[0]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:236]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[1]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:238]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[2]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:240]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[3]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:242]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[4]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:244]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[5]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:246]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[6]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:248]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_d[7]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:250]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[0]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:252]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[1]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:254]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[2]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:256]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[3]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:258]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[4]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:260]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[5]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:262]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[6]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:264]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[7]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:266]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_address[8]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:268]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[0]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:270]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[1]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:274]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[2]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:278]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[3]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:282]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[4]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:286]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[5]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:290]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[6]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:294]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_d[7]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:298]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[0]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:334]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[1]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:338]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[2]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:342]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[3]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:346]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[4]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:350]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[5]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:354]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[6]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:358]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_data[7]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:362]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[0]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:465]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[10]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:469]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[11]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:473]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[15]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:489]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[1]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:493]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[2]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:497]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[3]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:501]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[4]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:505]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[5]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:509]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[6]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:513]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[7]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:517]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[8]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:521]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_header[9]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:525]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[0]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:529]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[1]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:533]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[2]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:537]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[3]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:541]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[4]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:545]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[5]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:549]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[6]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:553]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_debug_led[7]' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:557]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_adc_clk' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:869]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_cmd_data' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:909]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_dac_clk' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:911]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_fpga_clk' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:964]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_fpga_reset' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:966]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_oe_b' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:968]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_ren' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:970]
+Finished Parsing XDC File [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/PCFG_TOP_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PCFG_TOP_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/PCFG_TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 767.875 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 767.875 ; gain = 488.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7s75fgga676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 767.875 ; gain = 488.734
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for PCRAM/RAM1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for ADRAM/RAM1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for OPTIONRAM/RAM1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/FFT. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/MULT_IMAG. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/MULT_REAL. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/SQRT. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 767.875 ; gain = 488.734
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "s_CNT3_D" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_CNT3_D" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ready" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "request_reset" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_AD_MODE_CTRL_start" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DA_latch_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "s_AD_MODE_CTRL_start" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DA_latch_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "OUT_mux_sel" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 767.875 ; gain = 488.734
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     40 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 6     
+	   2 Input     15 Bit       Adders := 6     
+	   2 Input     11 Bit       Adders := 9     
++---Registers : 
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 3     
+	               15 Bit    Registers := 6     
+	               11 Bit    Registers := 6     
+	                8 Bit    Registers := 6     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 31    
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 12    
+	   4 Input     16 Bit        Muxes := 3     
+	   2 Input     15 Bit        Muxes := 27    
+	   2 Input      8 Bit        Muxes := 6     
+	   6 Input      8 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   8 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 49    
+	   7 Input      1 Bit        Muxes := 4     
+	   3 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	  10 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module TW_8254_CNT 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input     15 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 1     
+	               15 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 9     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+Module TOP_8254 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      3 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 4     
+Module delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module safe_latch 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module latch 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module mux 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module ad_count_ctrl 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input      8 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+Module signal_controller 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 4     
+	   8 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	  10 Input      1 Bit        Muxes := 1     
+Module max_counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 3     
++---Registers : 
+	               11 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module ram_control 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
+Module Option_mode 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     40 Bit       Adders := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 140 (col length:80)
+BRAMs: 180 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (OPTRAM_CTRL/w_fall_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ADRAM_CTRL/w_fall_reg)
+WARNING: [Synth 8-3332] Sequential element (s_wr_L_reg) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_wr_M_reg) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_wr_wait_reg) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[15]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[14]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[13]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[12]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[11]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[10]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[9]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[8]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[7]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[6]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[5]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[4]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[3]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[2]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[1]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[0]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_mode_reg) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[14]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[13]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[12]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[11]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[10]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[9]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[8]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[7]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[6]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[5]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[4]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[3]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[2]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[1]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[0]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[14]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[13]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[12]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[11]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[10]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[9]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[8]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[7]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[6]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[5]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[4]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[3]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[2]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[1]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[0]) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_UD_reg) is unused and will be removed from module TW_8254_CNT__2.
+WARNING: [Synth 8-3332] Sequential element (s_wr_L_reg) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_wr_M_reg) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_wr_wait_reg) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[15]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[14]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[13]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[12]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[11]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[10]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[9]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[8]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[7]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[6]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[5]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[4]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[3]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[2]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[1]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_REG_reg[0]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_mode_reg) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[14]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[13]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[12]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[11]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[10]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[9]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[8]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[7]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[6]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[5]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[4]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[3]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[2]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[1]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_D_reg[0]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[14]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[13]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[12]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[11]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[10]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[9]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[8]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[7]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[6]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[5]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[4]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[3]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[2]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[1]) is unused and will be removed from module TW_8254_CNT.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 767.875 ; gain = 488.734
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 767.875 ; gain = 488.734
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 787.543 ; gain = 508.402
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 787.543 ; gain = 508.402
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 787.543 ; gain = 508.402
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 787.543 ; gain = 508.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |RAM           |         3|
+|2     |xfft_0        |         1|
+|3     |mult_gen_0    |         2|
+|4     |cordic_0      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------------+------+
+|      |Cell              |Count |
++------+------------------+------+
+|1     |RAM_bbox_1        |     1|
+|2     |RAM_bbox_1__3     |     1|
+|3     |RAM_bbox_1__4     |     1|
+|4     |cordic_0_bbox_5   |     1|
+|5     |mult_gen_0_bbox_3 |     1|
+|6     |mult_gen_0_bbox_4 |     1|
+|7     |xfft_0_bbox_2     |     1|
+|8     |BUFG              |     1|
+|9     |CARRY4            |    33|
+|10    |LUT1              |    72|
+|11    |LUT2              |    68|
+|12    |LUT3              |   112|
+|13    |LUT4              |    60|
+|14    |LUT5              |    42|
+|15    |LUT6              |   100|
+|16    |FDCE              |    32|
+|17    |FDPE              |     4|
+|18    |FDRE              |   187|
+|19    |FDSE              |     5|
+|20    |IBUF              |    22|
+|21    |IOBUF             |     8|
+|22    |OBUF              |    31|
+|23    |OBUFT             |    12|
++------+------------------+------+
+
+Report Instance Areas: 
++------+------------------+-----------------------+------+
+|      |Instance          |Module                 |Cells |
++------+------------------+-----------------------+------+
+|1     |top               |                       |   966|
+|2     |  clk_gen         |TOP_8254               |   253|
+|3     |    CNT0          |TW_8254_CNT__1         |   229|
+|4     |  CMD_DELAY       |delay__1               |     1|
+|5     |  ALL_INPUT_LATCH |safe_latch             |    38|
+|6     |  OUT_LATCH       |latch__1               |     8|
+|7     |  DA_LATCH        |latch__2               |     8|
+|8     |  AD_LATCH        |latch__3               |     8|
+|9     |  TRIBUF          |tristatebuffer         |     8|
+|10    |  PC_MUX          |mux__1                 |     8|
+|11    |  OUT_mux_1       |mux__2                 |     8|
+|12    |  OUT_mux_2       |mux                    |     8|
+|13    |  addr_decode     |address_decoder        |    12|
+|14    |  main_ctrl       |signal_controller      |   100|
+|15    |    len_latch     |latch                  |     8|
+|16    |    ad_ctrl       |ad_count_ctrl          |    32|
+|17    |  PCRAM           |RAM_WRAPPER__xdcDup__1 |     8|
+|18    |  ADRAM           |RAM_WRAPPER__xdcDup__2 |     8|
+|19    |  OPTIONRAM       |RAM_WRAPPER            |     8|
+|20    |  PCRAM_CTRL      |ram_control__1         |    67|
+|21    |    counter       |max_counter__1         |    57|
+|22    |  ADRAM_CTRL      |ram_control__2         |    63|
+|23    |    counter       |max_counter__2         |    57|
+|24    |  OPTRAM_DELAY    |delay__2               |     1|
+|25    |  OPTRAM_CTRL     |ram_control            |    61|
+|26    |    counter       |max_counter            |    57|
+|27    |  OPTMODE_CTRL    |Option_mode            |   202|
+|28    |    OUT_EN_DELAY  |delay                  |     1|
++------+------------------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 787.543 ; gain = 508.402
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 107 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 787.543 ; gain = 177.441
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 787.543 ; gain = 508.402
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 8 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 8 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 233 Warnings, 72 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 787.543 ; gain = 519.723
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'D:/vivado_projects/spain/spain.runs/synth_1/PCFG_TOP.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file PCFG_TOP_utilization_synth.rpt -pb PCFG_TOP_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.052 . Memory (MB): peak = 787.543 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu May 26 15:59:31 2022...
