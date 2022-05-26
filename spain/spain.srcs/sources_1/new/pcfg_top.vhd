@@ -221,7 +221,7 @@ clk_gen : TOP_8254 port map(
 
 s_m_8254_reset  <= NOT s_reset_b OR s_reset8254_addr;
 s_m_8254_cs_b   <= NOT s_pcs_addr;
-s_m_8254_wr_b   <= s_oe_b;
+s_m_8254_wr_b   <= NOT s_oe_b;
 s_m_8254_gate0	<= '1';
 s_m_8254_gate1	<= '1';
 s_m_8254_gate2	<= '1';

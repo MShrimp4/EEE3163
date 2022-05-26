@@ -68,6 +68,8 @@ architecture Behavioral of signal_controller is
     signal s_AD_MODE_CTRL_ack : STD_LOGIC;
     signal s_AD_MODE_done  : STD_LOGIC;
     signal s_AD_MODE_ready : STD_LOGIC;
+    
+    signal s_is_idle_like : boolean;
     --
     signal got_lettuce : STD_LOGIC := '0';
     signal lettuce     : STD_LOGIC;
@@ -162,21 +164,34 @@ begin
              else sIDLE;
 
 -- Mealy Outputs
+   s_is_idle_like <=  state = sIDLE OR state = sPC_W OR state = sPC_R OR state = sADR OR state = sOPT2;
    PCRAM_CTRL_rst   <= '1' when reset = '1'
+                  else '0' when NOT s_is_idle_like
                   else '1' when state /= sPC_W AND next_state = sPC_W
                   else '1' when state /= sAD   AND next_state = sAD
                   else '0';
-   PCRAM_CTRL_rst_r <= '1' when state /= sPC_R AND next_state = sPC_R
+   PCRAM_CTRL_rst_r <= '0' when NOT s_is_idle_like
+                  else '1' when state /= sPC_R AND next_state = sPC_R
                   else '1' when state /= sOPT1 AND next_state = sOPT1
                   else '1' when state /= sDA   AND next_state = sDA --optional!
                   else '0';
-   ADRAM_CTRL_rst_r <= '1' when state /= sADR  AND next_state = sADR  else '0';
-   en_latch         <= '1' when state /= sAD   AND next_state = sAD   else '0';
+   ADRAM_CTRL_rst_r <= '0' when NOT s_is_idle_like
+                  else '1' when state /= sADR  AND next_state = sADR  
+                  else '0';
+   en_latch         <= '0' when NOT s_is_idle_like
+                  else '1' when state /= sAD   AND next_state = sAD   
+                  else '0';
    OPTRAM_CTRL_rst  <= '1' when reset = '1'
-                  else '1' when state /= sOPT1 AND next_state = sOPT1 else '0';
+                  else '0' when NOT s_is_idle_like
+                  else '1' when state /= sOPT1 AND next_state = sOPT1 
+                  else '0';
    OPTMODE_CTRL_rst <= '1' when reset = '1'
-                  else '1' when state /= sOPT1 AND next_state = sOPT1 else '0';
-   OPTRAM_CTRL_rst_r<= '1' when state /= sOPT2 AND next_state = sOPT2 else '0';
+                  else '0' when NOT s_is_idle_like
+                  else '1' when state /= sOPT1 AND next_state = sOPT1 
+                  else '0';
+   OPTRAM_CTRL_rst_r<= '0' when NOT s_is_idle_like
+                  else '1' when state /= sOPT2 AND next_state = sOPT2 
+                  else '0';
 
 -- Combinational
 

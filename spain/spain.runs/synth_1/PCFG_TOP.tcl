@@ -32,11 +32,11 @@ set_property ip_output_repo d:/vivado_projects/spain/spain.cache/ip [current_pro
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd
-  D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/ad_count_ctrl.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd
+  D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/safe_latch.vhd

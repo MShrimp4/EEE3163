@@ -97,13 +97,13 @@ ARCHITECTURE behavior OF tb_pcfg IS
 		WEN_tmp 				<= 'X';
 		REN_tmp 				<= 'X';
 		n_OE					<= 'X';
-		wait for m_clk_period*0.9;
+		wait for m_clk_period*0.5;
 		Address_tmp				<= Addr; 
         Data_tmp                <= Data_in;
         WEN_tmp                 <= '0';
         REN_tmp                 <= '0';
         n_OE                    <= '1';
-		wait for m_clk_period*4.1;
+		wait for m_clk_period*4.5;
 	
 		WEN_tmp 				<= '1';
 		wait for m_clk_period*5;
@@ -133,13 +133,13 @@ ARCHITECTURE behavior OF tb_pcfg IS
 		WEN_tmp 				<= 'X';
 		REN_tmp 				<= 'X';
 		n_OE					<= 'X';
-		wait for m_clk_period*0.9;
+		wait for m_clk_period*0.5;
 		Address_tmp				<= Addr; 
         Data_tmp                <= "ZZZZZZZZ";
         WEN_tmp                 <= '0';
         REN_tmp                 <= '0';
         n_OE                    <= '0';
-		wait for m_clk_period*4.1;
+		wait for m_clk_period*4.5;
 		REN_tmp 				<= '1';
 		wait for m_clk_period*5;
 		Address_tmp				<= (others=>'Z'); 

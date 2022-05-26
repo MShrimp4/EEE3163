@@ -72,10 +72,7 @@ END COMPONENT;
     
     signal added_val : SIGNED (39 downto 0);
     
--- Love of my life, don't leave me
-
-    signal sqrt_output : STD_LOGIC_VECTOR (23 downto 0);
-    signal sqrt_valid  : STD_LOGIC;
+    signal sqrt_data : STD_LOGIC_VECTOR  (23 downto 0);
 begin
 
 -- Components
@@ -119,20 +116,10 @@ begin
     SQRT : cordic_0
         port map (s_axis_cartesian_tdata  => std_logic_vector (added_val),
                   s_axis_cartesian_tvalid => mult_tvalid,
-                  m_axis_dout_tdata       => sqrt_output,
-                  m_axis_dout_tvalid      => sqrt_valid,
+                  m_axis_dout_tdata       => sqrt_data,
+                  m_axis_dout_tvalid      => m_yout_valid,
                   aclk                    => m_clk);
-                  
-    SQRT_LATCH : entity work.latch (Behavioral)
-    generic map (length=> m_yout'length)
-    port map (clk=>m_clk, en=>'1',
-              input (7) => sqrt_output(18),
-              input (6 downto 0) => sqrt_output(12 downto 6),
-              output => m_yout);
-              
-    SQRT_DELAY : entity work.delay (Behavioral)
-    generic map (length=>1)
-    port map (clk=>m_clk,
-              input  => sqrt_valid,
-              output => m_yout_valid);
+        
+        m_yout (7) <= sqrt_data (18);
+        m_yout (6 downto 0) <= sqrt_data (12 downto 6);
 end Behavioral;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1653534681">
+<GenRun Id="synth_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1653540199">
   <File Type="PA-TCL" Name="PCFG_TOP.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="PCFG_TOP_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="PCFG_TOP_reports.tcl"/>
@@ -12,12 +12,6 @@
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/delay.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/latch.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -42,6 +36,12 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/address_decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/latch.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -132,8 +132,8 @@
     <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design">
       <Option Id="FlattenHierarchy">1</Option>
-      <Option Id="FsmExtraction">0</Option>
       <Option Id="Directive">0</Option>
+      <Option Id="FsmExtraction">0</Option>
     </Step>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="RAM"/>
