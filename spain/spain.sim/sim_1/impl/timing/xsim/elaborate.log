@@ -235,7 +235,7 @@ Compiling module xil_defaultlib.mult_gen_0_dsp_HD21
 Compiling module xil_defaultlib.mult_gen_0_mult_gen_v12_0_14_viv...
 Compiling module xil_defaultlib.mult_gen_0_mult_gen_v12_0_14_HD1...
 Compiling module xil_defaultlib.mult_gen_0_HD18
-Compiling module xil_defaultlib.delay__3
+Compiling module xil_defaultlib.delay
 Compiling module xil_defaultlib.cordic_0_xbip_pipe_v3_0_5_viv
 Compiling module xil_defaultlib.cordic_0_delay__parameterized5_8
 Compiling module xil_defaultlib.cordic_0_delay__parameterized7
@@ -337,8 +337,6 @@ Compiling module xil_defaultlib.cordic_0_cordic_v6_0_14_synth
 Compiling module xil_defaultlib.cordic_0_cordic_v6_0_14_viv
 Compiling module xil_defaultlib.cordic_0_cordic_v6_0_14
 Compiling module xil_defaultlib.cordic_0
-Compiling module xil_defaultlib.delay
-Compiling module xil_defaultlib.latch
 Compiling module xil_defaultlib.Option_mode
 Compiling module xil_defaultlib.max_counter
 Compiling module xil_defaultlib.ram_control
@@ -372,17 +370,17 @@ Compiling module simprims_ver.OBUF
 Compiling module simprims_ver.IBUF
 Compiling module simprims_ver.OBUFT
 Compiling module xil_defaultlib.IOBUF_UNIQ_BASE_
-Compiling module xil_defaultlib.IOBUF_HD8
-Compiling module xil_defaultlib.IOBUF_HD9
-Compiling module xil_defaultlib.IOBUF_HD10
-Compiling module xil_defaultlib.IOBUF_HD11
-Compiling module xil_defaultlib.IOBUF_HD12
-Compiling module xil_defaultlib.IOBUF_HD13
-Compiling module xil_defaultlib.IOBUF_HD14
+Compiling module xil_defaultlib.IOBUF_HD43
+Compiling module xil_defaultlib.IOBUF_HD44
+Compiling module xil_defaultlib.IOBUF_HD45
+Compiling module xil_defaultlib.IOBUF_HD46
+Compiling module xil_defaultlib.IOBUF_HD47
+Compiling module xil_defaultlib.IOBUF_HD48
+Compiling module xil_defaultlib.IOBUF_HD49
 Compiling module simprims_ver.BUFG
 Compiling module xil_defaultlib.ad_count_ctrl
 Compiling module simprims_ver.FDSE(INIT=1'b0)
-Compiling module xil_defaultlib.latch__4
+Compiling module xil_defaultlib.latch
 Compiling module xil_defaultlib.signal_controller
 Compiling module xil_defaultlib.PCFG_TOP
 Compiling architecture behavior of entity xil_defaultlib.tb_pcfg

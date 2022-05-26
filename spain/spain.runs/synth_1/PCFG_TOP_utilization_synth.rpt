@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Thu May 26 13:44:03 2022
+| Date         : Thu May 26 15:59:31 2022
 | Host         : DESKTOP-19UI20G running 64-bit major release  (build 9200)
 | Command      : report_utilization -file PCFG_TOP_utilization_synth.rpt -pb PCFG_TOP_utilization_synth.pb
 | Design       : PCFG_TOP
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  348 |     0 |     48000 |  0.73 |
-|   LUT as Logic          |  348 |     0 |     48000 |  0.73 |
+| Slice LUTs*             |  354 |     0 |     48000 |  0.74 |
+|   LUT as Logic          |  354 |     0 |     48000 |  0.74 |
 |   LUT as Memory         |    0 |     0 |     17600 |  0.00 |
 | Slice Registers         |  228 |     0 |     96000 |  0.24 |
 |   Register as Flip Flop |  228 |     0 |     96000 |  0.24 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 4     |          Yes |           - |          Set |
 | 32    |          Yes |           - |        Reset |
-| 6     |          Yes |         Set |            - |
-| 186   |          Yes |       Reset |            - |
+| 5     |          Yes |         Set |            - |
+| 187   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -145,19 +145,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  186 |        Flop & Latch |
-| LUT3     |  106 |                 LUT |
-| LUT6     |   95 |                 LUT |
+| FDRE     |  187 |        Flop & Latch |
+| LUT3     |  112 |                 LUT |
+| LUT6     |  100 |                 LUT |
 | LUT1     |   72 |                 LUT |
-| LUT2     |   69 |                 LUT |
-| LUT4     |   59 |                 LUT |
-| LUT5     |   48 |                 LUT |
+| LUT2     |   68 |                 LUT |
+| LUT4     |   60 |                 LUT |
+| LUT5     |   42 |                 LUT |
 | CARRY4   |   33 |          CarryLogic |
 | FDCE     |   32 |        Flop & Latch |
 | OBUF     |   31 |                  IO |
 | IBUF     |   30 |                  IO |
 | OBUFT    |   20 |                  IO |
-| FDSE     |    6 |        Flop & Latch |
+| FDSE     |    5 |        Flop & Latch |
 | FDPE     |    4 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+

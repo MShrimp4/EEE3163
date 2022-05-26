@@ -17,6 +17,8 @@ begin
     process (clk)
     begin
         if rising_edge (clk) then
+            d_en <= d_en;
+            d    <= d;
             if d_en = '0' then
                 if data_en = '1' then
                     d_en <= '1';

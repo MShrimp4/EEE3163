@@ -1,12 +1,12 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/vivado_projects/spain/spain.sim/sim_1/impl/timing/xsim/tb_pcfg_time_impl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module IOBUF_UNIQ_BASE_
-INFO: [VRFC 10-311] analyzing module IOBUF_HD10
-INFO: [VRFC 10-311] analyzing module IOBUF_HD11
-INFO: [VRFC 10-311] analyzing module IOBUF_HD12
-INFO: [VRFC 10-311] analyzing module IOBUF_HD13
-INFO: [VRFC 10-311] analyzing module IOBUF_HD14
-INFO: [VRFC 10-311] analyzing module IOBUF_HD8
-INFO: [VRFC 10-311] analyzing module IOBUF_HD9
+INFO: [VRFC 10-311] analyzing module IOBUF_HD43
+INFO: [VRFC 10-311] analyzing module IOBUF_HD44
+INFO: [VRFC 10-311] analyzing module IOBUF_HD45
+INFO: [VRFC 10-311] analyzing module IOBUF_HD46
+INFO: [VRFC 10-311] analyzing module IOBUF_HD47
+INFO: [VRFC 10-311] analyzing module IOBUF_HD48
+INFO: [VRFC 10-311] analyzing module IOBUF_HD49
 INFO: [VRFC 10-311] analyzing module Option_mode
 INFO: [VRFC 10-311] analyzing module PCFG_TOP
 INFO: [VRFC 10-311] analyzing module RAM
@@ -23,12 +23,10 @@ INFO: [VRFC 10-311] analyzing module cordic_0
 INFO: [VRFC 10-311] analyzing module delay
 INFO: [VRFC 10-311] analyzing module delay__1
 INFO: [VRFC 10-311] analyzing module delay__2
-INFO: [VRFC 10-311] analyzing module delay__3
 INFO: [VRFC 10-311] analyzing module latch
 INFO: [VRFC 10-311] analyzing module latch__1
 INFO: [VRFC 10-311] analyzing module latch__2
 INFO: [VRFC 10-311] analyzing module latch__3
-INFO: [VRFC 10-311] analyzing module latch__4
 INFO: [VRFC 10-311] analyzing module max_counter
 INFO: [VRFC 10-311] analyzing module max_counter__1
 INFO: [VRFC 10-311] analyzing module max_counter__2

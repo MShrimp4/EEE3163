@@ -70,9 +70,7 @@ architecture Behavioral of signal_controller is
     signal s_AD_MODE_ready : STD_LOGIC;
     
     signal s_is_idle_like : boolean;
-    --
-    signal got_lettuce : STD_LOGIC := '0';
-    signal lettuce     : STD_LOGIC;
+    signal s_changed      : STD_LOGIC := '0';
 begin
 
 -- Components
@@ -104,50 +102,83 @@ begin
     process (s_clk)
     begin
         if rising_edge (s_clk) then
-            if lettuce = '1' then
-                got_lettuce <= '1';
-            end if;
-        
             if reset = '1' then
                 state <= sIDLE;
+                s_changed <= '0';
             else
+                state <= state;
+                s_changed <= '0';
                 case (state) is
                     when sIDLE =>
                         state <= next_state;
+                        s_changed <= '1';
                     when sPC_R =>
-                        if next_state /= sPC_R AND next_state /= sIDLE then
+                        if next_state /= sIDLE then
                             state <= next_state;
+                            s_changed <= '1';
+                        else
+                            state <= sPC_R;
+                            s_changed <= '0';
                         end if;
                     when sPC_W =>
-                        if next_state /= sPC_W AND next_state /= sIDLE then
+                        if next_state /= sIDLE then
                             state <= next_state;
+                            s_changed <= '1';
+                        else
+                            state <= sPC_W;
+                            s_changed <= '0';
                         end if;
                     when sDA =>
                         if da_stop_addr = '1' then
                             state <= sIDLE;
+                            s_changed <= '1';
+                        else 
+                            state <= sDA;
+                            s_changed <= '0';
                         end if;
                     when sAD =>
                         if s_AD_MODE_done = '1' then
                             state <= sAD_T;
+                            s_changed <= '1';
+                        else
+                            state <= sAD;
+                            s_changed <= '0';
                         end if;
                     when sAD_T =>
                         if ADRAM_CTRL_tc_r = '1' then
                             state <= sIDLE;
+                            s_changed <= '1';
+                        else
+                            state <= sAD_T;
+                            s_changed <= '0';
                         end if;
                     when sADR =>
-                        if next_state /= sADR AND next_state /= sIDLE then
+                        if next_state /= sIDLE then
                             state <= next_state;
+                            s_changed <= '1';
+                        else
+                            state <= sADR;
+                            s_changed <= '0';
                         end if;
                     when sOPT1 =>
                         if PCRAM_CTRL_tc_r = '1' then
                             state <= sIDLE;
+                            s_changed <= '1';
+                        else
+                            state <= sOPT1;
+                            s_changed <= '0';
                         end if;
                     when sOPT2 =>
-                        if next_state /= sOPT2 AND next_state /= sIDLE then
+                        if next_state /= sIDLE then
                             state <= next_state;
+                            s_changed <= '1';
+                        else
+                            state <= sOPT2;
+                            s_changed <= '0';
                         end if;
                     when others =>
                         state <= sIDLE;
+                        s_changed <= '0';
                 end case;
             end if;
         end if;
@@ -247,18 +278,6 @@ begin
              else "101" when next_state = sAD_T
              else "110" when next_state = sADR
              else "111";
-   lettuce
-               <= '1' when
-         pcs_addr = '1' OR
-         reset8254_addr = '1' OR 
-         pc_RAM_addr = '1' OR 
-         da_start_addr = '1' OR 
-         da_stop_addr = '1' OR 
-         ad_RAM_addr = '1' OR 
-         adr_RAM_addr = '1' OR 
-         opt_step1_addr = '1' OR 
-         opt_step2_addr = '1'
-         else '0';
-    debug_state (6) <= got_lettuce;
+    debug_state (6) <= s_changed;
 
 end Behavioral;

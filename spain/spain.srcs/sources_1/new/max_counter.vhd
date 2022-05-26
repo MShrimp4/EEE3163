@@ -40,6 +40,7 @@ begin
     process (clk_c)
     begin
         if rising_edge (clk_c) then
+            cnt <= cnt;
             if rst_all = '1' OR rst_c = '1' OR max = zero then
                 cnt <= (others=>'0');
             elsif ce_c = '1' then
@@ -48,6 +49,8 @@ begin
                 else
                     cnt <= cnt_next;
                 end if;
+            else
+                cnt <= cnt;
             end if;
         end if;
     end process;
@@ -55,10 +58,13 @@ begin
     process (clk_max)
     begin
         if rising_edge (clk_max) then
+            max <= max;
             if rst_all = '1' then
                 max <= (others=>'0');
             elsif ce_max = '1' then
                 max <= max + one;
+            else
+                max <= max;
             end if;
         end if;
     end process;
