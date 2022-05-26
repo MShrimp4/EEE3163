@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Wed May 25 22:47:52 2022
-# Process ID: 13552
+# Start of session at: Thu May 26 12:11:23 2022
+# Process ID: 4188
 # Current directory: D:/vivado_projects/spain/spain.runs/synth_1
 # Command line: vivado.exe -log PCFG_TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PCFG_TOP.tcl
 # Log file: D:/vivado_projects/spain/spain.runs/synth_1/PCFG_TOP.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7s75'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s75'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10652 
+INFO: Helper process launched with PID 13184 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 381.988 ; gain = 102.598
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 382.180 ; gain = 102.996
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'PCFG_TOP' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:37]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
@@ -25,8 +25,8 @@ INFO: [Synth 8-638] synthesizing module 'PCFG_TOP' [D:/vivado_projects/spain/spa
 	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
 	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
-INFO: [Synth 8-113] binding component instance 's_clk_g' to cell 'IBUF' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:198]
-INFO: [Synth 8-3491] module 'TOP_8254' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:29' bound to instance 'clk_gen' of component 'TOP_8254' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:203]
+INFO: [Synth 8-113] binding component instance 's_clk_g' to cell 'IBUF' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:199]
+INFO: [Synth 8-3491] module 'TOP_8254' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:29' bound to instance 'clk_gen' of component 'TOP_8254' [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:204]
 INFO: [Synth 8-638] synthesizing module 'TOP_8254' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:52]
 INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:6' bound to instance 'CNT0' of component 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:158]
 INFO: [Synth 8-638] synthesizing module 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:16]
@@ -35,57 +35,54 @@ INFO: [Synth 8-256] done synthesizing module 'TW_8254_CNT' (1#1) [D:/vivado_proj
 INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:6' bound to instance 'CNT1' of component 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:170]
 INFO: [Synth 8-3491] module 'TW_8254_CNT' declared at 'D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd:6' bound to instance 'CNT2' of component 'TW_8254_CNT' [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:182]
 INFO: [Synth 8-256] done synthesizing module 'TOP_8254' (2#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/top_8254.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'delay' [D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd:20]
+	Parameter length bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'delay' (3#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd:20]
+INFO: [Synth 8-638] synthesizing module 'safe_latch' [D:/vivado_projects/spain/spain.srcs/sources_1/new/safe_latch.vhd:13]
+	Parameter length bound to: 18 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'safe_latch' (4#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/safe_latch.vhd:13]
 INFO: [Synth 8-638] synthesizing module 'latch' [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
-	Parameter length bound to: 4 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'latch' (3#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
-INFO: [Synth 8-638] synthesizing module 'latch__parameterized0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
-	Parameter length bound to: 9 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'latch__parameterized0' (3#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
-INFO: [Synth 8-638] synthesizing module 'latch__parameterized1' [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
 	Parameter length bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'latch__parameterized1' (3#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
+INFO: [Synth 8-256] done synthesizing module 'latch' (5#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/latch.vhd:12]
 INFO: [Synth 8-638] synthesizing module 'tristatebuffer' [D:/vivado_projects/spain/spain.srcs/sources_1/new/tristatebuff.vhd:34]
 	Parameter length bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'tristatebuffer' (4#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/tristatebuff.vhd:34]
+INFO: [Synth 8-256] done synthesizing module 'tristatebuffer' (6#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/tristatebuff.vhd:34]
 INFO: [Synth 8-638] synthesizing module 'mux' [D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd:23]
 	Parameter length bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'mux' (5#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd:23]
+INFO: [Synth 8-256] done synthesizing module 'mux' (7#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd:23]
 INFO: [Synth 8-638] synthesizing module 'address_decoder' [D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd:19]
-INFO: [Synth 8-256] done synthesizing module 'address_decoder' (6#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (8#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd:19]
 INFO: [Synth 8-638] synthesizing module 'signal_controller' [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:56]
 INFO: [Synth 8-638] synthesizing module 'ad_count_ctrl' [D:/vivado_projects/spain/spain.srcs/sources_1/new/ad_count_ctrl.vhd:27]
-INFO: [Synth 8-256] done synthesizing module 'ad_count_ctrl' (7#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/ad_count_ctrl.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'ad_count_ctrl' (9#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/ad_count_ctrl.vhd:27]
 WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'debug_state_reg' in module 'signal_controller' in the same process may cause logic issues. 
  Please split the sync and async parts into different processes [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:216]
 WARNING: [Synth 8-6426] Mix of Sync and Async assignments to register 'debug_state_reg' in module 'signal_controller' in the same process may cause logic issues. 
  Please split the sync and async parts into different processes [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:226]
-INFO: [Synth 8-256] done synthesizing module 'signal_controller' (8#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'signal_controller' (10#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd:56]
 INFO: [Synth 8-638] synthesizing module 'RAM_WRAPPER' [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
-INFO: [Synth 8-3491] module 'RAM' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'RAM' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/RAM_stub.vhdl:20]
-INFO: [Synth 8-256] done synthesizing module 'RAM_WRAPPER' (9#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
+INFO: [Synth 8-3491] module 'RAM' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/RAM_stub.vhdl:5' bound to instance 'RAM1' of component 'RAM' [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'RAM' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/RAM_stub.vhdl:20]
+INFO: [Synth 8-256] done synthesizing module 'RAM_WRAPPER' (11#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/RAM_WRAPPER.vhd:38]
 INFO: [Synth 8-638] synthesizing module 'ram_control' [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:25]
 	Parameter length bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'max_counter' [D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd:33]
 	Parameter length bound to: 11 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'max_counter' (10#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'max_counter' (12#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd:33]
 WARNING: [Synth 8-3936] Found unconnected internal register 'w_delay_reg' and it is trimmed from '2' to '1' bits. [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:53]
-INFO: [Synth 8-256] done synthesizing module 'ram_control' (11#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:25]
-INFO: [Synth 8-638] synthesizing module 'delay' [D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd:20]
-	Parameter length bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'delay' (12#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/delay.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'ram_control' (13#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd:25]
 INFO: [Synth 8-638] synthesizing module 'Option_mode' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:22]
-INFO: [Synth 8-3491] module 'xfft_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:82]
-INFO: [Synth 8-638] synthesizing module 'xfft_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/xfft_0_stub.vhdl:26]
-INFO: [Synth 8-3491] module 'mult_gen_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:101]
-INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:16]
-INFO: [Synth 8-3491] module 'mult_gen_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:109]
-INFO: [Synth 8-3491] module 'cordic_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:119]
-INFO: [Synth 8-638] synthesizing module 'cordic_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-13552-DESKTOP-19UI20G/realtime/cordic_0_stub.vhdl:16]
-INFO: [Synth 8-256] done synthesizing module 'Option_mode' (13#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:22]
+INFO: [Synth 8-3491] module 'xfft_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/xfft_0_stub.vhdl:5' bound to instance 'FFT' of component 'xfft_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'xfft_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/xfft_0_stub.vhdl:26]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_REAL' of component 'mult_gen_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'mult_gen_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'mult_gen_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/mult_gen_0_stub.vhdl:5' bound to instance 'MULT_IMAG' of component 'mult_gen_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:109]
+INFO: [Synth 8-3491] module 'cordic_0' declared at 'D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/cordic_0_stub.vhdl:5' bound to instance 'SQRT' of component 'cordic_0' [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:119]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [D:/vivado_projects/spain/spain.runs/synth_1/.Xil/Vivado-4188-DESKTOP-19UI20G/realtime/cordic_0_stub.vhdl:16]
+INFO: [Synth 8-256] done synthesizing module 'Option_mode' (14#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/Option_mode.vhd:22]
 WARNING: [Synth 8-3848] Net m_dac_gain_d in module/entity PCFG_TOP does not have driver. [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:21]
 WARNING: [Synth 8-3848] Net m_dac_gain_clk in module/entity PCFG_TOP does not have driver. [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:24]
-INFO: [Synth 8-256] done synthesizing module 'PCFG_TOP' (14#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'PCFG_TOP' (15#1) [D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd:37]
 WARNING: [Synth 8-3331] design signal_controller has unconnected port AD_RAM_addra[10]
 WARNING: [Synth 8-3331] design signal_controller has unconnected port AD_RAM_addra[9]
 WARNING: [Synth 8-3331] design signal_controller has unconnected port AD_RAM_addra[8]
@@ -101,6 +98,7 @@ WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_dac_gain_clk
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_header[14]
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_header[13]
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_header[12]
+WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_wen
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[7]
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[6]
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[5]
@@ -110,7 +108,7 @@ WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[2]
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[1]
 WARNING: [Synth 8-3331] design PCFG_TOP has unconnected port m_debug_sw[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 437.672 ; gain = 158.281
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 437.656 ; gain = 158.473
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -123,10 +121,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 437.672 ; gain = 158.281
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 437.656 ; gain = 158.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 437.672 ; gain = 158.281
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 437.656 ; gain = 158.473
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -323,7 +321,6 @@ CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of conn
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_fpga_reset' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:966]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_oe_b' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:968]
 CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_ren' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:970]
-CRITICAL WARNING: [Common 17-69] Command failed: Cannot change direction of connected port 'm_wen' [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc:972]
 Finished Parsing XDC File [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/PCFG_TOP_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/vivado_projects/spain/spain.srcs/constrs_1/imports/spain/pcfg2019_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PCFG_TOP_propImpl.xdc].
@@ -333,16 +330,16 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 767.723 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 767.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 767.723 ; gain = 488.332
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 767.188 ; gain = 488.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s75fgga676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 767.723 ; gain = 488.332
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 767.188 ; gain = 488.004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -355,7 +352,7 @@ Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/MULT_IMAG. (constraint f
 Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/MULT_REAL. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for OPTMODE_CTRL/SQRT. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 767.723 ; gain = 488.332
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 767.188 ; gain = 488.004
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "s_CNT3_D" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "s_CNT3_D" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -368,7 +365,7 @@ INFO: [Synth 8-5544] ROM "s_AD_MODE_CTRL_start" won't be mapped to Block RAM bec
 INFO: [Synth 8-5544] ROM "DA_latch_en" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "OUT_mux_sel" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 767.723 ; gain = 488.332
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 767.188 ; gain = 488.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -386,16 +383,17 @@ Detailed RTL Component Info :
 	   2 Input     15 Bit       Adders := 6     
 	   2 Input     11 Bit       Adders := 9     
 +---Registers : 
+	               18 Bit    Registers := 1     
 	               16 Bit    Registers := 3     
 	               15 Bit    Registers := 6     
 	               11 Bit    Registers := 6     
-	                9 Bit    Registers := 1     
-	                8 Bit    Registers := 8     
-	                4 Bit    Registers := 2     
+	                8 Bit    Registers := 7     
+	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 2     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 30    
+	                1 Bit    Registers := 32    
 +---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 12    
 	   4 Input     16 Bit        Muxes := 3     
 	   2 Input     15 Bit        Muxes := 27    
@@ -406,7 +404,7 @@ Detailed RTL Component Info :
 	   6 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 57    
+	   2 Input      1 Bit        Muxes := 49    
 	   7 Input      1 Bit        Muxes := 4     
 	   3 Input      1 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 2     
@@ -442,15 +440,19 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   8 Input      3 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 4     
+Module delay 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module safe_latch 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 Module latch 
-Detailed RTL Component Info : 
-+---Registers : 
-	                4 Bit    Registers := 1     
-Module latch__parameterized0 
-Detailed RTL Component Info : 
-+---Registers : 
-	                9 Bit    Registers := 1     
-Module latch__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
@@ -458,10 +460,6 @@ Module mux
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      8 Bit        Muxes := 1     
-Module address_decoder 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 10    
 Module ad_count_ctrl 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -498,10 +496,6 @@ Detailed RTL Component Info :
 +---Registers : 
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
-Module delay 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 1     
 Module Option_mode 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -522,8 +516,6 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3332] Sequential element (latched_input_reg[2]) is unused and will be removed from module latch.
-WARNING: [Synth 8-3332] Sequential element (latched_input_reg[1]) is unused and will be removed from module latch.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (OPTRAM_CTRL/w_fall_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (ADRAM_CTRL/w_fall_reg)
 WARNING: [Synth 8-3332] Sequential element (s_wr_L_reg) is unused and will be removed from module TW_8254_CNT__2.
@@ -624,9 +616,11 @@ WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[6]) is unused and will 
 WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[5]) is unused and will be removed from module TW_8254_CNT.
 WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[4]) is unused and will be removed from module TW_8254_CNT.
 WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[3]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[2]) is unused and will be removed from module TW_8254_CNT.
+WARNING: [Synth 8-3332] Sequential element (s_CNT3_U_reg[1]) is unused and will be removed from module TW_8254_CNT.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 767.723 ; gain = 488.332
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 767.188 ; gain = 488.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -638,7 +632,7 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 767.723 ; gain = 488.332
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 767.188 ; gain = 488.004
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -650,7 +644,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 785.172 ; gain = 505.781
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 787.633 ; gain = 508.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -668,7 +662,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 785.172 ; gain = 505.781
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 787.633 ; gain = 508.449
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -681,7 +675,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 785.172 ; gain = 505.781
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 787.633 ; gain = 508.449
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -693,7 +687,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 785.172 ; gain = 505.781
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 787.633 ; gain = 508.449
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -723,14 +717,14 @@ Report Cell Usage:
 |8     |BUFG              |     1|
 |9     |CARRY4            |    33|
 |10    |LUT1              |    71|
-|11    |LUT2              |    67|
-|12    |LUT3              |    87|
-|13    |LUT4              |    62|
+|11    |LUT2              |    68|
+|12    |LUT3              |   105|
+|13    |LUT4              |    63|
 |14    |LUT5              |    49|
-|15    |LUT6              |    93|
+|15    |LUT6              |    92|
 |16    |FDCE              |    32|
 |17    |FDPE              |     4|
-|18    |FDRE              |   194|
+|18    |FDRE              |   195|
 |19    |FDSE              |     6|
 |20    |IBUF              |    22|
 |21    |IOBUF             |     8|
@@ -739,47 +733,46 @@ Report Cell Usage:
 +------+------------------+------+
 
 Report Instance Areas: 
-+------+-----------------+-------------------------+------+
-|      |Instance         |Module                   |Cells |
-+------+-----------------+-------------------------+------+
-|1     |top              |                         |   949|
-|2     |  clk_gen        |TOP_8254                 |   253|
-|3     |    CNT0         |TW_8254_CNT__1           |   229|
-|4     |  PC_LATCH       |latch                    |     2|
-|5     |  ADDR_LATCH     |latch__parameterized0    |     9|
-|6     |  IN_LATCH       |latch__parameterized1__1 |     8|
-|7     |  OUT_LATCH      |latch__parameterized1__2 |     8|
-|8     |  DA_LATCH       |latch__parameterized1__3 |     8|
-|9     |  AD_LATCH       |latch__parameterized1__4 |     8|
-|10    |  TRIBUF         |tristatebuffer           |     8|
-|11    |  PC_MUX         |mux__1                   |     8|
-|12    |  OUT_mux_1      |mux__2                   |     8|
-|13    |  OUT_mux_2      |mux                      |     8|
-|14    |  addr_decode    |address_decoder          |    12|
-|15    |  main_ctrl      |signal_controller        |    95|
-|16    |    len_latch    |latch__parameterized1__5 |     8|
-|17    |    ad_ctrl      |ad_count_ctrl            |    25|
-|18    |  PCRAM          |RAM_WRAPPER__xdcDup__1   |     8|
-|19    |  ADRAM          |RAM_WRAPPER__xdcDup__2   |     8|
-|20    |  OPTIONRAM      |RAM_WRAPPER              |     8|
-|21    |  PCRAM_CTRL     |ram_control__1           |    67|
-|22    |    counter      |max_counter__1           |    57|
-|23    |  ADRAM_CTRL     |ram_control__2           |    63|
-|24    |    counter      |max_counter__2           |    57|
-|25    |  OPTRAM_DELAY   |delay__1                 |     1|
-|26    |  OPTRAM_CTRL    |ram_control              |    61|
-|27    |    counter      |max_counter              |    57|
-|28    |  OPTMODE_CTRL   |Option_mode              |   211|
-|29    |    OUT_EN_DELAY |delay__2                 |     1|
-|30    |    SQRT_LATCH   |latch__parameterized1    |     8|
-|31    |    SQRT_DELAY   |delay                    |     1|
-+------+-----------------+-------------------------+------+
++------+------------------+-----------------------+------+
+|      |Instance          |Module                 |Cells |
++------+------------------+-----------------------+------+
+|1     |top               |                       |   969|
+|2     |  clk_gen         |TOP_8254               |   253|
+|3     |    CNT0          |TW_8254_CNT__1         |   229|
+|4     |  CMD_DELAY       |delay__1               |     1|
+|5     |  ALL_INPUT_LATCH |safe_latch             |    38|
+|6     |  OUT_LATCH       |latch__1               |     8|
+|7     |  DA_LATCH        |latch__2               |     8|
+|8     |  AD_LATCH        |latch__3               |     8|
+|9     |  TRIBUF          |tristatebuffer         |     8|
+|10    |  PC_MUX          |mux__1                 |     8|
+|11    |  OUT_mux_1       |mux__2                 |     8|
+|12    |  OUT_mux_2       |mux                    |     8|
+|13    |  addr_decode     |address_decoder        |    12|
+|14    |  main_ctrl       |signal_controller      |    95|
+|15    |    len_latch     |latch__4               |     8|
+|16    |    ad_ctrl       |ad_count_ctrl          |    25|
+|17    |  PCRAM           |RAM_WRAPPER__xdcDup__1 |     8|
+|18    |  ADRAM           |RAM_WRAPPER__xdcDup__2 |     8|
+|19    |  OPTIONRAM       |RAM_WRAPPER            |     8|
+|20    |  PCRAM_CTRL      |ram_control__1         |    67|
+|21    |    counter       |max_counter__1         |    57|
+|22    |  ADRAM_CTRL      |ram_control__2         |    63|
+|23    |    counter       |max_counter__2         |    57|
+|24    |  OPTRAM_DELAY    |delay__2               |     1|
+|25    |  OPTRAM_CTRL     |ram_control            |    61|
+|26    |    counter       |max_counter            |    57|
+|27    |  OPTMODE_CTRL    |Option_mode            |   211|
+|28    |    OUT_EN_DELAY  |delay__3               |     1|
+|29    |    SQRT_LATCH    |latch                  |     8|
+|30    |    SQRT_DELAY    |delay                  |     1|
++------+------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 785.172 ; gain = 505.781
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 787.633 ; gain = 508.449
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 109 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 785.172 ; gain = 175.730
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 785.172 ; gain = 505.781
+Synthesis finished with 0 errors, 0 critical warnings and 107 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 787.633 ; gain = 178.918
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 787.633 ; gain = 508.449
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -790,11 +783,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 8 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-74 Infos, 230 Warnings, 73 Critical Warnings and 0 Errors encountered.
+72 Infos, 231 Warnings, 72 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 786.453 ; gain = 518.465
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 788.316 ; gain = 520.848
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'D:/vivado_projects/spain/spain.runs/synth_1/PCFG_TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file PCFG_TOP_utilization_synth.rpt -pb PCFG_TOP_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 786.453 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed May 25 22:48:31 2022...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 788.316 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu May 26 12:11:57 2022...

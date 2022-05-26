@@ -1533,5 +1533,3 @@ set_property src_info {type:XDC file:1 line:968 export:INPUT save:INPUT read:REA
 set_property DIRECTION IN [get_ports m_oe_b]
 set_property src_info {type:XDC file:1 line:970 export:INPUT save:INPUT read:READ} [current_design]
 set_property DIRECTION IN [get_ports m_ren]
-set_property src_info {type:XDC file:1 line:972 export:INPUT save:INPUT read:READ} [current_design]
-set_property DIRECTION IN [get_ports m_wen]

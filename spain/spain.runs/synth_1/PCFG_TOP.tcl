@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7s75fgga676-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -40,6 +39,7 @@ read_vhdl -library xil_defaultlib {
   D:/vivado_projects/spain/spain.srcs/sources_1/new/address_decoder.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/max_counter.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/mux.vhd
+  D:/vivado_projects/spain/spain.srcs/sources_1/new/safe_latch.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/tristatebuff.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/signal_controller.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/ram_control.vhd
@@ -47,16 +47,16 @@ read_vhdl -library xil_defaultlib {
   D:/vivado_projects/spain/spain.srcs/sources_1/new/tw_8254_cnt.vhd
   D:/vivado_projects/spain/spain.srcs/sources_1/new/pcfg_top.vhd
 }
-read_ip -quiet d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM.xci
+read_ip -quiet D:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM.xci
 set_property used_in_implementation false [get_files -all d:/vivado_projects/spain/spain.srcs/sources_1/ip/RAM/RAM_ooc.xdc]
 
-read_ip -quiet d:/vivado_projects/spain/spain.srcs/sources_1/ip/xfft_0/xfft_0.xci
+read_ip -quiet D:/vivado_projects/spain/spain.srcs/sources_1/ip/xfft_0/xfft_0.xci
 set_property used_in_implementation false [get_files -all d:/vivado_projects/spain/spain.srcs/sources_1/ip/xfft_0/xfft_0_ooc.xdc]
 
-read_ip -quiet d:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0.xci
+read_ip -quiet D:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0.xci
 set_property used_in_implementation false [get_files -all d:/vivado_projects/spain/spain.srcs/sources_1/ip/mult_gen_0/mult_gen_0_ooc.xdc]
 
-read_ip -quiet d:/vivado_projects/spain/spain.srcs/sources_1/ip/cordic_0/cordic_0.xci
+read_ip -quiet D:/vivado_projects/spain/spain.srcs/sources_1/ip/cordic_0/cordic_0.xci
 set_property used_in_implementation false [get_files -all d:/vivado_projects/spain/spain.srcs/sources_1/ip/cordic_0/cordic_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

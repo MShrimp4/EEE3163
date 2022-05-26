@@ -6,6 +6,7 @@ use IEEE.Numeric_std.ALL;
 use ieee.std_logic_textio.all;
 LIBRARY std;                        
 use std.textio.all;
+use std.env.stop;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
@@ -55,7 +56,7 @@ ARCHITECTURE behavior OF tb_pcfg IS
    signal m_OE_b : std_logic := '1';
    signal m_wen : std_logic := '0';
    signal m_ren : std_logic := '0';
-   signal m_ADC_data : std_logic_vector(7 downto 0) := "00000110"; --(others => '0'); --?ù¥Í±? Î∞îÍøà
+   signal m_ADC_data : std_logic_vector(7 downto 0) := "00000110"; --(others => '0'); --¿Ã∞≈ πŸ≤ﬁ
 
 	--BiDirs
    signal m_data : std_logic_vector(7 downto 0);
@@ -90,13 +91,19 @@ ARCHITECTURE behavior OF tb_pcfg IS
 				signal 		n_OE			: out   std_logic) is
 	begin
 	 
+        CMD_DATA_tmp            <= '1';
+		Address_tmp				<= (others=>'X'); 
+		Data_tmp   				<= (others=>'X');
+		WEN_tmp 				<= 'X';
+		REN_tmp 				<= 'X';
+		n_OE					<= 'X';
+		wait for m_clk_period*0.9;
 		Address_tmp				<= Addr; 
-		Data_tmp   				<= Data_in;
-		CMD_DATA_tmp 			<= '1';
-		WEN_tmp 				<= '0';
-		REN_tmp 				<= '0';
-		n_OE					<= '1';
-		wait for m_clk_period*5;
+        Data_tmp                <= Data_in;
+        WEN_tmp                 <= '0';
+        REN_tmp                 <= '0';
+        n_OE                    <= '1';
+		wait for m_clk_period*4.1;
 	
 		WEN_tmp 				<= '1';
 		wait for m_clk_period*5;
@@ -105,7 +112,7 @@ ARCHITECTURE behavior OF tb_pcfg IS
 		Data_tmp   				<= (others=>'Z'); 
  		CMD_DATA_tmp			<= '0';
 		WEN_tmp 				<= '0';
-		wait for 10 ns;
+		wait for 60 ns;
 	end CMD_WR; 
 	
 	----Read mode-----
@@ -120,23 +127,34 @@ ARCHITECTURE behavior OF tb_pcfg IS
 				signal		n_OE			: out	std_logic
 				) is
 	begin
+        CMD_DATA_tmp            <= '1';
+		Address_tmp				<= (others=>'X'); 
+        Data_tmp                <= "11111111";
+		WEN_tmp 				<= 'X';
+		REN_tmp 				<= 'X';
+		n_OE					<= 'X';
+		wait for m_clk_period*0.9;
 		Address_tmp				<= Addr; 
-		CMD_DATA_tmp 			<= '1';
-		WEN_tmp 				<= '0';
-		REN_tmp 				<= '0';
-		n_OE					<= '0';
-		Data_tmp				<= "ZZZZZZZZ";
-		wait for m_clk_period*5;
+        Data_tmp                <= "ZZZZZZZZ";
+        WEN_tmp                 <= '0';
+        REN_tmp                 <= '0';
+        n_OE                    <= '0';
+		wait for m_clk_period*4.1;
 		REN_tmp 				<= '1';
 		wait for m_clk_period*5;
 		Address_tmp				<= (others=>'Z'); 
 		CMD_DATA_tmp			<= '0';
 		REN_tmp 				<= '0';
 		n_OE					<= '1';
-		wait for 10 ns;
+		wait for 60 ns;
 	end CMD_RD;
 	
- 
+-- Added Features
+
+-- signal
+    constant sel_8254 : STD_LOGIC_VECTOR (6 downto 0) := "1000100";
+    constant CW       : STD_LOGIC_VECTOR (1 downto 0) := "11";
+    constant C0       : STD_LOGIC_VECTOR (1 downto 0) := "00";
 BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: PCFG_TOP PORT MAP (
@@ -173,9 +191,9 @@ BEGIN
    end process;
  
    Option_input_data : process(s_dat_clk)
-   file	       filein1      :   text is in "Sample_Input_1.dat"; --?õê?ïò?äî dat?åå?ùº ?ù¥Î¶ÑÏùÑ ?†Å?ñ¥Ï£ºÏÑ∏?öî fs=40MHz
-   variable    linein1      :   line;							 --Sample_Input_1.dat : 3*cos(2?f0/fs*n) + sin(2?f1/fs*n), f0=0.5MHz, f1=3.3MHz
-   variable    inputtmp1    :   integer;						 --Sample_Input_2.dat : 3*cos(2?f2/fs*n) - 4*sin(2?f3/fs*n) - 2*sin(2?f4/fs*n), f2=1MHz, f3=2MHz, f4=4.7MHz
+   file	       filein1      :   text open read_mode is "Sample_Input_1.dat"; --ø¯«œ¥¬ dat∆ƒ¿œ ¿Ã∏ß¿ª ¿˚æÓ¡÷ººø‰ fs=40MHz
+   variable    linein1      :   line;							 --Sample_Input_1.dat : 3*cos(2•f0/fs*n) + sin(2•f1/fs*n), f0=0.5MHz, f1=3.3MHz
+   variable    inputtmp1    :   integer;						 --Sample_Input_2.dat : 3*cos(2•f2/fs*n) - 4*sin(2•f3/fs*n) - 2*sin(2•f4/fs*n), f2=1MHz, f3=2MHz, f4=4.7MHz
    begin
    	if rising_edge(s_dat_clk) then
            if s_dat_en = '1' then
@@ -198,7 +216,7 @@ BEGIN
 	ADC_input : process
 	begin
       m_ADC_data <= m_ADC_data + x"04";
-      wait for m_clk_period*1; -- ?ûê?ú†Î°?Í≤? Î≥?Í≤? Í∞??ä•
+      wait for m_clk_period; -- ¿⁄¿Ø∑”∞‘ ∫Ø∞Ê ∞°¥…
 	end process;
    
 	
@@ -208,46 +226,37 @@ BEGIN
       -- hold reset state for 100 ns.
 		wait for 100 ns;	
 		m_reset_b  <= '1';
-		wait for 10 us;
+		wait for 10 us;		
 		
-		 -- 8254 setting (m_clkÎ•? 4Î∂ÑÏ£º?ï¥?Ñú div_clk?ùÑ ÎßåÎì§Í∏? ?úÑ?ïú Í≥ºÏ†ï)
-		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
+		 -- 8254 setting (m_clk∏¶ 4∫–¡÷«ÿº≠ div_clk¿ª ∏∏µÈ±‚ ¿ß«— ∞˙¡§)
+		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 				
    
 		----PC Write		
 		for i in 0 to 10 loop
 		CMD_WR('1' & x"30",conv_std_logic_vector(i,8),m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	
-		wait for 1 us;
 		end loop;
 		
-		-- PC read mode : 8254reset => 8254 1Î∂ÑÏ£º => PC read mode
+		-- PC read mode : 8254reset => 8254 1∫–¡÷ => PC read mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
-		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
-		wait for 10 us;
-		for i in 0 to 10 loop
+		for i in 0 to 21 loop
 		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 1 us;
 		end loop;
-		wait for 10 us;
+		wait for 1 us;--wait for 10 us;	
 
-	    -- DA mode : 8254reset => 8254 n Î∂ÑÏ£º => DA mode
+	    -- DA mode : 8254reset => 8254 n ∫–¡÷ => DA mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 04
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 0C
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 		CMD_RD('1' & x"40",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
 		wait for 10 us;
@@ -257,70 +266,64 @@ BEGIN
 		CMD_RD('1' & x"41",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
 		wait for 10 us;   
 				
-		-- AD mode : 8254reset => 8254 nÎ∂ÑÏ£º => AD mode
+		-- AD mode : 8254reset => 8254 n∫–¡÷ => AD mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 04
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&C0,"00000100",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);	-- LSB 04
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
 		CMD_WR('1' & x"50","00001011",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
+		wait for 5 us;
 
-		-- PC read mode : 8254reset => 8254 1Î∂ÑÏ£º => PC read mode
+		-- PC read mode : 8254reset => 8254 1∫–¡÷ => PC read mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
-		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
-		wait for 10 us;
-		for i in 0 to 10 loop
-		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- PC RAM?óê 10Í∞? ?ùΩÍ∏?
-		wait for 1 us;
+		for i in 0 to 21 loop
+		CMD_RD('1' & x"30",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- PC RAMø° 10∞≥ ¿–±‚
 		end loop;
-		wait for 10 us;		
+		wait for 1 us;--wait for 10 us;		
 		
-		-- ADR mode : 8254reset => 8254 1Î∂ÑÏ£º => ADR mode
+		-- ADR mode : 8254reset => 8254 1∫–¡÷ => ADR mode
 		CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+		CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
+		CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
 		wait for 10 us;
-		CMD_WR('1' & x"13","00110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
-		wait for 10 us;
-		CMD_WR('1' & x"10","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
-		wait for 10 us;
-		for i in 0 to 10 loop
+		for i in 0 to 21 loop
 		CMD_RD('1' & x"51",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 1 us;
 		end loop;
-		wait for 10 us;
-		
-		--==========Option mode sequence===========
-		--PC Write mode : PC RAM?óê "Sample_Input_1.dat" Write	
-		s_dat_en <= '1';
-			for i in 0 to 511 loop
-			s_dat_clk <= '1';
-			wait for 1 us;
-			CMD_WR('1' & x"30",option_data,m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-			s_dat_clk <= '0';
-			wait for 1 us;
-			end loop;
-		wait for 10 us;
-		
-		--Option mode(step1)
-		CMD_WR('1' & x"60","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
-		wait for 300 us;
-		
-	    --Option mode(step2)
-		for i in 0 to 511 loop
-		CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAMÍ∞? ?ùΩÍ∏?
-		wait for 1 us;
-		end loop;
-			   
+		wait for 1 us;--wait for 10 us;
+                
+        --==========Option mode sequence===========
+        --PC Write mode : PC RAMø° "Sample_Input_1.dat" Write    
+        s_dat_en <= '1';
+            for i in 0 to 511 loop
+            s_dat_clk <= '1';
+            wait for 30 ns; -- 1 us
+            CMD_WR('1' & x"30",option_data,m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+            s_dat_clk <= '0';
+            wait for 10 ns; -- 1 us
+            end loop;
+        wait for 1 us; --10 us
+        
+        CMD_WR('1' & x"21","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+        CMD_WR(sel_8254&CW,C0&"110110",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+        CMD_WR(sel_8254&C0,"00000001",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);   -- LSB 01
+        CMD_WR(sel_8254&C0,"00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- MSB 00
+        wait for 10 us;
+        		--Option mode(step1)
+        CMD_WR('1' & x"60","00000000",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);
+        wait for 195 us;
+        
+        --Option mode(step2)
+        for i in 0 to 511 loop
+        CMD_RD('1' & x"61",m_address,m_data,m_cmd_data,m_wen,m_ren,m_OE_b);  -- OPTION RAM∞™ ¿–±‚
+        end loop;
+                
+        stop;
 			   
       wait;
    end process;

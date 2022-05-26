@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1653486470">
+<GenRun Id="impl_1" LaunchPart="xc7s75fgga676-2" LaunchTime="1653534725">
   <File Type="BITSTR-BMM" Name="PCFG_TOP_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="PCFG_TOP_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="PCFG_TOP_timing_summary_init.rpt"/>
@@ -119,6 +119,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/safe_latch.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/tristatebuff.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -183,9 +189,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>

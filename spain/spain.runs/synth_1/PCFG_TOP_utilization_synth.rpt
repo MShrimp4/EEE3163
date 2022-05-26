@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed May 25 22:48:31 2022
+| Date         : Thu May 26 12:11:57 2022
 | Host         : DESKTOP-19UI20G running 64-bit major release  (build 9200)
 | Command      : report_utilization -file PCFG_TOP_utilization_synth.rpt -pb PCFG_TOP_utilization_synth.pb
 | Design       : PCFG_TOP
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  338 |     0 |     48000 |  0.70 |
-|   LUT as Logic          |  338 |     0 |     48000 |  0.70 |
+| Slice LUTs*             |  347 |     0 |     48000 |  0.72 |
+|   LUT as Logic          |  347 |     0 |     48000 |  0.72 |
 |   LUT as Memory         |    0 |     0 |     17600 |  0.00 |
-| Slice Registers         |  236 |     0 |     96000 |  0.25 |
-|   Register as Flip Flop |  236 |     0 |     96000 |  0.25 |
+| Slice Registers         |  237 |     0 |     96000 |  0.25 |
+|   Register as Flip Flop |  237 |     0 |     96000 |  0.25 |
 |   Register as Latch     |    0 |     0 |     96000 |  0.00 |
 | F7 Muxes                |    0 |     0 |     32000 |  0.00 |
 | F8 Muxes                |    0 |     0 |     16000 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 4     |          Yes |           - |          Set |
 | 32    |          Yes |           - |        Reset |
 | 6     |          Yes |         Set |            - |
-| 194   |          Yes |       Reset |            - |
+| 195   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -145,12 +145,12 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  194 |        Flop & Latch |
-| LUT6     |   93 |                 LUT |
-| LUT3     |   87 |                 LUT |
+| FDRE     |  195 |        Flop & Latch |
+| LUT3     |  105 |                 LUT |
+| LUT6     |   92 |                 LUT |
 | LUT1     |   71 |                 LUT |
-| LUT2     |   67 |                 LUT |
-| LUT4     |   62 |                 LUT |
+| LUT2     |   68 |                 LUT |
+| LUT4     |   63 |                 LUT |
 | LUT5     |   49 |                 LUT |
 | CARRY4   |   33 |          CarryLogic |
 | FDCE     |   32 |        Flop & Latch |

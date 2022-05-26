@@ -106,10 +106,11 @@ signal s_optmode_m_valid : STD_LOGIC;
 -- Latch Enable
 signal DA_latch_en  : STD_LOGIC;
 
+-- Delay
+signal s_m_cmd_data_delay : STD_LOGIC;
+
 -- PC Latch
 signal s_cmd_data       : STD_LOGIC;
-signal s_wen            : STD_LOGIC;
-signal s_ren            : STD_LOGIC;
 signal s_oe_b           : STD_LOGIC;
 
 -- Address Latch
@@ -117,7 +118,7 @@ signal s_address        : STD_LOGIC_VECTOR (m_address'length-1 downto 0);
 
 -- Latch Data
 signal s_OUT_latch_din  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
-signal s_IN_latch_dout  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
+signal s_data  : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
 
 -- Tristate Buffer
 signal s_tri_data       : STD_LOGIC_VECTOR (m_data'length-1 downto 0);
@@ -206,7 +207,7 @@ clk_gen : TOP_8254 port map(
            m_clk2    => s_clk,
            m_clk_ctr => s_clk,
            m_reset   => s_m_8254_reset, --8254 resetê³? ?˜¼?š©?  ?ˆ˜ ?ˆ?„ë¡? ë³?ê²?
-           m_data    => s_IN_latch_dout,
+           m_data    => s_data,
            m_gate0   => s_m_8254_gate0,
            m_gate1   => s_m_8254_gate1,
            m_gate2   => s_m_8254_gate2,
@@ -227,30 +228,24 @@ s_m_8254_gate2	<= '1';
 
 -- Components
 
-
-PC_LATCH    : entity work.latch (Behavioral)
-    generic map(length=> 4)
-    port map(clk=>s_clk, en=> '1',
-             input (3) => m_cmd_data,
-             input (2) => m_wen,
-             input (1) => m_ren,
-             input (0) => m_oe_b,
-             output (3) => s_cmd_data,
-             output (2) => s_wen,
-             output (1) => s_ren,
-             output (0) => s_oe_b);
-
-ADDR_LATCH  : entity work.latch (Behavioral)
-    generic map(length=> m_address'length)
-    port map(clk=>s_clk, en=>'1',
-             input=>  m_address,
-             output=> s_address);
-
-IN_LATCH    : entity work.latch (Behavioral)
-    generic map(length=> m_data'length)
-    port map(clk=>s_clk, en=>'1',
-             input  => m_data,
-             output => s_IN_latch_dout);
+CMD_DELAY   : entity work.delay (Behavioral)
+    generic map(length=>1)
+    port map (clk=>s_clk,
+              input=>m_cmd_data,
+              output=>s_m_cmd_data_delay);
+              
+ALL_INPUT_LATCH : entity work.safe_latch (Behavioral)
+    generic map(length=> 1 + m_address'length + m_data'length)
+    port map(clk=>s_clk,
+             data_en=>s_m_cmd_data_delay,
+             data_en_out=>s_cmd_data,
+             data     (1 + m_address'length + m_data'length - 1) => m_oe_b,
+             data     (m_address'length + m_data'length - 1 downto m_data'length) => m_address,
+             data     (m_data'length - 1 downto 0) => m_data,
+             data_out (1 + m_address'length + m_data'length - 1) => s_oe_b,
+             data_out (m_address'length + m_data'length - 1 downto m_data'length) => s_address,
+             data_out (m_data'length - 1 downto 0) => s_data
+    );
 
 OUT_LATCH   : entity work.latch (Behavioral)
     generic map(length=> m_data'length)
@@ -277,7 +272,7 @@ TRIBUF      : entity work.tristatebuffer (Behavioral)
 
 PC_MUX      : entity work.mux (Behavioral)
     generic map(length=> m_data'length)
-    port map(Din0=> s_IN_latch_dout,
+    port map(Din0=> s_data,
              Din1=> s_AD_RAM_dout,
              Dout=> s_PC_RAM_din,
              sel => s_PC_mux_sel);
@@ -298,7 +293,6 @@ OUT_mux_2   : entity work.mux (Behavioral)
 
 addr_decode : entity work.address_decoder (Behavioral)
     port map(addr_in=>        s_address,
-             en=>             s_cmd_data,
              pcs_addr=>       s_pcs_addr,
              reset_addr=>     s_reset_addr,
              reset8254_addr=> s_reset8254_addr,
@@ -315,7 +309,7 @@ main_ctrl   : entity work.signal_controller (Behavioral)
              sys_clk=>        s_clk,
              reset=>          s_ctrl_reset,
              s_oe_b=>         s_oe_b,
-             s_data=>         s_IN_latch_dout,
+             s_data=>         s_data,
              pcs_addr=>       s_pcs_addr,
              reset8254_addr=> s_reset8254_addr,
              pc_RAM_addr=>    s_pc_RAM_addr,

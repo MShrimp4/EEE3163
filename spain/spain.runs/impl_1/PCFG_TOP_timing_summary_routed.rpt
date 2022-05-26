@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Wed May 25 22:50:07 2022
+| Date         : Thu May 26 12:13:35 2022
 | Host         : DESKTOP-19UI20G running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file PCFG_TOP_timing_summary_routed.rpt -pb PCFG_TOP_timing_summary_routed.pb -rpx PCFG_TOP_timing_summary_routed.rpx -warn_on_violation
 | Design       : PCFG_TOP
@@ -52,7 +52,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 1386 register/latch pins with no clock driven by root clock pin: m_fpga_clk (HIGH)
+ There are 1387 register/latch pins with no clock driven by root clock pin: m_fpga_clk (HIGH)
 
  There are 20 register/latch pins with no clock driven by root clock pin: clk_gen/s_addr_reg[0]/Q (HIGH)
 
@@ -77,7 +77,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 2435 pins that are not constrained for maximum delay. (HIGH)
+ There are 2455 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
