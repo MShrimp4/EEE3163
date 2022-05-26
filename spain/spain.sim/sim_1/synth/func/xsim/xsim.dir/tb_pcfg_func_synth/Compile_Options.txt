@@ -1,1 +1,0 @@
--wto "bfbfd768946b4f0cb0aa6ad564e786fa" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "tb_pcfg_func_synth" "xil_defaultlib.tb_pcfg" -log "elaborate.log" 
